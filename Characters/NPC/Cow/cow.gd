@@ -19,7 +19,13 @@ var current_state: COW_STATE = COW_STATE.IDLE
 const CHASE_SPEED = 50.0
 
 func _ready() -> void:
+	set_physics_process(false)
+	call_deferred("await_for_physics")
 	pick_new_state()
+
+func await_for_physics():
+	await get_tree().physics_frame
+	set_physics_process(true)
 
 func _physics_process(delta: float) -> void:
 	match current_state:
