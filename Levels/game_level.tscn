@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://b4t4wmqtf1wjm"]
+[gd_scene load_steps=28 format=4 uid="uid://b4t4wmqtf1wjm"]
 
 [ext_resource type="PackedScene" uid="uid://l6oecmvfr7a7" path="res://Characters/Player/player_cat.tscn" id="1_up8ek"]
 [ext_resource type="Texture2D" uid="uid://b1tasarm33pfe" path="res://Assets/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="2_bskef"]
@@ -565,6 +565,11 @@ sources/9 = SubResource("TileSetAtlasSource_eolva")
 sources/10 = SubResource("TileSetAtlasSource_sh88w")
 sources/11 = SubResource("TileSetAtlasSource_wri67")
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_um5wi"]
+vertices = PackedVector2Array(537.641, 283.25, 160, 292.742, 160, 88.8438, 530.359, 83.1484)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(150, 79, 540, 73, 548, 293, 150, 303)])
+
 [node name="GameLevel" type="Node2D"]
 y_sort_enabled = true
 
@@ -595,14 +600,17 @@ tile_set = SubResource("TileSet_hqfmj")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(476, 212)
 
-[node name="Cow" parent="." instance=ExtResource("13_ds5vk")]
+[node name="Cow" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("13_ds5vk")]
 position = Vector2(277, 218)
+target_to_chase = NodePath("../PlayerCat")
 
-[node name="Cow2" parent="." instance=ExtResource("13_ds5vk")]
+[node name="Cow2" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("13_ds5vk")]
 position = Vector2(383, 143)
+target_to_chase = NodePath("../PlayerCat")
 
-[node name="Cow3" parent="." instance=ExtResource("13_ds5vk")]
+[node name="Cow3" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("13_ds5vk")]
 position = Vector2(387, 242)
+target_to_chase = NodePath("../PlayerCat")
 
 [node name="Chest" parent="." instance=ExtResource("14_um5wi")]
 position = Vector2(281, 175)
@@ -612,3 +620,6 @@ position = Vector2(337, 216)
 
 [node name="Chest3" parent="." instance=ExtResource("14_um5wi")]
 position = Vector2(425, 147)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_um5wi")
