@@ -17,7 +17,7 @@ var current_state: COW_STATE = COW_STATE.IDLE
 func _ready() -> void:
 	pick_new_state()
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if (current_state == COW_STATE.WALK):
 		# Update velocity
 		velocity = move_direction.normalized() * move_speed

@@ -4,12 +4,14 @@ extends CharacterBody2D
 @export var starting_direciton: Vector2 = Vector2(0, 1)
 
 @onready var animation_tree = $AnimationTree
+
 @onready var state_machine = animation_tree.get("parameters/playback")
 
 func _ready() -> void:
 	update_animation_parameters(starting_direciton)
+		
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	# Get input direction
 	var input_direction = Vector2(
 		Input.get_action_strength("right") - Input.get_action_strength("left"),
