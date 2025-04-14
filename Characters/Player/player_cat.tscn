@@ -1,6 +1,6 @@
-[gd_scene load_steps=28 format=3 uid="uid://l6oecmvfr7a7"]
+[gd_scene load_steps=29 format=3 uid="uid://l6oecmvfr7a7"]
 
-[ext_resource type="Texture2D" uid="uid://c5iig5mniuitb" path="res://Assets/Sprout Lands - Sprites - Basic pack/Characters/Basic Charakter Spritesheet.png" id="1_k8dsg"]
+[ext_resource type="Texture2D" uid="uid://c5iig5mniuitb" path="res://assets/Sprout Lands - Sprites - Basic pack/Characters/Basic Charakter Spritesheet.png" id="1_k8dsg"]
 [ext_resource type="Script" uid="uid://dkt4ekm7grid1" path="res://Characters/Player/player_cat.gd" id="1_u0lhy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k8dsg"]
@@ -235,6 +235,8 @@ states/Walk/node = SubResource("AnimationNodeBlendSpace2D_mvmeq")
 states/Walk/position = Vector2(530.667, 99.0371)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_3b306"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_pilkh"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_rktvm")]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_my8ih"]
+
 [node name="PlayerCat" type="CharacterBody2D"]
 script = ExtResource("1_u0lhy")
 
@@ -258,3 +260,10 @@ tree_root = SubResource("AnimationNodeStateMachine_adw66")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Idle/blend_position = Vector2(-0.105691, -0.218675)
 parameters/Walk/blend_position = Vector2(0.16188, -0.205422)
+
+[node name="DialogueInteractionArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DialogueInteractionArea"]
+shape = SubResource("RectangleShape2D_my8ih")
