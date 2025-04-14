@@ -8,6 +8,7 @@ var in_progress: bool = false
 
 @onready var background = $Background
 @onready var text_label = $TextLabel
+@onready var sprite = $Sprite2D
 
 func _ready():
 	background.visible = false
@@ -33,6 +34,7 @@ func next_line():
 func finish():
 	text_label.text = ""
 	background.visible = false
+	sprite.visible = false
 	in_progress = false
 	get_tree().paused = false
 	
@@ -42,6 +44,7 @@ func on_display_dialog(text_key):
 	else:
 		get_tree().paused = true
 		background.visible = true
-		in_progress = true
+		sprite.visible = true
+		in_progress = true		
 		selected_text = scene_text[text_key].duplicate()
 		show_text()

@@ -621,6 +621,18 @@ position = Vector2(387, 242)
 [node name="Chest" parent="." instance=ExtResource("14_um5wi")]
 position = Vector2(281, 175)
 
+[node name="DialogAreaChest1" parent="Chest" instance=ExtResource("15_0ooie")]
+position = Vector2(-281, -175)
+text_key = "chest"
+
+[node name="CollisionShape2D" parent="Chest/DialogAreaChest1" index="0"]
+position = Vector2(281, 176)
+shape = SubResource("RectangleShape2D_0ooie")
+
+[node name="RichTextLabel" parent="Chest/DialogAreaChest1" index="1"]
+offset_top = -4.0
+offset_bottom = 36.0
+
 [node name="Chest2" parent="." instance=ExtResource("14_um5wi")]
 position = Vector2(337, 216)
 
@@ -630,11 +642,5 @@ position = Vector2(425, 147)
 [node name="DialogPlayer" parent="." instance=ExtResource("17_ah7re")]
 scene_text_file = "res://assets/Dialogue/dialogue.json"
 
-[node name="DialogAreaChest1" parent="." instance=ExtResource("15_0ooie")]
-text_key = "chest"
-
-[node name="CollisionShape2D" parent="DialogAreaChest1" index="0"]
-position = Vector2(281, 176)
-shape = SubResource("RectangleShape2D_0ooie")
-
-[editable path="DialogAreaChest1"]
+[editable path="Chest/DialogAreaChest1"]
+[editable path="DialogPlayer"]
