@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dgejjs2qy7rc0"
-path="res://.godot/imported/Doors.png-d651b559470da7073beec5a1d01b8271.ctex"
+path="res://.godot/imported/Doors.png-7a8c21e2a948fe679a99859a2949a007.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Doors.png"
-dest_files=["res://.godot/imported/Doors.png-d651b559470da7073beec5a1d01b8271.ctex"]
+source_file="res://Assets/Sprout Lands - Sprites - Basic pack/Tilesets/Doors.png"
+dest_files=["res://.godot/imported/Doors.png-7a8c21e2a948fe679a99859a2949a007.ctex"]
 
 [params]
 
