@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://b4t4wmqtf1wjm"]
+[gd_scene load_steps=39 format=4 uid="uid://b4t4wmqtf1wjm"]
 
 [ext_resource type="Script" uid="uid://sej1q3wjvr8u" path="res://Levels/game_level.gd" id="1_0ooie"]
 [ext_resource type="PackedScene" uid="uid://l6oecmvfr7a7" path="res://Characters/Player/player_cat.tscn" id="1_up8ek"]
@@ -19,10 +19,10 @@
 [ext_resource type="PackedScene" uid="uid://l8xtpy0co1om" path="res://Menu/inv_menu.tscn" id="15_alay0"]
 [ext_resource type="Resource" uid="uid://bia5i2p7vck5l" path="res://Menu/myInv.tres" id="15_jw0rm"]
 [ext_resource type="PackedScene" uid="uid://cum3uhbgu6q8j" path="res://UI/DialogPlayer.tscn" id="17_ah7re"]
-[ext_resource type="FontFile" path="res://assets/fonts/DefaultFont.tres" id="17_jw0rm"]
 [ext_resource type="Script" uid="uid://g32um0mltv5d" path="res://addons/dialogue_manager/dialogue_label.gd" id="19_6tkkn"]
 [ext_resource type="PackedScene" uid="uid://c631sh33m0vn2" path="res://World/PickupArea.tscn" id="19_fct0e"]
 [ext_resource type="PackedScene" uid="uid://dmj8q8ibt2p47" path="res://World/ItemUseArea.tscn" id="19_sf1a6"]
+[ext_resource type="PackedScene" uid="uid://b0efnhlcoenlu" path="res://UI/PauseMenu/pause_menu.tscn" id="23_fct0e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_um5wi"]
 
@@ -579,9 +579,6 @@ sources/11 = SubResource("TileSetAtlasSource_wri67")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ooie"]
 size = Vector2(22, 23)
 
-[sub_resource type="LabelSettings" id="LabelSettings_jw0rm"]
-font_size = 8
-
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_um5wi"]
 vertices = PackedVector2Array(537.641, 283.25, 160, 292.742, 160, 88.8438, 530.359, 83.1484)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
@@ -590,30 +587,6 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(150, 79, 540, 73, 548, 
 [node name="GameLevel" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_0ooie")
-
-[node name="DialogPlayer_Background#VBoxContainer2" type="VBoxContainer" parent="."]
-offset_left = 2.0
-offset_top = 3.0
-offset_right = 88.0
-offset_bottom = 43.0
-
-[node name="DialogPlayer_Background#VBoxContainer" type="VBoxContainer" parent="."]
-offset_left = 2.0
-offset_top = 3.0
-offset_right = 88.0
-offset_bottom = 43.0
-
-[node name="DialogPlayer_Background#VBoxContainer3" type="VBoxContainer" parent="."]
-offset_left = 2.0
-offset_top = 3.0
-offset_right = 88.0
-offset_bottom = 43.0
-
-[node name="DialogPlayer_Background#VBoxContainer4" type="VBoxContainer" parent="."]
-offset_left = 2.0
-offset_top = 3.0
-offset_right = 88.0
-offset_bottom = 43.0
 
 [node name="PlayerCat" parent="." instance=ExtResource("1_up8ek")]
 position = Vector2(476, 212)
@@ -702,44 +675,14 @@ script = ExtResource("19_6tkkn")
 skip_pause_at_abbreviations = PackedStringArray("Mr", "Mrs", "Ms", "Dr", "etc", "eg", "ex")
 metadata/_custom_type_script = "uid://g32um0mltv5d"
 
-[node name="DialogPlayer_Background_VBoxContainer#TextLabel" type="Label" parent="."]
-theme_override_colors/font_color = Color(0.0784314, 0.0627451, 0.0745098, 1)
-theme_override_fonts/font = ExtResource("17_jw0rm")
-label_settings = SubResource("LabelSettings_jw0rm")
-autowrap_mode = 3
-
-[node name="DialogPlayer_Background_VBoxContainer#Button" type="Button" parent="."]
-theme_override_font_sizes/font_size = 8
-text = "Ok"
-alignment = 0
-autowrap_mode = 3
-
-[node name="DialogPlayer_Background_VBoxContainer#Button2" type="Button" parent="."]
-theme_override_font_sizes/font_size = 6
-text = "hello
-"
-alignment = 0
-
-[node name="DialogPlayer_Background_VBoxContainer#TextLabel2" type="Label" parent="."]
-theme_override_colors/font_color = Color(0.0784314, 0.0627451, 0.0745098, 1)
-theme_override_fonts/font = ExtResource("17_jw0rm")
-label_settings = SubResource("LabelSettings_jw0rm")
-autowrap_mode = 3
-
-[node name="DialogPlayer_Background_VBoxContainer#Button3" type="Button" parent="."]
-theme_override_font_sizes/font_size = 8
-text = "Ok"
-alignment = 0
-autowrap_mode = 3
-
-[node name="DialogPlayer_Background_VBoxContainer#Button4" type="Button" parent="."]
-theme_override_font_sizes/font_size = 6
-text = "hello
-"
-alignment = 0
-
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_um5wi")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+scale = Vector2(0.2, 0.2)
+transform = Transform2D(0.2, 0, 0, 0.2, 0, 0)
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("23_fct0e")]
 
 [editable path="Chest/DialogAreaChest1"]
 [editable path="DialogPlayer"]
