@@ -2,17 +2,17 @@
 
 [ext_resource type="Script" uid="uid://sej1q3wjvr8u" path="res://Levels/game_level.gd" id="1_0ooie"]
 [ext_resource type="PackedScene" uid="uid://l6oecmvfr7a7" path="res://Characters/Player/player_cat.tscn" id="1_up8ek"]
-[ext_resource type="Texture2D" uid="uid://b1tasarm33pfe" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="2_bskef"]
-[ext_resource type="Texture2D" uid="uid://das1n7a1f1goh" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Hills.png" id="3_ds5vk"]
-[ext_resource type="Texture2D" uid="uid://bsmyxp53o5pcx" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Fences.png" id="4_um5wi"]
-[ext_resource type="Texture2D" uid="uid://dgejjs2qy7rc0" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Doors.png" id="5_alay0"]
-[ext_resource type="Texture2D" uid="uid://c5uyyf23rlfug" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Tilled_Dirt.png" id="6_0ooie"]
-[ext_resource type="Texture2D" uid="uid://bwp00v32la127" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Water.png" id="7_jw0rm"]
-[ext_resource type="Texture2D" uid="uid://d3usy7vxkdl2d" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Wooden_House_Roof_Tilset.png" id="8_ah7re"]
-[ext_resource type="Texture2D" uid="uid://d028empfelid4" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Wooden_House_Walls_Tilset.png" id="9_6tkkn"]
-[ext_resource type="Texture2D" uid="uid://crsnk6reuqqst" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Tilled_Dirt_v2.png" id="10_2lq5e"]
-[ext_resource type="Texture2D" uid="uid://cosr13mc6ljiq" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Tilled_Dirt_Wide.png" id="11_55elf"]
-[ext_resource type="Texture2D" uid="uid://642g21ndoeua" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Tilled_Dirt_Wide_v2.png" id="12_sf1a6"]
+[ext_resource type="Texture2D" uid="uid://b1tasarm33pfe" path="res://Assets/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="2_bskef"]
+[ext_resource type="Texture2D" uid="uid://das1n7a1f1goh" path="res://Assets/Sprout Lands - Sprites - Basic pack/Tilesets/Hills.png" id="3_ds5vk"]
+[ext_resource type="Texture2D" uid="uid://bsmyxp53o5pcx" path="res://Assets/Sprout Lands - Sprites - Basic pack/Tilesets/Fences.png" id="4_um5wi"]
+[ext_resource type="Texture2D" uid="uid://dgejjs2qy7rc0" path="res://Assets/Sprout Lands - Sprites - Basic pack/Tilesets/Doors.png" id="5_alay0"]
+[ext_resource type="Texture2D" uid="uid://c5uyyf23rlfug" path="res://Assets/Sprout Lands - Sprites - Basic pack/Tilesets/Tilled_Dirt.png" id="6_0ooie"]
+[ext_resource type="Texture2D" uid="uid://bwp00v32la127" path="res://Assets/Sprout Lands - Sprites - Basic pack/Tilesets/Water.png" id="7_jw0rm"]
+[ext_resource type="Texture2D" uid="uid://d3usy7vxkdl2d" path="res://Assets/Sprout Lands - Sprites - Basic pack/Tilesets/Wooden_House_Roof_Tilset.png" id="8_ah7re"]
+[ext_resource type="Texture2D" uid="uid://d028empfelid4" path="res://Assets/Sprout Lands - Sprites - Basic pack/Tilesets/Wooden_House_Walls_Tilset.png" id="9_6tkkn"]
+[ext_resource type="Texture2D" uid="uid://crsnk6reuqqst" path="res://Assets/Sprout Lands - Sprites - Basic pack/Tilesets/Tilled_Dirt_v2.png" id="10_2lq5e"]
+[ext_resource type="Texture2D" uid="uid://cosr13mc6ljiq" path="res://Assets/Sprout Lands - Sprites - Basic pack/Tilesets/Tilled_Dirt_Wide.png" id="11_55elf"]
+[ext_resource type="Texture2D" uid="uid://642g21ndoeua" path="res://Assets/Sprout Lands - Sprites - Basic pack/Tilesets/Tilled_Dirt_Wide_v2.png" id="12_sf1a6"]
 [ext_resource type="PackedScene" uid="uid://bew0slr5bajyo" path="res://Characters/NPC/Cow/cow.tscn" id="13_ds5vk"]
 [ext_resource type="PackedScene" uid="uid://rdcew8xgnvv7" path="res://Objects/Chest/chest.tscn" id="14_um5wi"]
 [ext_resource type="PackedScene" uid="uid://dgr0cksbdcl1a" path="res://World/DialogArea.tscn" id="15_0ooie"]
@@ -586,6 +586,12 @@ font_size = 8
 y_sort_enabled = true
 script = ExtResource("1_0ooie")
 
+[node name="DialogPlayer_Background#VBoxContainer2" type="VBoxContainer" parent="."]
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 88.0
+offset_bottom = 43.0
+
 [node name="DialogPlayer_Background#VBoxContainer" type="VBoxContainer" parent="."]
 offset_left = 2.0
 offset_top = 3.0
@@ -667,45 +673,6 @@ position = Vector2(425, 147)
 [node name="DialogPlayer" parent="." instance=ExtResource("17_ah7re")]
 scene_text_file = "res://assets/Dialogue/dialogue.json"
 
-[node name="Background" parent="DialogPlayer" index="0"]
-offset_right = 8.0
-offset_bottom = 76.0
-grow_horizontal = 2
-expand_mode = 5
-
-[node name="VBoxContainer" type="VBoxContainer" parent="DialogPlayer/Background" index="0"]
-layout_mode = 0
-offset_left = 2.0
-offset_top = 3.0
-offset_right = 88.0
-offset_bottom = 43.0
-
-[node name="TextLabel" type="Label" parent="DialogPlayer/Background/VBoxContainer"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.0784314, 0.0627451, 0.0745098, 1)
-theme_override_fonts/font = ExtResource("17_jw0rm")
-label_settings = SubResource("LabelSettings_jw0rm")
-autowrap_mode = 3
-
-[node name="Button" type="Button" parent="DialogPlayer/Background/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 8
-text = "Ok"
-alignment = 0
-autowrap_mode = 3
-
-[node name="Button2" type="Button" parent="DialogPlayer/Background/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 6
-text = "hello
-"
-alignment = 0
-
-[node name="TextLabel" parent="DialogPlayer" index="1"]
-offset_right = 22.0
-offset_bottom = 112.0
-grow_horizontal = 2
-
 [node name="DialogueLabel" type="RichTextLabel" parent="DialogPlayer"]
 offset_right = 40.0
 offset_bottom = 40.0
@@ -726,6 +693,24 @@ alignment = 0
 autowrap_mode = 3
 
 [node name="DialogPlayer_Background_VBoxContainer#Button2" type="Button" parent="."]
+theme_override_font_sizes/font_size = 6
+text = "hello
+"
+alignment = 0
+
+[node name="DialogPlayer_Background_VBoxContainer#TextLabel2" type="Label" parent="."]
+theme_override_colors/font_color = Color(0.0784314, 0.0627451, 0.0745098, 1)
+theme_override_fonts/font = ExtResource("17_jw0rm")
+label_settings = SubResource("LabelSettings_jw0rm")
+autowrap_mode = 3
+
+[node name="DialogPlayer_Background_VBoxContainer#Button3" type="Button" parent="."]
+theme_override_font_sizes/font_size = 8
+text = "Ok"
+alignment = 0
+autowrap_mode = 3
+
+[node name="DialogPlayer_Background_VBoxContainer#Button4" type="Button" parent="."]
 theme_override_font_sizes/font_size = 6
 text = "hello
 "
