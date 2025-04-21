@@ -15,8 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://cy68afy15elqh" path="res://Characters/NPC/Cow/cow.tscn" id="13_ds5vk"]
 [ext_resource type="PackedScene" uid="uid://rdcew8xgnvv7" path="res://Objects/Chest/chest.tscn" id="14_um5wi"]
 [ext_resource type="PackedScene" uid="uid://bg6e57trh10jg" path="res://World/DialogArea.tscn" id="15_0ooie"]
-[ext_resource type="PackedScene" uid="uid://dmd41luu44vdq" path="res://UI/DialogPlayer.tscn" id="17_ah7re"]
-[ext_resource type="PackedScene" uid="uid://b0efnhlcoenlu" path="res://pause_menu.tscn" id="18_ah7re"]
+[ext_resource type="PackedScene" uid="uid://dmd41luu44vdq" path="res://UI/DialoguePlayer/DialogPlayer.tscn" id="17_ah7re"]
+[ext_resource type="PackedScene" uid="uid://b0efnhlcoenlu" path="res://UI/PauseMenu/pause_menu.tscn" id="18_ah7re"]
 [ext_resource type="Script" uid="uid://g32um0mltv5d" path="res://addons/dialogue_manager/dialogue_label.gd" id="19_6tkkn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_um5wi"]
