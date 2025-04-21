@@ -7,6 +7,8 @@ extends CharacterBody2D
 
 @onready var state_machine = animation_tree.get("parameters/playback")
 
+@export var interactable = null
+
 func _ready() -> void:
 	update_animation_parameters(starting_direciton)
 		

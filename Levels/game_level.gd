@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var pause_menu = $Camera2D/PauseMenu
+@onready var inv_menu = $Camera2D/InvMenu
 var paused = false
 
 # Catching inputs for interaction and inventory
@@ -13,10 +13,10 @@ func _input(event):
 # Pause Logic
 func pauseMenu():
 	if paused:
-		pause_menu.hide()
+		inv_menu.hide()
 		Engine.time_scale = 1
 	else:
-		pause_menu.show()
+		inv_menu.show()
 		Engine.time_scale = 0
 	
 	paused = !paused

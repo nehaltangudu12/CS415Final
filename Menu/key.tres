@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://cksbrew34u4np"]
+
+[ext_resource type="Script" uid="uid://rwy1bekjxd4m" path="res://Menu/inv_item.gd" id="1_3qx4b"]
+[ext_resource type="Texture2D" uid="uid://c4iau7xgtq3gq" path="res://Assets/sprites/Player-Idle.png" id="2_vah25"]
+
+[resource]
+script = ExtResource("1_3qx4b")
+name = "Key"
+texture = ExtResource("2_vah25")
+metadata/_custom_type_script = "uid://rwy1bekjxd4m"
