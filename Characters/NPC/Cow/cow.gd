@@ -83,7 +83,7 @@ func _on_player_detector_body_entered(body: Node2D) -> void:
 
 func _on_hit_box_body_entered(body: Node2D) -> void:
 	if body is Player:
-		print("You got cheese touched")
+		#print("You got cheese touched")
 		var direction = global_position.direction_to(body.global_position)
 		var explosion_force = direction * knockback_strength
 		body.knockback = explosion_force
