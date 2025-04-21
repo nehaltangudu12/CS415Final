@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cosr13mc6ljiq" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Tilled_Dirt_Wide.png" id="11_55elf"]
 [ext_resource type="Texture2D" uid="uid://642g21ndoeua" path="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Tilled_Dirt_Wide_v2.png" id="12_sf1a6"]
 [ext_resource type="PackedScene" uid="uid://cy68afy15elqh" path="res://Characters/NPC/Cow/cow.tscn" id="13_ds5vk"]
+
 [ext_resource type="PackedScene" uid="uid://rdcew8xgnvv7" path="res://Objects/Chest/chest.tscn" id="14_um5wi"]
 [ext_resource type="PackedScene" uid="uid://bg6e57trh10jg" path="res://World/DialogArea.tscn" id="15_0ooie"]
 [ext_resource type="PackedScene" uid="uid://dmd41luu44vdq" path="res://UI/DialoguePlayer/DialogPlayer.tscn" id="17_ah7re"]
@@ -574,8 +575,22 @@ sources/11 = SubResource("TileSetAtlasSource_wri67")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0ooie"]
 size = Vector2(22, 23)
 
+[sub_resource type="LabelSettings" id="LabelSettings_jw0rm"]
+font_size = 8
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_um5wi"]
+vertices = PackedVector2Array(537.641, 283.25, 160, 292.742, 160, 88.8438, 530.359, 83.1484)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(150, 79, 540, 73, 548, 293, 150, 303)])
+
 [node name="GameLevel" type="Node2D"]
 y_sort_enabled = true
+
+[node name="DialogPlayer_Background#VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 88.0
+offset_bottom = 43.0
 
 [node name="PlayerCat" parent="." instance=ExtResource("1_up8ek")]
 position = Vector2(476, 212)
@@ -611,14 +626,17 @@ tile_set = SubResource("TileSet_hqfmj")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(476, 212)
 
-[node name="Cow" parent="." instance=ExtResource("13_ds5vk")]
+[node name="Cow" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("13_ds5vk")]
 position = Vector2(277, 218)
+target_to_chase = NodePath("../PlayerCat")
 
-[node name="Cow2" parent="." instance=ExtResource("13_ds5vk")]
+[node name="Cow2" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("13_ds5vk")]
 position = Vector2(383, 143)
+target_to_chase = NodePath("../PlayerCat")
 
-[node name="Cow3" parent="." instance=ExtResource("13_ds5vk")]
+[node name="Cow3" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("13_ds5vk")]
 position = Vector2(387, 242)
+target_to_chase = NodePath("../PlayerCat")
 
 [node name="Chest" parent="." instance=ExtResource("14_um5wi")]
 position = Vector2(281, 175)
@@ -655,6 +673,9 @@ offset_bottom = 40.0
 script = ExtResource("19_6tkkn")
 skip_pause_at_abbreviations = PackedStringArray("Mr", "Mrs", "Ms", "Dr", "etc", "eg", "ex")
 metadata/_custom_type_script = "uid://g32um0mltv5d"
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_um5wi")
 
 [editable path="Chest/DialogAreaChest1"]
 [editable path="CanvasLayer/PauseMenu"]

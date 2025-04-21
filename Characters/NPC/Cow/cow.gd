@@ -1,28 +1,47 @@
 extends CharacterBody2D
 
-enum COW_STATE { IDLE, WALK }
+class_name Enemy
+
+enum COW_STATE { IDLE, WALK, CHASE }
 
 @export var move_speed: float = 20
 @export var idle_time: float = 5
 @export var walk_time: float = 2
+@export var chase_time: float = 3
+@export var target_to_chase: CharacterBody2D
 
 @onready var animation_tree = $AnimationTree
 @onready var state_machine = animation_tree.get("parameters/playback")
 @onready var sprite = $Sprite2D
 @onready var timer = $Timer
+@onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 
 var move_direction: Vector2 = Vector2.ZERO
 var current_state: COW_STATE = COW_STATE.IDLE
+var knockback_strength: float = 100.0
+
+const CHASE_SPEED = 60.0
 
 func _ready() -> void:
+	set_physics_process(false)
+	call_deferred("await_for_physics")
 	pick_new_state()
 
+func await_for_physics():
+	await get_tree().physics_frame
+	set_physics_process(true)
+
 func _physics_process(delta: float) -> void:
-	if (current_state == COW_STATE.WALK):
-		# Update velocity
-		velocity = move_direction.normalized() * move_speed
-		# Move and Slide function uses velocity of character body to move character on map
-		move_and_slide()
+	match current_state:
+		COW_STATE.WALK:
+			# Update velocity
+			velocity = move_direction.normalized() * move_speed
+			# Move and Slide function uses velocity of character body to move character on map
+			move_and_slide()
+		COW_STATE.CHASE:
+			navigation_agent.target_position = target_to_chase.global_position
+			velocity = global_position.direction_to(navigation_agent.get_next_path_position()) * CHASE_SPEED
+			move_and_slide()
 
 # Randomly generate a move direction
 # Can be either -1, 0, or 1 for x and y
@@ -44,7 +63,7 @@ func pick_new_state():
 		current_state = COW_STATE.WALK
 		select_new_direction()
 		timer.start(walk_time)
-	elif (current_state == COW_STATE.WALK):
+	elif (current_state == COW_STATE.WALK || current_state == COW_STATE.CHASE):
 		# Change to idle state
 		state_machine.travel("idle")
 		current_state = COW_STATE.IDLE
@@ -53,3 +72,18 @@ func pick_new_state():
 
 func _on_timer_timeout() -> void:
 	pick_new_state() # Replace with function body.
+
+# If enemy detects player, it chases player
+func _on_player_detector_body_entered(body: Node2D) -> void:
+	if (body is Player):
+		#print("player detected")
+		state_machine.travel("walk")
+		current_state = COW_STATE.CHASE
+		timer.start(chase_time)
+
+func _on_hit_box_body_entered(body: Node2D) -> void:
+	if body is Player:
+		#print("You got cheese touched")
+		var direction = global_position.direction_to(body.global_position)
+		var explosion_force = direction * knockback_strength
+		body.knockback = explosion_force
