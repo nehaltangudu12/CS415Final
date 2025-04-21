@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://btgpq1jy4oftx"
-path="res://.godot/imported/Wood_Bridge.png-593f173f07e6360921b46b9c57bd42ca.ctex"
+path="res://.godot/imported/Wood_Bridge.png-b7857ab007cbb921fef3cc0eb51d5ba7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprout Lands - Sprites - Basic pack/Objects/Wood_Bridge.png"
-dest_files=["res://.godot/imported/Wood_Bridge.png-593f173f07e6360921b46b9c57bd42ca.ctex"]
+source_file="res://assets/Sprout Lands - Sprites - Basic pack/Objects/Wood_Bridge.png"
+dest_files=["res://.godot/imported/Wood_Bridge.png-b7857ab007cbb921fef3cc0eb51d5ba7.ctex"]
 
 [params]
 
