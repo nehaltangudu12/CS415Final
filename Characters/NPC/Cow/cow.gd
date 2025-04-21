@@ -18,6 +18,7 @@ enum COW_STATE { IDLE, WALK, CHASE }
 
 var move_direction: Vector2 = Vector2.ZERO
 var current_state: COW_STATE = COW_STATE.IDLE
+var knockback_strength: float = 100.0
 
 const CHASE_SPEED = 60.0
 
@@ -75,7 +76,14 @@ func _on_timer_timeout() -> void:
 # If enemy detects player, it chases player
 func _on_player_detector_body_entered(body: Node2D) -> void:
 	if (body is Player):
-		print("player detected")
+		#print("player detected")
 		state_machine.travel("walk")
 		current_state = COW_STATE.CHASE
 		timer.start(chase_time)
+
+func _on_hit_box_body_entered(body: Node2D) -> void:
+	if body is Player:
+		print("You got cheese touched")
+		var direction = global_position.direction_to(body.global_position)
+		var explosion_force = direction * knockback_strength
+		body.knockback = explosion_force
