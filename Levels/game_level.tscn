@@ -600,6 +600,7 @@ tile_set = SubResource("TileSet_hqfmj")
 position = Vector2(476, 212)
 
 [node name="PauseMenu" parent="Camera2D" instance=ExtResource("15_alay0")]
+visible = false
 offset_left = -157.0
 offset_top = -152.0
 offset_right = -157.0
