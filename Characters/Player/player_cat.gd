@@ -7,14 +7,18 @@ class_name Player
 @export var knockback_time: float = 0.3
 
 @onready var animation_tree = $AnimationTree
+
 @onready var state_machine = animation_tree.get("parameters/playback")
 @onready var timer = $Timer
 
 var knockback = Vector2.ZERO
 var is_knockbacked: bool = false
 
+@export var interactable = null
+
 func _ready() -> void:
 	update_animation_parameters(starting_direciton)
+		
 
 func _physics_process(delta: float) -> void:
 	# Sets timer to reset knockback

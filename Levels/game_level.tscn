@@ -1,5 +1,6 @@
-[gd_scene load_steps=35 format=4 uid="uid://b4t4wmqtf1wjm"]
+[gd_scene load_steps=40 format=4 uid="uid://b4t4wmqtf1wjm"]
 
+[ext_resource type="Script" uid="uid://sej1q3wjvr8u" path="res://Levels/game_level.gd" id="1_0ooie"]
 [ext_resource type="PackedScene" uid="uid://l6oecmvfr7a7" path="res://Characters/Player/player_cat.tscn" id="1_up8ek"]
 [ext_resource type="Texture2D" uid="uid://b1tasarm33pfe" path="res://Assets/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="2_bskef"]
 [ext_resource type="Texture2D" uid="uid://das1n7a1f1goh" path="res://Assets/Sprout Lands - Sprites - Basic pack/Tilesets/Hills.png" id="3_ds5vk"]
@@ -15,9 +16,13 @@
 [ext_resource type="PackedScene" uid="uid://bew0slr5bajyo" path="res://Characters/NPC/Cow/cow.tscn" id="13_ds5vk"]
 [ext_resource type="PackedScene" uid="uid://rdcew8xgnvv7" path="res://Objects/Chest/chest.tscn" id="14_um5wi"]
 [ext_resource type="PackedScene" uid="uid://dgr0cksbdcl1a" path="res://World/DialogArea.tscn" id="15_0ooie"]
+[ext_resource type="PackedScene" uid="uid://l8xtpy0co1om" path="res://Menu/inv_menu.tscn" id="15_alay0"]
+[ext_resource type="Resource" uid="uid://bia5i2p7vck5l" path="res://Menu/myInv.tres" id="15_jw0rm"]
 [ext_resource type="PackedScene" uid="uid://cum3uhbgu6q8j" path="res://UI/DialogPlayer.tscn" id="17_ah7re"]
 [ext_resource type="FontFile" path="res://assets/fonts/DefaultFont.tres" id="17_jw0rm"]
 [ext_resource type="Script" uid="uid://g32um0mltv5d" path="res://addons/dialogue_manager/dialogue_label.gd" id="19_6tkkn"]
+[ext_resource type="PackedScene" uid="uid://c631sh33m0vn2" path="res://World/PickupArea.tscn" id="19_fct0e"]
+[ext_resource type="PackedScene" uid="uid://dmj8q8ibt2p47" path="res://World/ItemUseArea.tscn" id="19_sf1a6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_um5wi"]
 
@@ -584,6 +589,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(150, 79, 540, 73, 548, 
 
 [node name="GameLevel" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_0ooie")
 
 [node name="DialogPlayer_Background#VBoxContainer2" type="VBoxContainer" parent="."]
 offset_left = 2.0
@@ -592,6 +598,18 @@ offset_right = 88.0
 offset_bottom = 43.0
 
 [node name="DialogPlayer_Background#VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 88.0
+offset_bottom = 43.0
+
+[node name="DialogPlayer_Background#VBoxContainer3" type="VBoxContainer" parent="."]
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 88.0
+offset_bottom = 43.0
+
+[node name="DialogPlayer_Background#VBoxContainer4" type="VBoxContainer" parent="."]
 offset_left = 2.0
 offset_top = 3.0
 offset_right = 88.0
@@ -631,15 +649,25 @@ tile_set = SubResource("TileSet_hqfmj")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(476, 212)
 
-[node name="Cow" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("13_ds5vk")]
+[node name="InvMenu" parent="Camera2D" instance=ExtResource("15_alay0")]
+visible = false
+offset_left = -157.0
+offset_top = -152.0
+offset_right = -157.0
+offset_bottom = -152.0
+inv = ExtResource("15_jw0rm")
+
+[node name="Cow" parent="." instance=ExtResource("13_ds5vk")]
+
+[node name="Cow2" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("13_ds5vk")]
 position = Vector2(277, 218)
 target_to_chase = NodePath("../PlayerCat")
 
-[node name="Cow2" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("13_ds5vk")]
+[node name="Cow3" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("13_ds5vk")]
 position = Vector2(383, 143)
 target_to_chase = NodePath("../PlayerCat")
 
-[node name="Cow3" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("13_ds5vk")]
+[node name="Cow4" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("13_ds5vk")]
 position = Vector2(387, 242)
 target_to_chase = NodePath("../PlayerCat")
 
@@ -657,8 +685,12 @@ shape = SubResource("RectangleShape2D_0ooie")
 [node name="Chest2" parent="." instance=ExtResource("14_um5wi")]
 position = Vector2(337, 216)
 
+[node name="PickupArea" parent="Chest2" instance=ExtResource("19_fct0e")]
+
 [node name="Chest3" parent="." instance=ExtResource("14_um5wi")]
 position = Vector2(425, 147)
+
+[node name="ItemUseArea" parent="Chest3" instance=ExtResource("19_sf1a6")]
 
 [node name="DialogPlayer" parent="." instance=ExtResource("17_ah7re")]
 scene_text_file = "res://assets/Dialogue/dialogue.json"
@@ -683,6 +715,24 @@ alignment = 0
 autowrap_mode = 3
 
 [node name="DialogPlayer_Background_VBoxContainer#Button2" type="Button" parent="."]
+theme_override_font_sizes/font_size = 6
+text = "hello
+"
+alignment = 0
+
+[node name="DialogPlayer_Background_VBoxContainer#TextLabel2" type="Label" parent="."]
+theme_override_colors/font_color = Color(0.0784314, 0.0627451, 0.0745098, 1)
+theme_override_fonts/font = ExtResource("17_jw0rm")
+label_settings = SubResource("LabelSettings_jw0rm")
+autowrap_mode = 3
+
+[node name="DialogPlayer_Background_VBoxContainer#Button3" type="Button" parent="."]
+theme_override_font_sizes/font_size = 8
+text = "Ok"
+alignment = 0
+autowrap_mode = 3
+
+[node name="DialogPlayer_Background_VBoxContainer#Button4" type="Button" parent="."]
 theme_override_font_sizes/font_size = 6
 text = "hello
 "

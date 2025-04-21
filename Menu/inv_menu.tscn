@@ -1,0 +1,62 @@
+[gd_scene load_steps=3 format=3 uid="uid://l8xtpy0co1om"]
+
+[ext_resource type="Script" uid="uid://vkkex5ydcakp" path="res://Menu/inv_menu.gd" id="1_05uyy"]
+[ext_resource type="Texture2D" uid="uid://sic858yd3cs7" path="res://Assets/Sprout Lands - Sprites - Basic pack/Objects/Free_Chicken_House.png" id="1_hdmo1"]
+
+[node name="InvMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -4.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_05uyy")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 308.0
+offset_bottom = 48.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Slot1" type="TextureButton" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_hdmo1")
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/Slot1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.535
+anchor_right = -0.246
+anchor_bottom = 0.189
+offset_left = 124.68
+offset_top = 49.0
+offset_right = 166.808
+offset_bottom = 62.928
+
+[node name="Slot2" type="TextureButton" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_hdmo1")
+
+[node name="Slot3" type="TextureButton" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_hdmo1")
+
+[node name="Slot4" type="TextureButton" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_hdmo1")
+
+[node name="Slot5" type="TextureButton" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_hdmo1")
+
+[connection signal="mouse_entered" from="MarginContainer/HBoxContainer/Slot1" to="." method="_on_slot_1_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Slot1" to="." method="_on_slot_1_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Slot2" to="." method="_on_slot_2_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Slot3" to="." method="_on_slot_3_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Slot4" to="." method="_on_slot_4_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Slot5" to="." method="_on_slot_5_pressed"]
