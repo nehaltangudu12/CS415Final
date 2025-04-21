@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://b4t4wmqtf1wjm"]
+[gd_scene load_steps=35 format=4 uid="uid://b4t4wmqtf1wjm"]
 
 [ext_resource type="PackedScene" uid="uid://l6oecmvfr7a7" path="res://Characters/Player/player_cat.tscn" id="1_up8ek"]
 [ext_resource type="Texture2D" uid="uid://b1tasarm33pfe" path="res://Assets/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="2_bskef"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dgr0cksbdcl1a" path="res://World/DialogArea.tscn" id="15_0ooie"]
 [ext_resource type="PackedScene" uid="uid://cum3uhbgu6q8j" path="res://UI/DialogPlayer.tscn" id="17_ah7re"]
 [ext_resource type="FontFile" path="res://assets/fonts/DefaultFont.tres" id="17_jw0rm"]
+[ext_resource type="Script" uid="uid://dufo8wuhvxef" path="res://addons/ez_dialogue/ez_dialogue_node.gd" id="18_ah7re"]
 [ext_resource type="Script" uid="uid://g32um0mltv5d" path="res://addons/dialogue_manager/dialogue_label.gd" id="19_6tkkn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_um5wi"]
@@ -681,12 +682,18 @@ offset_right = 22.0
 offset_bottom = 112.0
 grow_horizontal = 2
 
+[node name="EzDialogue" type="Node" parent="DialogPlayer"]
+script = ExtResource("18_ah7re")
+metadata/_custom_type_script = "uid://dufo8wuhvxef"
+
 [node name="DialogueLabel" type="RichTextLabel" parent="DialogPlayer"]
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("19_6tkkn")
 skip_pause_at_abbreviations = PackedStringArray("Mr", "Mrs", "Ms", "Dr", "etc", "eg", "ex")
 metadata/_custom_type_script = "uid://g32um0mltv5d"
+
+[connection signal="dialogue_generated" from="DialogPlayer/EzDialogue" to="DialogPlayer" method="_on_ez_dialogue_dialogue_generated"]
 
 [editable path="Chest/DialogAreaChest1"]
 [editable path="DialogPlayer"]
