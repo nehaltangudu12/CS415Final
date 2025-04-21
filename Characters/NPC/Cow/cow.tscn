@@ -1,7 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://cy68afy15elqh"]
+[gd_scene load_steps=14 format=3 uid="uid://bew0slr5bajyo"]
 
-[ext_resource type="Script" path="res://Characters/NPC/Cow/cow.gd" id="1_w554k"]
-[ext_resource type="Texture2D" uid="uid://wtsvv5wrllsr" path="res://assets/Sprout Lands - Sprites - Basic pack/Characters/Free Cow Sprites.png" id="2_ipcbf"]
+[ext_resource type="Script" uid="uid://bwagpluvomnot" path="res://Characters/NPC/Cow/cow.gd" id="1_w554k"]
+[ext_resource type="Texture2D" uid="uid://wtsvv5wrllsr" path="res://Assets/Sprout Lands - Sprites - Basic pack/Characters/Free Cow Sprites.png" id="2_ipcbf"]
 
 [sub_resource type="Animation" id="Animation_chrba"]
 length = 0.001
