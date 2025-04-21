@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d028empfelid4"
-path="res://.godot/imported/Wooden_House_Walls_Tilset.png-4db180902850c533714e0ba9d79a017e.ctex"
+path="res://.godot/imported/Wooden_House_Walls_Tilset.png-7340b69cedc464c03bbf5fcce335190b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sprout Lands - Sprites - Basic pack/Tilesets/Wooden_House_Walls_Tilset.png"
-dest_files=["res://.godot/imported/Wooden_House_Walls_Tilset.png-4db180902850c533714e0ba9d79a017e.ctex"]
+source_file="res://Assets/Sprout Lands - Sprites - Basic pack/Tilesets/Wooden_House_Walls_Tilset.png"
+dest_files=["res://.godot/imported/Wooden_House_Walls_Tilset.png-7340b69cedc464c03bbf5fcce335190b.ctex"]
 
 [params]
 

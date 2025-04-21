@@ -1,0 +1,8 @@
+~ start
+Chest: Check inside?
+- Yes
+	Chest: You found something.
+- No
+	Chest: You found nothing.
+- End the conversation => END
+=> END
