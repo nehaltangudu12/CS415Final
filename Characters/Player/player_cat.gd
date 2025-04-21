@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+class_name Player
+
 @export var move_speed: float = 100
 @export var starting_direciton: Vector2 = Vector2(0, 1)
 
@@ -36,3 +38,8 @@ func pick_new_state():
 		state_machine.travel("Walk", false)
 	else:
 		state_machine.travel("Idle", false)
+
+
+func _on_hit_box_body_entered(body: Node2D) -> void:
+	if (body is Enemy):
+		print("you got cheese touched")
