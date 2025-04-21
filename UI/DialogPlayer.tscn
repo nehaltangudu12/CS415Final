@@ -1,40 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cum3uhbgu6q8j"]
+[gd_scene load_steps=2 format=3 uid="uid://cum3uhbgu6q8j"]
 
-[ext_resource type="Texture2D" uid="uid://5p1hhu66drwm" path="res://assets/sprites/Dialogue-Background.png" id="1"]
-[ext_resource type="FontFile" path="res://assets/fonts/DefaultFont.tres" id="2"]
 [ext_resource type="Script" uid="uid://delvicb0dwpjh" path="res://UI/DialogPlayer.gd" id="3"]
-[ext_resource type="Texture2D" uid="uid://dajhjkgia3gg1" path="res://assets/Sprout Lands - Sprites - Basic pack/Characters/Basic Charakter Actions.png" id="4_nhl4u"]
 
 [node name="DialogPlayer" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("3")
 scene_text_file = "res://assets/json/world_dialog.json"
-
-[node name="Background" type="TextureRect" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -80.0
-offset_top = 35.0
-offset_bottom = 65.0
-scale = Vector2(2, 2)
-texture = ExtResource("1")
-
-[node name="TextLabel" type="Label" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -72.0
-offset_top = 40.0
-offset_right = 72.0
-offset_bottom = 90.0
-theme_override_colors/font_color = Color(0.0784314, 0.0627451, 0.0745098, 1)
-theme_override_fonts/font = ExtResource("2")
-autowrap_mode = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-texture = ExtResource("4_nhl4u")
-offset = Vector2(430, 35)
-hframes = 2
-vframes = 16
