@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bj46m58pxrucb"
-path="res://.godot/imported/Egg_item.png-02a9d4010cc2a736bc1879d638f67982.ctex"
+path="res://.godot/imported/Egg_item.png-d50698f8fe94dfdc02f790eb9224edfa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprout Lands - Sprites - Basic pack/Objects/Egg_item.png"
-dest_files=["res://.godot/imported/Egg_item.png-02a9d4010cc2a736bc1879d638f67982.ctex"]
+source_file="res://assets/Sprout Lands - Sprites - Basic pack/Objects/Egg_item.png"
+dest_files=["res://.godot/imported/Egg_item.png-d50698f8fe94dfdc02f790eb9224edfa.ctex"]
 
 [params]
 

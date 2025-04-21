@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://sic858yd3cs7"
-path="res://.godot/imported/Free_Chicken_House.png-3c1671416a57efc7641a059d3ea317b7.ctex"
+path="res://.godot/imported/Free_Chicken_House.png-424294837e288607d9966df652cc4099.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprout Lands - Sprites - Basic pack/Objects/Free_Chicken_House.png"
-dest_files=["res://.godot/imported/Free_Chicken_House.png-3c1671416a57efc7641a059d3ea317b7.ctex"]
+source_file="res://assets/Sprout Lands - Sprites - Basic pack/Objects/Free_Chicken_House.png"
+dest_files=["res://.godot/imported/Free_Chicken_House.png-424294837e288607d9966df652cc4099.ctex"]
 
 [params]
 
