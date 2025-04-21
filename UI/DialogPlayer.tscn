@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cum3uhbgu6q8j"]
-
-[ext_resource type="Script" uid="uid://delvicb0dwpjh" path="res://UI/DialogPlayer.gd" id="3"]
-
-[node name="DialogPlayer" type="CanvasLayer"]
-process_mode = 3
-script = ExtResource("3")
-scene_text_file = "res://assets/json/world_dialog.json"
