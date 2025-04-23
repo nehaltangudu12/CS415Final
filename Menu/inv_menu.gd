@@ -41,8 +41,7 @@ func _input(event):
 		slot5.texture_normal = inv.items[4].texture
 			
 func _on_slot_1_pressed() -> void:
-	print("slot_1")
-	print(inv.items[0].name)
+	#print("slot_1")
 	selected = slot1
 	#label.text = inv.items[0].name
 	if player.interactable != null && inv.items[0].name == player.interactable.itemNeeded:
@@ -51,7 +50,7 @@ func _on_slot_1_pressed() -> void:
 		print("can't use this item")
 
 func _on_slot_2_pressed() -> void:
-	print("slot_2")
+	#print("slot_2")
 	selected = slot2
 	#label.text = inv.items[1].name
 	if player.interactable != null && inv.items[1].name == player.interactable.itemNeeded:
@@ -59,7 +58,7 @@ func _on_slot_2_pressed() -> void:
 	else:
 		print("can't use this item")
 func _on_slot_3_pressed() -> void:
-	print("slot_3")
+	#print("slot_3")
 	selected = slot3
 	#label.text = inv.items[2].name
 	if player.interactable != null && inv.items[2].name == player.interactable.itemNeeded:
@@ -67,7 +66,7 @@ func _on_slot_3_pressed() -> void:
 	else:
 		print("can't use this item")
 func _on_slot_4_pressed() -> void:
-	print("slot_4")
+	#print("slot_4")
 	selected = slot4
 	#label.text = inv.items[3].name
 	if player.interactable != null && inv.items[3].name == player.interactable.itemNeeded:
@@ -75,7 +74,7 @@ func _on_slot_4_pressed() -> void:
 	else:
 		print("can't use this item")
 func _on_slot_5_pressed() -> void:
-	print("slot_5")
+	#print("slot_5")
 	selected = slot5
 	#label.text = inv.items[4].name
 	if player.interactable != null && inv.items[4].name == player.interactable.itemNeeded:

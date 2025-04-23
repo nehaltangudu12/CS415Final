@@ -6,11 +6,16 @@ extends Area2D
 @onready var pauseMenu = $"../../Camera2D/InvMenu"
 
 var area_active: bool = false
+var parent
+
+func _ready():
+	parent = get_parent()
 
 func _input(event):
 	if area_active and event.is_action_pressed("ui_accept"):
 		pauseMenu._add_item(myItem)
 		print("success!")
+		parent.queue_free()
 		
 func show_read():
 	interact_indicator.visible = true

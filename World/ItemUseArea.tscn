@@ -21,7 +21,7 @@ offset_left = 186.0
 offset_top = 219.0
 offset_right = 250.0
 offset_bottom = 259.0
-text = "[Tab]"
+text = "[Use]"
 
 [connection signal="area_entered" from="." to="." method="_on_DialogArea_area_entered"]
 [connection signal="area_exited" from="." to="." method="_on_DialogArea_area_exited"]
