@@ -28,7 +28,7 @@ func _add_item(item: InvItem):
 			inv.items[i] = item
 			print(inv.items[3].name)
 			break
-			
+	print("Inventory Full!")
 
 func _input(event):
 	if event.is_action_pressed("inventory"):
