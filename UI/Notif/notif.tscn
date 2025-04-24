@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpurei6ka65nb"]
+
+[ext_resource type="Script" uid="uid://d18t22nq8pmnh" path="res://UI/Notif/notif.gd" id="1_m3unc"]
+[ext_resource type="PackedScene" uid="uid://cgtms6d4vpa25" path="res://UI/Notif/dialogue_balloon.tscn" id="2_gycdk"]
+
+[node name="Notif" type="CanvasLayer"]
+script = ExtResource("1_m3unc")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchors_preset = -1
+anchor_bottom = 0.037
+offset_left = 4.0
+offset_top = 571.0
+offset_right = 44.0
+offset_bottom = 587.024
+scale = Vector2(0.752481, 0.602159)
+bbcode_enabled = true
+text = "[pulse][Q][/pulse]"
+
+[node name="DialogueBalloon" parent="." instance=ExtResource("2_gycdk")]
+next_action = null
+skip_action = null
+
+[node name="CharacterLabel" parent="DialogueBalloon/Balloon/Panel/Dialogue/VBoxContainer" index="0"]
+text = "[pulse][Q][/pulse]"
+
+[editable path="DialogueBalloon"]
