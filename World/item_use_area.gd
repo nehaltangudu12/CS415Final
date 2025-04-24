@@ -7,9 +7,9 @@ extends Area2D
 
 var area_active: bool = false
 
-#func _input(event):
-	#if area_active and event.is_action_pressed("ui_accept"):
-		#SignalBus.emit_signal("display_dialog", text_key)
+func _input(event):
+	if area_active and event.is_action_pressed("ui_accept"):
+		SignalBus.emit_signal("open_inventory")
 		
 func show_read():
 	interact_indicator.visible = true
