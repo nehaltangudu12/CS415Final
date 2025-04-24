@@ -7,6 +7,9 @@ extends Area2D
 
 var area_active: bool = false
 
+
+func itemEvent():
+	print("used correct item!")
 func _input(event):
 	if area_active and event.is_action_pressed("ui_accept"):
 		SignalBus.emit_signal("open_inventory")
