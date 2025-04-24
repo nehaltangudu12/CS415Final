@@ -43,12 +43,8 @@ func _on_slot_1_pressed() -> void:
 	selected = slot1
 	#label.text = inv.items[0].name
 	if player.interactable != null && inv.items[0].name in player.interactable.itemNeeded:
-<<<<<<< Updated upstream
 		player.interactable.itemEvent(inv.items[0].name)
-=======
-		player.interactable.itemEvent()
 		inv.items[0] = emptyObj
->>>>>>> Stashed changes
 	else:
 		print("can't use this item")
 	gameLevel.pauseMenu()
@@ -58,12 +54,8 @@ func _on_slot_2_pressed() -> void:
 	selected = slot2
 	#label.text = inv.items[1].name
 	if player.interactable != null && inv.items[1].name in player.interactable.itemNeeded:
-<<<<<<< Updated upstream
 		player.interactable.itemEvent(inv.items[1].name)
-=======
-		player.interactable.itemEvent()
 		inv.items[1] = emptyObj
->>>>>>> Stashed changes
 	else:
 		print("can't use this item")
 	gameLevel.pauseMenu()
@@ -73,12 +65,8 @@ func _on_slot_3_pressed() -> void:
 	selected = slot3
 	#label.text = inv.items[2].name
 	if player.interactable != null && inv.items[2].name in player.interactable.itemNeeded:
-<<<<<<< Updated upstream
 		player.interactable.itemEvent(inv.items[2].name)
-=======
-		player.interactable.itemEvent()
 		inv.items[2] = emptyObj
->>>>>>> Stashed changes
 	else:
 		print("can't use this item")
 	gameLevel.pauseMenu()
@@ -88,12 +76,8 @@ func _on_slot_4_pressed() -> void:
 	selected = slot4
 	#label.text = inv.items[3].name
 	if player.interactable != null && inv.items[3].name in player.interactable.itemNeeded:
-<<<<<<< Updated upstream
 		player.interactable.itemEvent(inv.items[3].name)
-=======
-		player.interactable.itemEvent()
 		inv.items[3] = emptyObj
->>>>>>> Stashed changes
 	else:
 		print("can't use this item")
 	gameLevel.pauseMenu()
@@ -103,12 +87,8 @@ func _on_slot_5_pressed() -> void:
 	selected = slot5
 	#label.text = inv.items[4].name
 	if player.interactable != null && inv.items[4].name in player.interactable.itemNeeded:
-<<<<<<< Updated upstream
 		player.interactable.itemEvent(inv.items[4].name)
-=======
-		player.interactable.itemEvent()
 		inv.items[4] = emptyObj
->>>>>>> Stashed changes
 	else:
 		print("can't use this item")
 	gameLevel.pauseMenu()
