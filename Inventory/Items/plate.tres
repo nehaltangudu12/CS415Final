@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://cy8arp3h5gi4c"]
 
 [ext_resource type="Script" uid="uid://rwy1bekjxd4m" path="res://Inventory/inv_item.gd" id="1_82pju"]
-[ext_resource type="Texture2D" uid="uid://bj46m58pxrucb" path="res://Assets/Sprout Lands - Sprites - Basic pack/Objects/Egg_item.png" id="2_0vysk"]
+[ext_resource type="Texture2D" uid="uid://c0xppuc11b4ar" path="res://Assets/Interactables/Dirty Plate.png" id="2_82pju"]
 
 [resource]
 script = ExtResource("1_82pju")
 name = "Plate"
-texture = ExtResource("2_0vysk")
+texture = ExtResource("2_82pju")
 metadata/_custom_type_script = "uid://rwy1bekjxd4m"

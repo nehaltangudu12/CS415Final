@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://sa1cw4mlmif2"]
 
 [ext_resource type="Script" uid="uid://rwy1bekjxd4m" path="res://Inventory/inv_item.gd" id="1_i7lc7"]
-[ext_resource type="Texture2D" uid="uid://bj46m58pxrucb" path="res://Assets/Sprout Lands - Sprites - Basic pack/Objects/Egg_item.png" id="2_nrg2d"]
+[ext_resource type="Texture2D" uid="uid://cp1m22skyk6f6" path="res://Assets/Interactables/Dirty Pot.png" id="2_i7lc7"]
 
 [resource]
 script = ExtResource("1_i7lc7")
 name = "Pot"
-texture = ExtResource("2_nrg2d")
+texture = ExtResource("2_i7lc7")
 metadata/_custom_type_script = "uid://rwy1bekjxd4m"

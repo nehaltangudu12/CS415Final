@@ -14,7 +14,7 @@ func _ready():
 func _input(event):
 	if area_active and event.is_action_pressed("ui_accept"):
 		pauseMenu._add_item(myItem)
-		print("success!")
+		print("picked up!")
 		parent.queue_free()
 		
 func show_read():

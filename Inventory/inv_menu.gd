@@ -27,7 +27,6 @@ func _add_item(item: InvItem):
 	for i in range(len(inv.items)):
 		if inv.items[i].name == "empty":
 			inv.items[i] = item
-			print(inv.items[3].name)
 			break
 	print("Inventory Full!")
 
