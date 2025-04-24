@@ -1,12 +1,10 @@
 extends Control
 
 func resume():
-	get_tree().paused = false
 	$AnimationPlayer.play_backwards("blur")
 	self.visible = false	
 
 func pause():
-	get_tree().paused = true 
 	$AnimationPlayer.play("blur")
 
 func _input(key):
