@@ -8,7 +8,7 @@ extends Area2D
 var area_active: bool = false
 
 
-func itemEvent():
+func itemEvent(item):
 	print("used correct item!")
 func _input(event):
 	if area_active and event.is_action_pressed("ui_accept"):

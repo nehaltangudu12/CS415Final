@@ -25,7 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://c631sh33m0vn2" path="res://World/PickupArea.tscn" id="19_fct0e"]
 [ext_resource type="PackedScene" uid="uid://dmj8q8ibt2p47" path="res://World/ItemUseArea.tscn" id="19_sf1a6"]
 [ext_resource type="PackedScene" uid="uid://b0efnhlcoenlu" path="res://UI/PauseMenu/pause_menu.tscn" id="23_fct0e"]
-[ext_resource type="Script" path="res://Levels/button.gd" id="24_pl1jo"]
+[ext_resource type="Script" uid="uid://712cacw6ayrk" path="res://Levels/button.gd" id="24_pl1jo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_um5wi"]
 
