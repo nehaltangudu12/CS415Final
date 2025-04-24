@@ -1,6 +1,7 @@
-[gd_scene load_steps=57 format=4 uid="uid://gfyeg7ece47w"]
+[gd_scene load_steps=58 format=4 uid="uid://gfyeg7ece47w"]
 
 [ext_resource type="Texture2D" uid="uid://bos7wqi4dipxf" path="res://Assets/Top-Down_Retro_Interior/TopDownHouse_DoorsAndWindows.png" id="1_dw3m1"]
+[ext_resource type="Script" uid="uid://pw56rlhmu2cw" path="res://Levels/room_one.gd" id="1_mdgqp"]
 [ext_resource type="Texture2D" uid="uid://dxh54lharw1ol" path="res://Assets/Top-Down_Retro_Interior/TopDownHouse_FloorsAndWalls.png" id="2_lbnra"]
 [ext_resource type="Texture2D" uid="uid://d387uyjj0nk8n" path="res://Assets/Top-Down_Retro_Interior/TopDownHouse_FloorsAndWalls_OpenDoors.png" id="3_mdgqp"]
 [ext_resource type="Texture2D" uid="uid://bo0nkm3cb2jrp" path="res://Assets/Top-Down_Retro_Interior/TopDownHouse_FurnitureState1.png" id="4_8phrw"]
@@ -6422,6 +6423,7 @@ sources/5 = SubResource("TileSetAtlasSource_hk7ud")
 
 [node name="RoomOne" type="Node2D"]
 position = Vector2(138, 105)
+script = ExtResource("1_mdgqp")
 
 [node name="BASE (Copy This)" type="TileMapLayer" parent="."]
 position = Vector2(-3, -7)
