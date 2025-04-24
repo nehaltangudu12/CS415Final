@@ -9,7 +9,10 @@ var area_active: bool = false
 
 
 func itemEvent(item):
+	get_parent().currentItemCount += 1
+	get_parent().checkItemCount()
 	print("used correct item!")
+	
 func _input(event):
 	if area_active and event.is_action_pressed("ui_accept"):
 		SignalBus.emit_signal("open_inventory")

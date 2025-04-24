@@ -6664,6 +6664,7 @@ emptyObj = ExtResource("11_8qlal")
 [node name="Sink" type="Sprite2D" parent="."]
 position = Vector2(-113, -105)
 script = ExtResource("12_jyagn")
+itemCount = 3
 
 [node name="ItemUseArea" parent="Sink" instance=ExtResource("11_oaq7o")]
 position = Vector2(2, 12)
