@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 SignalBus="*res://Scripts/SignalBus.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+Notif="*res://UI/Notif/notif.tscn"
 
 [display]
 
