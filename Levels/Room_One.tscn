@@ -6686,3 +6686,7 @@ texture = ExtResource("9_h52gv")
 
 [node name="PickupArea" parent="DirtyCup" instance=ExtResource("10_m4r50")]
 myItem = ExtResource("11_m4r50")
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+energy = 0.5
+blend_mode = 1

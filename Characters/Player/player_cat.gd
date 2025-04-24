@@ -7,9 +7,12 @@ class_name Player
 @export var knockback_time: float = 0.3
 
 @onready var animation_tree = $AnimationTree
-
+@onready var light = $PointLight2D
 @onready var state_machine = animation_tree.get("parameters/playback")
 @onready var timer = $Timer
+
+# Lighting parameters
+var shrink_speed = 0.1  # adjust this to control speed
 
 var knockback = Vector2.ZERO
 var is_knockbacked: bool = false
@@ -61,3 +64,10 @@ func pick_new_state():
 		state_machine.travel("Walk", false)
 	else:
 		state_machine.travel("Idle", false)
+		
+func _process(delta):
+	# Adjust lighting around character
+	if light.texture_scale > 0.0:
+		light.texture_scale -= shrink_speed * delta
+		if light.texture_scale < 0.0:
+			print("you died :(")

@@ -5,8 +5,13 @@ extends Node2D
 @onready var inv_menu = $Camera2D/InvMenu
 var paused = false
 
+@onready var player = $PlayerCat
+
 func _ready():
 	SignalBus.open_inventory.connect(pauseMenu)
+	player.shrink_speed = 0.0
+	var light = player.get_node("PointLight2D")
+	light.energy = 0.5
 
 # Catching inputs for interaction and inventory
 func _input(event):

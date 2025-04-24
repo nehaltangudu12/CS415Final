@@ -7,6 +7,7 @@ var paused = false
 
 func _ready():
 	SignalBus.open_inventory.connect(pauseMenu)
+	Notif.display_notif("Welcome!")
 
 # Catching inputs for interaction and inventory
 func _input(event):
