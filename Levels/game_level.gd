@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var next_level:PackedScene
+
 @onready var inv_menu = $Camera2D/InvMenu
 var paused = false
 
@@ -24,3 +26,6 @@ func pauseMenu():
 		Engine.time_scale = 0
 	
 	paused = !paused
+
+func _on_button_pressed() -> void:
+	SignalBus.SWAP_LEVELS.emit(next_level.get_path())

@@ -1,8 +1,9 @@
-[gd_scene load_steps=39 format=4 uid="uid://b4t4wmqtf1wjm"]
+[gd_scene load_steps=41 format=4 uid="uid://b4t4wmqtf1wjm"]
 
 [ext_resource type="Script" uid="uid://sej1q3wjvr8u" path="res://Levels/game_level.gd" id="1_0ooie"]
 [ext_resource type="PackedScene" uid="uid://l6oecmvfr7a7" path="res://Characters/Player/player_cat.tscn" id="1_up8ek"]
 [ext_resource type="Texture2D" uid="uid://b1tasarm33pfe" path="res://Assets/Sprout Lands - Sprites - Basic pack/Tilesets/Grass.png" id="2_bskef"]
+[ext_resource type="PackedScene" uid="uid://gfyeg7ece47w" path="res://Levels/Room_One.tscn" id="2_sh88w"]
 [ext_resource type="Texture2D" uid="uid://das1n7a1f1goh" path="res://Assets/Sprout Lands - Sprites - Basic pack/Tilesets/Hills.png" id="3_ds5vk"]
 [ext_resource type="Texture2D" uid="uid://bsmyxp53o5pcx" path="res://Assets/Sprout Lands - Sprites - Basic pack/Tilesets/Fences.png" id="4_um5wi"]
 [ext_resource type="Texture2D" uid="uid://dgejjs2qy7rc0" path="res://Assets/Sprout Lands - Sprites - Basic pack/Tilesets/Doors.png" id="5_alay0"]
@@ -23,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://c631sh33m0vn2" path="res://World/PickupArea.tscn" id="19_fct0e"]
 [ext_resource type="PackedScene" uid="uid://dmj8q8ibt2p47" path="res://World/ItemUseArea.tscn" id="19_sf1a6"]
 [ext_resource type="PackedScene" uid="uid://b0efnhlcoenlu" path="res://UI/PauseMenu/pause_menu.tscn" id="23_fct0e"]
+[ext_resource type="Script" uid="uid://712cacw6ayrk" path="res://Levels/button.gd" id="24_pl1jo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_um5wi"]
 
@@ -587,6 +589,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(150, 79, 540, 73, 548, 
 [node name="GameLevel" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_0ooie")
+next_level = ExtResource("2_sh88w")
 
 [node name="PlayerCat" parent="." instance=ExtResource("1_up8ek")]
 position = Vector2(476, 212)
@@ -683,6 +686,20 @@ scale = Vector2(0.2, 0.2)
 transform = Transform2D(0.2, 0, 0, 0.2, 0, 0)
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("23_fct0e")]
+
+[node name="switchLevelButton" type="CanvasLayer" parent="."]
+
+[node name="Button" type="Button" parent="switchLevelButton"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+offset_right = 169.0
+grow_vertical = 0
+text = "Click to switch layers"
+script = ExtResource("24_pl1jo")
+
+[connection signal="pressed" from="switchLevelButton/Button" to="." method="_on_button_pressed"]
 
 [editable path="Chest/DialogAreaChest1"]
 [editable path="DialogPlayer"]
