@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://l8xtpy0co1om"]
 
-[ext_resource type="Script" uid="uid://vkkex5ydcakp" path="res://Menu/inv_menu.gd" id="1_05uyy"]
+[ext_resource type="Script" uid="uid://vkkex5ydcakp" path="res://Inventory/inv_menu.gd" id="1_05uyy"]
 [ext_resource type="Texture2D" uid="uid://sic858yd3cs7" path="res://Assets/Sprout Lands - Sprites - Basic pack/Objects/Free_Chicken_House.png" id="1_hdmo1"]
 
 [node name="InvMenu" type="Control"]

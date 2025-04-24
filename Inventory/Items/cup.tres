@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://b1migf6lktrov"]
+
+[ext_resource type="Script" uid="uid://rwy1bekjxd4m" path="res://Inventory/inv_item.gd" id="1_vrt5d"]
+[ext_resource type="Texture2D" uid="uid://bj46m58pxrucb" path="res://Assets/Sprout Lands - Sprites - Basic pack/Objects/Egg_item.png" id="2_6kkmf"]
+
+[resource]
+script = ExtResource("1_vrt5d")
+name = "Cup"
+texture = ExtResource("2_6kkmf")
+metadata/_custom_type_script = "uid://rwy1bekjxd4m"

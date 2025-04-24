@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://dldakjwolpio3"]
 
-[ext_resource type="Script" uid="uid://rwy1bekjxd4m" path="res://Menu/inv_item.gd" id="1_6naki"]
+[ext_resource type="Script" uid="uid://rwy1bekjxd4m" path="res://Inventory/inv_item.gd" id="1_6naki"]
 [ext_resource type="Texture2D" uid="uid://bj46m58pxrucb" path="res://Assets/Sprout Lands - Sprites - Basic pack/Objects/Egg_item.png" id="2_evhaq"]
 
 [resource]
