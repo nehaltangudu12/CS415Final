@@ -1,0 +1,12 @@
+~ start
+God: Hi! Looks like you figured out how to read me. You can interact with items using [wave] space [/wave].
+~ question
+God: What would you like to know more about?
+- How can i move (didn't you do this already)
+	God: You can move using wasd => question
+- Where is the main menu?
+	God: Access the main menu with esc => question
+- What interact signal?
+	God: It'll look something like this flashing on screen
+- End the conversation => END
+=> END

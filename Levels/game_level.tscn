@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://b4t4wmqtf1wjm"]
+[gd_scene load_steps=41 format=4 uid="uid://b4t4wmqtf1wjm"]
 
 [ext_resource type="Script" uid="uid://sej1q3wjvr8u" path="res://Levels/game_level.gd" id="1_0ooie"]
 [ext_resource type="PackedScene" uid="uid://l6oecmvfr7a7" path="res://Characters/Player/player_cat.tscn" id="1_up8ek"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://c631sh33m0vn2" path="res://World/PickupArea.tscn" id="19_fct0e"]
 [ext_resource type="PackedScene" uid="uid://dmj8q8ibt2p47" path="res://World/ItemUseArea.tscn" id="19_sf1a6"]
 [ext_resource type="PackedScene" uid="uid://b0efnhlcoenlu" path="res://UI/PauseMenu/pause_menu.tscn" id="23_fct0e"]
+[ext_resource type="Texture2D" uid="uid://c0531600m6ebj" path="res://Assets/Sprout Lands - Sprites - Basic pack/Objects/Basic_Furniture.png" id="24_pl1jo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_um5wi"]
 
@@ -584,6 +585,8 @@ vertices = PackedVector2Array(537.641, 283.25, 160, 292.742, 160, 88.8438, 530.3
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(150, 79, 540, 73, 548, 293, 150, 303)])
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pl1jo"]
+
 [node name="GameLevel" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_0ooie")
@@ -631,6 +634,7 @@ offset_bottom = -152.0
 inv = ExtResource("15_jw0rm")
 
 [node name="Cow" parent="." instance=ExtResource("13_ds5vk")]
+position = Vector2(-36, 44)
 
 [node name="Cow2" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("13_ds5vk")]
 position = Vector2(277, 218)
@@ -665,6 +669,15 @@ position = Vector2(425, 147)
 
 [node name="ItemUseArea" parent="Chest3" instance=ExtResource("19_sf1a6")]
 
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_um5wi")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+scale = Vector2(0.2, 0.2)
+transform = Transform2D(0.2, 0, 0, 0.2, 0, 0)
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("23_fct0e")]
+
 [node name="DialogPlayer" parent="." instance=ExtResource("17_ah7re")]
 scene_text_file = "res://assets/Dialogue/dialogue.json"
 
@@ -675,14 +688,21 @@ script = ExtResource("19_6tkkn")
 skip_pause_at_abbreviations = PackedStringArray("Mr", "Mrs", "Ms", "Dr", "etc", "eg", "ex")
 metadata/_custom_type_script = "uid://g32um0mltv5d"
 
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-navigation_polygon = SubResource("NavigationPolygon_um5wi")
+[node name="SignInstructions" type="Sprite2D" parent="."]
+position = Vector2(209, 110)
+scale = Vector2(1.6875, 1.96154)
+texture = ExtResource("24_pl1jo")
+hframes = 9
+vframes = 7
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-scale = Vector2(0.2, 0.2)
-transform = Transform2D(0.2, 0, 0, 0.2, 0, 0)
+[node name="DialogArea" parent="SignInstructions" instance=ExtResource("15_0ooie")]
+position = Vector2(-35.8776, 14.6493)
+text_key = "sign_intro_1.dialogue"
 
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("23_fct0e")]
+[node name="CollisionShape2D" parent="SignInstructions/DialogArea" index="0"]
+position = Vector2(36.4702, -7.00227)
+shape = SubResource("RectangleShape2D_pl1jo")
 
 [editable path="Chest/DialogAreaChest1"]
 [editable path="DialogPlayer"]
+[editable path="SignInstructions/DialogArea"]
