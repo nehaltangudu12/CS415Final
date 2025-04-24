@@ -1,6 +1,6 @@
 class_name NotifManager extends CanvasLayer
 
-@onready var text_ballon: DialogueManagerExampleBalloon = $DialogueBalloon
+@onready var text_ballon: DialogueManagerBalloon = $DialogueBalloon
 @onready var quit_indicator = $RichTextLabel
 
 func _ready() -> void:

@@ -18,8 +18,6 @@ bbcode_enabled = true
 text = "[pulse][Q][/pulse]"
 
 [node name="DialogueBalloon" parent="." instance=ExtResource("2_gycdk")]
-next_action = null
-skip_action = null
 
 [node name="CharacterLabel" parent="DialogueBalloon/Balloon/Panel/Dialogue/VBoxContainer" index="0"]
 text = "[pulse][Q][/pulse]"
