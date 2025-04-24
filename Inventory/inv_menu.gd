@@ -44,10 +44,11 @@ func _on_slot_1_pressed() -> void:
 	#label.text = inv.items[0].name
 	if player.interactable != null && inv.items[0].name in player.interactable.itemNeeded:
 		player.interactable.itemEvent(inv.items[0].name)
+		gameLevel.pauseMenu()
 		inv.items[0] = emptyObj
 	else:
+		gameLevel.pauseMenu()
 		print("can't use this item")
-	gameLevel.pauseMenu()
 
 func _on_slot_2_pressed() -> void:
 	#print("slot_2")
@@ -55,10 +56,11 @@ func _on_slot_2_pressed() -> void:
 	#label.text = inv.items[1].name
 	if player.interactable != null && inv.items[1].name in player.interactable.itemNeeded:
 		player.interactable.itemEvent(inv.items[1].name)
+		gameLevel.pauseMenu()
 		inv.items[1] = emptyObj
 	else:
+		gameLevel.pauseMenu()
 		print("can't use this item")
-	gameLevel.pauseMenu()
 	
 func _on_slot_3_pressed() -> void:
 	#print("slot_3")
@@ -66,10 +68,11 @@ func _on_slot_3_pressed() -> void:
 	#label.text = inv.items[2].name
 	if player.interactable != null && inv.items[2].name in player.interactable.itemNeeded:
 		player.interactable.itemEvent(inv.items[2].name)
+		gameLevel.pauseMenu()
 		inv.items[2] = emptyObj
 	else:
+		gameLevel.pauseMenu()
 		print("can't use this item")
-	gameLevel.pauseMenu()
 
 func _on_slot_4_pressed() -> void:
 	#print("slot_4")
@@ -77,10 +80,11 @@ func _on_slot_4_pressed() -> void:
 	#label.text = inv.items[3].name
 	if player.interactable != null && inv.items[3].name in player.interactable.itemNeeded:
 		player.interactable.itemEvent(inv.items[3].name)
+		gameLevel.pauseMenu()
 		inv.items[3] = emptyObj
 	else:
+		gameLevel.pauseMenu()
 		print("can't use this item")
-	gameLevel.pauseMenu()
 
 func _on_slot_5_pressed() -> void:
 	#print("slot_5")
@@ -88,8 +92,9 @@ func _on_slot_5_pressed() -> void:
 	#label.text = inv.items[4].name
 	if player.interactable != null && inv.items[4].name in player.interactable.itemNeeded:
 		player.interactable.itemEvent(inv.items[4].name)
+		gameLevel.pauseMenu()
 		inv.items[4] = emptyObj
 	else:
+		gameLevel.pauseMenu()
 		print("can't use this item")
-	gameLevel.pauseMenu()
 	
