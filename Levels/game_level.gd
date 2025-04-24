@@ -10,8 +10,6 @@ func _ready():
 
 # Catching inputs for interaction and inventory
 func _input(event):
-	if event.is_action_pressed("interact"):
-		print("Interacting!")
 	if event.is_action_pressed("inventory"):
 		pauseMenu()
 
