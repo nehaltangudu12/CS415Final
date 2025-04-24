@@ -1,11 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://6gthckxb7hrf"]
+[gd_scene load_steps=3 format=3 uid="uid://6gthckxb7hrf"]
 
-[ext_resource type="PackedScene" uid="uid://gfyeg7ece47w" path="res://Levels/Room_One.tscn" id="1_0ww8r"]
 [ext_resource type="Script" uid="uid://dye1uk5fl4rem" path="res://Levels/scene_switcher.gd" id="1_otmaw"]
-[ext_resource type="PackedScene" uid="uid://b4t4wmqtf1wjm" path="res://Levels/TestLevel/game_level.tscn" id="2_otmaw"]
+[ext_resource type="PackedScene" uid="uid://b4t4wmqtf1wjm" path="res://Levels/game_level.tscn" id="2_otmaw"]
 
 [node name="SceneSwitcher" type="Node"]
 script = ExtResource("1_otmaw")
 
 [node name="GameLevel" parent="." instance=ExtResource("2_otmaw")]
-next_level = ExtResource("1_0ww8r")
