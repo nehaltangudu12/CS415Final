@@ -1,6 +1,6 @@
 extends Area2D
 #@export var text_key: String = ""
-@export var itemNeeded: String = "Egg"
+@export var itemNeeded: Array = ["Plate","Cup","Bowl"]
 
 @onready var interact_indicator = $CanvasLayer/RichTextLabel
 @onready var player = $"../../PlayerCat"

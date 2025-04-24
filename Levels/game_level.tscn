@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://b4t4wmqtf1wjm"]
+[gd_scene load_steps=42 format=4 uid="uid://b4t4wmqtf1wjm"]
 
 [ext_resource type="Script" uid="uid://sej1q3wjvr8u" path="res://Levels/game_level.gd" id="1_0ooie"]
 [ext_resource type="PackedScene" uid="uid://l6oecmvfr7a7" path="res://Characters/Player/player_cat.tscn" id="1_up8ek"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://l8xtpy0co1om" path="res://Inventory/inv_menu.tscn" id="15_alay0"]
 [ext_resource type="Resource" uid="uid://bia5i2p7vck5l" path="res://Inventory/myInv.tres" id="15_jw0rm"]
 [ext_resource type="PackedScene" uid="uid://cum3uhbgu6q8j" path="res://UI/DialogPlayer.tscn" id="17_ah7re"]
+[ext_resource type="Resource" uid="uid://bkv8184rupkau" path="res://Inventory/Items/empty.tres" id="17_wri67"]
 [ext_resource type="Script" uid="uid://g32um0mltv5d" path="res://addons/dialogue_manager/dialogue_label.gd" id="19_6tkkn"]
 [ext_resource type="PackedScene" uid="uid://c631sh33m0vn2" path="res://World/PickupArea.tscn" id="19_fct0e"]
 [ext_resource type="PackedScene" uid="uid://dmj8q8ibt2p47" path="res://World/ItemUseArea.tscn" id="19_sf1a6"]
@@ -632,6 +633,7 @@ offset_top = -152.0
 offset_right = -157.0
 offset_bottom = -152.0
 inv = ExtResource("15_jw0rm")
+emptyObj = ExtResource("17_wri67")
 
 [node name="Cow" parent="." instance=ExtResource("13_ds5vk")]
 
@@ -667,6 +669,7 @@ position = Vector2(337, 216)
 position = Vector2(425, 147)
 
 [node name="ItemUseArea" parent="Chest3" instance=ExtResource("19_sf1a6")]
+itemNeeded = ["Key"]
 
 [node name="DialogPlayer" parent="." instance=ExtResource("17_ah7re")]
 scene_text_file = "res://assets/Dialogue/dialogue.json"

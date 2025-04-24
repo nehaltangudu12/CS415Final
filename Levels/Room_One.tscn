@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=4 uid="uid://gfyeg7ece47w"]
+[gd_scene load_steps=67 format=4 uid="uid://gfyeg7ece47w"]
 
 [ext_resource type="Texture2D" uid="uid://bos7wqi4dipxf" path="res://Assets/Top-Down_Retro_Interior/TopDownHouse_DoorsAndWindows.png" id="1_dw3m1"]
 [ext_resource type="Script" uid="uid://pw56rlhmu2cw" path="res://Levels/room_one.gd" id="1_mdgqp"]
@@ -12,7 +12,11 @@
 [ext_resource type="PackedScene" uid="uid://l8xtpy0co1om" path="res://Inventory/inv_menu.tscn" id="9_trdf8"]
 [ext_resource type="Resource" uid="uid://bia5i2p7vck5l" path="res://Inventory/myInv.tres" id="10_0fywq"]
 [ext_resource type="PackedScene" uid="uid://c631sh33m0vn2" path="res://World/PickupArea.tscn" id="10_m4r50"]
+[ext_resource type="Texture2D" uid="uid://c0xppuc11b4ar" path="res://Assets/Interactables/Dirty Plate.png" id="11_0fywq"]
+[ext_resource type="Resource" uid="uid://bkv8184rupkau" path="res://Inventory/Items/empty.tres" id="11_8qlal"]
 [ext_resource type="Resource" uid="uid://b1migf6lktrov" path="res://Inventory/Items/cup.tres" id="11_m4r50"]
+[ext_resource type="PackedScene" uid="uid://dmj8q8ibt2p47" path="res://World/ItemUseArea.tscn" id="11_oaq7o"]
+[ext_resource type="Resource" uid="uid://cy8arp3h5gi4c" path="res://Inventory/Items/plate.tres" id="14_fj5cf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0xmi6"]
 texture = ExtResource("1_dw3m1")
@@ -6654,6 +6658,20 @@ offset_top = -152.0
 offset_right = -157.0
 offset_bottom = -152.0
 inv = ExtResource("10_0fywq")
+emptyObj = ExtResource("11_8qlal")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-113, -105)
+
+[node name="ItemUseArea" parent="Sprite2D" instance=ExtResource("11_oaq7o")]
+position = Vector2(2, 12)
+
+[node name="DirtyPlate" type="Sprite2D" parent="."]
+position = Vector2(405, 101)
+texture = ExtResource("11_0fywq")
+
+[node name="PickupArea" parent="DirtyPlate" instance=ExtResource("10_m4r50")]
+myItem = ExtResource("14_fj5cf")
 
 [node name="DirtyCup2" type="Sprite2D" parent="."]
 position = Vector2(645, 180)
