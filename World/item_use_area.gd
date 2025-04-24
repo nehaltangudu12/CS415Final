@@ -30,4 +30,5 @@ func _on_DialogArea_area_entered(_area):
 	
 func _on_DialogArea_area_exited(_area):
 	area_active = false
+	player.interactable = null
 	exit_read()
