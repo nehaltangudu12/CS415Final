@@ -70,4 +70,5 @@ func _process(delta):
 	if light.texture_scale > 0.0:
 		light.texture_scale -= shrink_speed * delta
 		if light.texture_scale < 0.0:
+			GameOverCanvas.game_over()
 			print("you died :(")

@@ -19,8 +19,11 @@ config/icon="res://icon.svg"
 
 SignalBus="*res://Scripts/SignalBus.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+<<<<<<< HEAD
+=======
 Notif="*res://UI/Notif/notif.tscn"
 GameOverCanvas="*res://UI/GameOver/game_over_canvas.tscn"
+>>>>>>> 8d3ed0024f8a5d92743112de9b8b3d9dca0920f2
 
 [display]
 

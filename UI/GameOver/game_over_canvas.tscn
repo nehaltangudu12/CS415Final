@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://4c17iu1c58rh"]
+
+[ext_resource type="PackedScene" uid="uid://co0v0co1afgom" path="res://UI/GameOver/game_over.tscn" id="1_igy2w"]
+[ext_resource type="Script" uid="uid://bbb3v5rwfxajx" path="res://UI/GameOver/game_over_canvas.gd" id="1_y2dp4"]
+
+[node name="GameOverCanvas" type="CanvasLayer"]
+scale = Vector2(0.2, 0.2)
+transform = Transform2D(0.2, 0, 0, 0.2, 0, 0)
+script = ExtResource("1_y2dp4")
+
+[node name="GameOverMenu" parent="." instance=ExtResource("1_igy2w")]
+
+[editable path="GameOverMenu"]
