@@ -15,6 +15,7 @@ func _on_dialogue_finished(resource):
 	get_tree().paused = false
 
 func on_display_dialog(text_key: String):
+	print("Hi")
 	if in_progress:
 		return		
 

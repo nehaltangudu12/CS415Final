@@ -4,9 +4,12 @@
 
 [node name="DialogArea" type="Area2D"]
 process_mode = 3
+position = Vector2(173, 160)
+scale = Vector2(-24, -29)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1")
+text_key = "bartender1"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
