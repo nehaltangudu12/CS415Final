@@ -1,0 +1,8 @@
+~ start
+Nathan: [[Hi|Hello|Howdy]], you haven't touched these dishes. Can you go collect them all.
+- Yes
+	Nathan: Awesome. Visit me when you're done
+- No
+	Nathan: I'll ask you one more time. => start
+Nathan: Pronto.
+=> END

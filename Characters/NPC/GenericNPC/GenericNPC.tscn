@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6q7qfq27gosg"]
+
+[ext_resource type="Script" uid="uid://5w0r3j51f6r5" path="res://Characters/NPC/GenericNPC/generic_npc.gd" id="1_l7q0o"]
+[ext_resource type="PackedScene" uid="uid://dgr0cksbdcl1a" path="res://World/DialogArea.tscn" id="2_7nywg"]
+
+[node name="GenericNpc" type="Node2D"]
+script = ExtResource("1_l7q0o")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+
+[node name="DialogArea" parent="." instance=ExtResource("2_7nywg")]
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
