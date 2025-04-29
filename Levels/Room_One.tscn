@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=4 uid="uid://gfyeg7ece47w"]
+[gd_scene load_steps=77 format=4 uid="uid://gfyeg7ece47w"]
 
 [ext_resource type="Texture2D" uid="uid://bos7wqi4dipxf" path="res://Assets/Top-Down_Retro_Interior/TopDownHouse_DoorsAndWindows.png" id="1_dw3m1"]
 [ext_resource type="Script" uid="uid://pw56rlhmu2cw" path="res://Levels/room_one.gd" id="1_mdgqp"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://b6q7qfq27gosg" path="res://Characters/NPC/GenericNPC/GenericNPC.tscn" id="20_p6p58"]
 [ext_resource type="Texture2D" uid="uid://c4iau7xgtq3gq" path="res://Assets/sprites/Player-Idle.png" id="21_p6p58"]
 [ext_resource type="PackedScene" uid="uid://cum3uhbgu6q8j" path="res://UI/DialogPlayer.tscn" id="22_gdaqv"]
+[ext_resource type="PackedScene" uid="uid://bym46dceki7o3" path="res://Levels/TransitionArea.tscn" id="23_daorc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0xmi6"]
 texture = ExtResource("1_dw3m1")
@@ -7206,6 +7207,9 @@ size = Vector2(18, 38.0789)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gdaqv"]
 size = Vector2(2.79167, 1.94828)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_daorc"]
+size = Vector2(1, 1.31034)
+
 [node name="RoomOne" type="Node2D"]
 script = ExtResource("1_mdgqp")
 
@@ -7526,5 +7530,13 @@ shape = SubResource("RectangleShape2D_gdaqv")
 
 [node name="DialogPlayer" parent="." instance=ExtResource("22_gdaqv")]
 
+[node name="TransitionArea" parent="." instance=ExtResource("23_daorc")]
+text_key = "Room_Two"
+
+[node name="CollisionShape2D" parent="TransitionArea" index="0"]
+position = Vector2(10.75, -5.24138)
+shape = SubResource("RectangleShape2D_daorc")
+
 [editable path="Bartender"]
 [editable path="Bartender/DialogArea"]
+[editable path="TransitionArea"]
