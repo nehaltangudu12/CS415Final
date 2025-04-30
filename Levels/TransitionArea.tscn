@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://bym46dceki7o3"]
+
+[ext_resource type="Script" uid="uid://dd8s5uoba464h" path="res://Levels/transition_area.gd" id="1_c5xhq"]
+
+[node name="TransitionArea" type="Area2D"]
+process_mode = 3
+position = Vector2(173, 160)
+scale = Vector2(-24, -29)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_c5xhq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+visible = false
+offset_left = 186.0
+offset_top = 219.0
+offset_right = 250.0
+offset_bottom = 259.0
+text = "[Go]"
+
+[connection signal="area_entered" from="." to="." method="_on_DialogArea_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_DialogArea_area_exited"]

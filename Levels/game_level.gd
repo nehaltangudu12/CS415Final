@@ -5,9 +5,15 @@ extends Node2D
 @onready var inv_menu = $Camera2D/InvMenu
 var paused = false
 
+func display_start_dialogue():
+	Notif.display_notif("Allright, all tasks should be done. I should talk to Nathan for my check!")	
+
 func _ready():
+	# Signals
 	SignalBus.open_inventory.connect(pauseMenu)
-	Notif.display_notif("Welcome!")
+	
+	# Start events
+	display_start_dialogue()
 
 # Catching inputs for interaction and inventory
 func _input(event):

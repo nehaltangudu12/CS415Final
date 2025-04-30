@@ -1,0 +1,20 @@
+{
+	"chest": {
+		"branch": [
+			"open",
+			"esc"	
+		],
+		"text": [
+			"You cannot open this yet",
+			"Find a key hidden on the map"
+		]
+	},
+	"open": {
+		"branch": [
+			"esc"
+		],
+		"text": [
+			"Opening..."
+		]
+	}
+}
