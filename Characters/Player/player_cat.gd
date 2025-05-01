@@ -18,11 +18,17 @@ var knockback = Vector2.ZERO
 var is_knockbacked: bool = false
 var knockback_time: float = 0.3
 
+var is_dead = false
+
 func _ready() -> void:
 	update_animation_parameters(starting_direciton)
 		
 
 func _physics_process(delta: float) -> void:
+	# If dead do not run the rest of movement code
+	if is_dead:
+		return
+		
 	# Sets timer to reset knockback
 	if (knockback != Vector2.ZERO && !is_knockbacked):
 		is_knockbacked = true
@@ -32,7 +38,7 @@ func _physics_process(delta: float) -> void:
 	var input_direction = Vector2.ZERO
 	
 	# If check to prevent player from moving after being knocked backed
-	if (!is_knockbacked):
+	if not is_dead and not is_knockbacked:
 		input_direction = Vector2(
 			Input.get_action_strength("right") - Input.get_action_strength("left"),
 			Input.get_action_strength("down") - Input.get_action_strength("up")
@@ -78,6 +84,7 @@ func take_damage(damage):
 	if new_health < 0:
 			light.texture_scale = 0
 			GameOverCanvas.game_over()
+			is_dead = true
 			print("you died :(")
 	else:
 		light.texture_scale = new_health
