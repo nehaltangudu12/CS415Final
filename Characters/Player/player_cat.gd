@@ -4,7 +4,7 @@ class_name Player
 
 @export var move_speed: float = 100
 @export var starting_direciton: Vector2 = Vector2(0, 1)
-@export var knockback_time: float = 0.3
+@export var interactable = null
 
 @onready var animation_tree = $AnimationTree
 @onready var light = $PointLight2D
@@ -16,8 +16,7 @@ var shrink_speed = 0.1  # adjust this to control speed
 
 var knockback = Vector2.ZERO
 var is_knockbacked: bool = false
-
-@export var interactable = null
+var knockback_time: float = 0.3
 
 func _ready() -> void:
 	update_animation_parameters(starting_direciton)
@@ -72,3 +71,13 @@ func _process(delta):
 		if light.texture_scale < 0.0:
 			GameOverCanvas.game_over()
 			print("you died :(")
+
+# Note: Damage MUST be between [0,1]
+func take_damage(damage):
+	var new_health = light.texture_scale - damage
+	if new_health < 0:
+			light.texture_scale = 0
+			GameOverCanvas.game_over()
+			print("you died :(")
+	else:
+		light.texture_scale = new_health
