@@ -10,6 +10,10 @@ enum COW_STATE { IDLE, WALK, CHASE }
 @export var chase_time: float = 3
 @export var target_to_chase: CharacterBody2D
 
+@export var knockback_strength: float = 100.0
+@export var CHASE_SPEED: float = 60.0
+@export var damage: float = 0.1
+
 @onready var animation_tree = $AnimationTree
 @onready var state_machine = animation_tree.get("parameters/playback")
 @onready var sprite = $Sprite2D
@@ -18,9 +22,6 @@ enum COW_STATE { IDLE, WALK, CHASE }
 
 var move_direction: Vector2 = Vector2.ZERO
 var current_state: COW_STATE = COW_STATE.IDLE
-var knockback_strength: float = 100.0
-
-const CHASE_SPEED = 60.0
 
 func _ready() -> void:
 	set_physics_process(false)
@@ -83,7 +84,6 @@ func _on_player_detector_body_entered(body: Node2D) -> void:
 
 func _on_hit_box_body_entered(body: Node2D) -> void:
 	if body is Player:
-		print("You got cheese touched")
+		body.take_damage(damage)
 		var direction = global_position.direction_to(body.global_position)
-		var explosion_force = direction * knockback_strength
-		body.knockback = explosion_force
+		body.get_knockbacked(direction, knockback_strength)
