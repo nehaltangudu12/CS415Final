@@ -707,7 +707,7 @@ script = ExtResource("24_pl1jo")
 blend_mode = 1
 
 [node name="Car" parent="." instance=ExtResource("27_0eo6c")]
-position = Vector2(607, 129)
+position = Vector2(583, 80)
 
 [connection signal="pressed" from="switchLevelButton/Button" to="." method="_on_button_pressed"]
 

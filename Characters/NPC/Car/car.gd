@@ -17,7 +17,7 @@ extends CharacterBody2D
 
 enum DIRECTION {LEFT, RIGHT, UP, DOWN}
 
-var direction: DIRECTION = DIRECTION.DOWN
+var car_direction: DIRECTION = DIRECTION.DOWN
 var move_direction: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
@@ -25,7 +25,7 @@ func _ready() -> void:
 	set_physics_process(true)
 
 func _set_direction():
-	match direction:
+	match car_direction:
 			DIRECTION.LEFT:
 				move_direction = Vector2.LEFT
 			DIRECTION.RIGHT:
@@ -57,8 +57,6 @@ func _physics_process(delta: float) -> void:
 
 func _on_hit_box_body_entered(body: Node2D) -> void:
 	if body is Player:
-		print("You got cheese touched")
 		body.take_damage(damage)
 		var direction = global_position.direction_to(body.global_position)
-		var explosion_force = direction * knockback_strength
-		body.knockback = explosion_force
+		body.get_knockbacked(direction, knockback_strength)

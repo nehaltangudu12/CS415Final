@@ -28,12 +28,6 @@ func _physics_process(delta: float) -> void:
 	# If dead do not run the rest of movement code
 	if is_dead:
 		return
-		
-	# Sets timer to reset knockback
-	if (knockback != Vector2.ZERO && !is_knockbacked):
-		is_knockbacked = true
-		timer.start(knockback_time)
-		
 	
 	var input_direction = Vector2.ZERO
 	
@@ -51,7 +45,6 @@ func _physics_process(delta: float) -> void:
 	
 	# Move and Slide function uses velocity of character body to move character on map
 	move_and_slide()
-	
 	pick_new_state()
 
 # Resets knockback
@@ -79,7 +72,8 @@ func _process(delta):
 			print("you died :(")
 
 # Note: Damage MUST be between [0,1]
-func take_damage(damage):
+func take_damage(damage: float):
+	print("You got cheese touched")
 	var new_health = light.texture_scale - damage
 	if new_health < 0:
 			light.texture_scale = 0
@@ -88,3 +82,10 @@ func take_damage(damage):
 			print("you died :(")
 	else:
 		light.texture_scale = new_health
+
+func get_knockbacked(direction: Vector2, strength: float):
+	var explosion_force = direction * strength
+	knockback = explosion_force
+	is_knockbacked = true
+	# Sets timer to reset knockback
+	timer.start(knockback_time)
