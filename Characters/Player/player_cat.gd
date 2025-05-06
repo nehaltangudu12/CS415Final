@@ -5,6 +5,7 @@ class_name Player
 @export var move_speed: float = 100
 @export var starting_direciton: Vector2 = Vector2(0, 1)
 @export var knockback_time: float = 0.3
+@export var shrink_speed = 0.1
 
 @onready var animation_tree = $AnimationTree
 @onready var light = $PointLight2D
@@ -12,7 +13,6 @@ class_name Player
 @onready var timer = $Timer
 
 # Lighting parameters
-var shrink_speed = 0.1  # adjust this to control speed
 
 var knockback = Vector2.ZERO
 var is_knockbacked: bool = false
