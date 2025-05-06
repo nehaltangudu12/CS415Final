@@ -3,7 +3,9 @@ extends CharacterBody2D
 @export var move_speed: float = 150
 @export var damage: float = 0.8
 @export var knockback_strength: float = 500.0
+@export var despawn_time: float = 5
 
+@onready var timer = $Timer
 
 @onready var horizontal_sprite = $HorizontalSprite
 @onready var up_sprite = $UpSprite
@@ -21,6 +23,8 @@ var car_direction: DIRECTION = DIRECTION.DOWN
 var move_direction: Vector2 = Vector2.ZERO
 
 func _ready() -> void:
+	# Set a timer to despawn car
+	timer.start(despawn_time)
 	_set_direction()
 	set_physics_process(true)
 
@@ -60,3 +64,7 @@ func _on_hit_box_body_entered(body: Node2D) -> void:
 		body.take_damage(damage)
 		var direction = global_position.direction_to(body.global_position)
 		body.get_knockbacked(direction, knockback_strength)
+
+
+func _on_timer_timeout() -> void:
+	queue_free()

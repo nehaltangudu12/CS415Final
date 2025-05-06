@@ -83,6 +83,13 @@ func take_damage(damage: float):
 	else:
 		light.texture_scale = new_health
 
+func gain_health(health: float):
+	print("Gained health")
+	var new_health = light.texture_scale + health
+	# Must be equal to or less than 1
+	new_health = min(new_health, 1)
+	light.texture_scale = new_health
+
 func get_knockbacked(direction: Vector2, strength: float):
 	var explosion_force = direction * strength
 	knockback = explosion_force

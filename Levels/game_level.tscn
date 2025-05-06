@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=4 uid="uid://b4t4wmqtf1wjm"]
+[gd_scene load_steps=44 format=4 uid="uid://b4t4wmqtf1wjm"]
 
 [ext_resource type="Script" uid="uid://sej1q3wjvr8u" path="res://Levels/game_level.gd" id="1_0ooie"]
 [ext_resource type="PackedScene" uid="uid://l6oecmvfr7a7" path="res://Characters/Player/player_cat.tscn" id="1_up8ek"]
@@ -26,7 +26,8 @@
 [ext_resource type="PackedScene" uid="uid://dmj8q8ibt2p47" path="res://World/ItemUseArea.tscn" id="19_sf1a6"]
 [ext_resource type="PackedScene" uid="uid://b0efnhlcoenlu" path="res://UI/PauseMenu/pause_menu.tscn" id="23_fct0e"]
 [ext_resource type="Script" uid="uid://712cacw6ayrk" path="res://Levels/button.gd" id="24_pl1jo"]
-[ext_resource type="PackedScene" uid="uid://cf8mfgyju77wt" path="res://Characters/NPC/Car/car.tscn" id="27_0eo6c"]
+[ext_resource type="PackedScene" uid="uid://ckys4pe8jtm5p" path="res://Characters/NPC/Car/spawn_car.tscn" id="28_08jf7"]
+[ext_resource type="PackedScene" uid="uid://bia6mho7tystw" path="res://Objects/Health/health.tscn" id="28_glhpp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_um5wi"]
 
@@ -706,8 +707,31 @@ script = ExtResource("24_pl1jo")
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 blend_mode = 1
 
-[node name="Car" parent="." instance=ExtResource("27_0eo6c")]
-position = Vector2(583, 80)
+[node name="Health" parent="." instance=ExtResource("28_glhpp")]
+position = Vector2(133, 319)
+
+[node name="Health2" parent="." instance=ExtResource("28_glhpp")]
+position = Vector2(499, 139)
+
+[node name="Health3" parent="." instance=ExtResource("28_glhpp")]
+position = Vector2(82, 178)
+
+[node name="Spawn Car" parent="." instance=ExtResource("28_08jf7")]
+position = Vector2(558, 68)
+car_direction = 0
+spawn_interval = 1.0
+
+[node name="Spawn Car2" parent="." instance=ExtResource("28_08jf7")]
+position = Vector2(185, 308)
+car_direction = 2
+spawn_interval = 3.0
+
+[node name="Spawn Car3" parent="." instance=ExtResource("28_08jf7")]
+position = Vector2(223, 326)
+
+[node name="Spawn Car4" parent="." instance=ExtResource("28_08jf7")]
+position = Vector2(611, 54)
+car_direction = 3
 
 [connection signal="pressed" from="switchLevelButton/Button" to="." method="_on_button_pressed"]
 
