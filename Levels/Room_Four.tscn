@@ -1105,7 +1105,7 @@ energy = 0.8
 blend_mode = 1
 
 [node name="BusDriver" type="Sprite2D" parent="."]
-position = Vector2(81, 193)
+position = Vector2(87, 191)
 texture = ExtResource("8_726c2")
 script = ExtResource("8_3h06v")
 
