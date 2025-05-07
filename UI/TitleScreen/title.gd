@@ -1,6 +1,4 @@
-extends Node
-
-var current_level
+extends Node2D
 
 @export var fade_out_speed: float = 1.0
 @export var fade_in_speed: float = 1.0
@@ -19,21 +17,24 @@ var current_level
 @onready var fade_in_options = SceneManager.create_options(fade_in_speed, fade_in_pattern, fade_in_smoothness, fade_in_inverted)
 @onready var general_options = SceneManager.create_general_options(color, timeout, clickable, add_to_back)
 
-func _ready() -> void:
-	SignalBus.SWAP_LEVELS.connect(handle_level_changed)
-	current_level = $Title
-	
-	# Start at the main menu
+@onready var box = $CanvasLayer/MainMenu
+
+func _ready():
+	pass
+
+func _on_new_game_button_down() -> void:
 	SceneManager.change_scene(
-		"Title",
+		"Room_One",
 		fade_in_options,
 		fade_out_options,
 		general_options,
 	)
-	
-func handle_level_changed(next_level_filepath: String):
-	var s = load(next_level_filepath)
-	var next_level = s.instantiate()
-	add_child(next_level)
-	current_level.queue_free()
-	current_level = next_level
+
+
+func _on_help_button_down() -> void:
+	SceneManager.change_scene(
+		"Help",
+		fade_in_options,
+		fade_out_options,
+		general_options,
+	)
