@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsyito3u5kcx3"]
+
+[ext_resource type="Script" uid="uid://ja8bv6ssnci2" path="res://UI/UserInput/user_input.gd" id="1_tmugr"]
+
+[node name="UserInput" type="Node2D"]
+script = ExtResource("1_tmugr")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LineEdit" type="LineEdit" parent="CanvasLayer"]
+offset_left = 236.0
+offset_top = 196.0
+offset_right = 407.0
+offset_bottom = 258.0
+alignment = 1

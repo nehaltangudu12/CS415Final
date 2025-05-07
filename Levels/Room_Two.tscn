@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://l8xtpy0co1om" path="res://Inventory/inv_menu.tscn" id="4_fakkh"]
 [ext_resource type="Resource" uid="uid://bia5i2p7vck5l" path="res://Inventory/myInv.tres" id="5_p0pjj"]
 [ext_resource type="Resource" uid="uid://bkv8184rupkau" path="res://Inventory/Items/empty.tres" id="6_g6qth"]
+[ext_resource type="PackedScene" uid="uid://cum3uhbgu6q8j" path="res://UI/DialogPlayer.tscn" id="7_fakkh"]
+[ext_resource type="PackedScene" uid="uid://dadbr7g4hva8u" path="res://Objects/PhoneBooth/PhoneBooth.tscn" id="8_p0pjj"]
+[ext_resource type="PackedScene" uid="uid://bym46dceki7o3" path="res://Levels/TransitionArea.tscn" id="10_xl4ak"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4can4"]
 texture = ExtResource("1_4can4")
@@ -1036,6 +1039,11 @@ texture = ExtResource("2_x7h8r")
 sources/0 = SubResource("TileSetAtlasSource_4can4")
 sources/1 = SubResource("TileSetAtlasSource_x7h8r")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p0pjj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xl4ak"]
+size = Vector2(51.25, 1.10345)
+
 [node name="RoomTwo" type="Node2D"]
 script = ExtResource("1_fakkh")
 
@@ -1076,8 +1084,9 @@ position = Vector2(-12, -7)
 tile_map_data = PackedByteArray("AAAFAAUAAQASABAAAAAFAAYAAQASABEAAAAGAAUAAQATABAAAAAGAAYAAQATABEAAAA=")
 tile_set = SubResource("TileSet_tf58o")
 
-[node name="PlayerCat" parent="." instance=ExtResource("3_tf58o")]
-position = Vector2(39, 62)
+[node name="PlayerCat" parent="." instance=ExtResource("3_x7h8r")]
+position = Vector2(40, 59)
+shrink_speed = 0.001
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PlayerCat"]
 remote_path = NodePath("../../Camera2D")
@@ -1095,8 +1104,37 @@ offset_top = -152.0
 offset_right = -157.0
 offset_bottom = -152.0
 inv = ExtResource("5_p0pjj")
-emptyObj = ExtResource("6_g6qth")
+emptyObj = ExtResource("6_p0pjj")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 energy = 0.8
 blend_mode = 1
+
+[node name="DialogPlayer" parent="." instance=ExtResource("7_fakkh")]
+
+[node name="PhoneBooth" parent="." instance=ExtResource("8_p0pjj")]
+
+[node name="CollisionShape2D" parent="PhoneBooth/Area2D" index="0"]
+position = Vector2(301, 51)
+shape = SubResource("RectangleShape2D_p0pjj")
+
+[node name="LineEdit" parent="PhoneBooth/Area2D/UserInput/CanvasLayer" index="0"]
+offset_left = 214.0
+offset_top = 154.0
+offset_right = 385.0
+offset_bottom = 216.0
+
+[node name="Sprite2D" parent="PhoneBooth" index="1"]
+position = Vector2(300, 50)
+
+[node name="TransitionArea" parent="." instance=ExtResource("10_xl4ak")]
+text_key = "game_level"
+
+[node name="CollisionShape2D" parent="TransitionArea" index="0"]
+position = Vector2(-16.875, -11.2069)
+shape = SubResource("RectangleShape2D_xl4ak")
+
+[editable path="PlayerCat"]
+[editable path="PhoneBooth"]
+[editable path="PhoneBooth/Area2D/UserInput"]
+[editable path="TransitionArea"]

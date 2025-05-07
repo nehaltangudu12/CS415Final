@@ -26,3 +26,6 @@ unique_name_in_owner = true
 [editable path="RoomOne/Bartender/DialogArea"]
 [editable path="RoomOne/TransitionArea"]
 [editable path="RoomTwo"]
+[editable path="RoomTwo/PlayerCat"]
+[editable path="RoomTwo/PhoneBooth"]
+[editable path="RoomTwo/PhoneBooth/Area2D/UserInput"]

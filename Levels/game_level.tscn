@@ -28,6 +28,7 @@
 [ext_resource type="Script" uid="uid://712cacw6ayrk" path="res://Levels/button.gd" id="24_pl1jo"]
 [ext_resource type="PackedScene" uid="uid://ckys4pe8jtm5p" path="res://Characters/NPC/Car/spawn_car.tscn" id="28_08jf7"]
 [ext_resource type="PackedScene" uid="uid://bia6mho7tystw" path="res://Objects/Health/health.tscn" id="28_glhpp"]
+[ext_resource type="PackedScene" uid="uid://dadbr7g4hva8u" path="res://Objects/PhoneBooth/PhoneBooth.tscn" id="27_0eo6c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_um5wi"]
 
@@ -589,6 +590,8 @@ vertices = PackedVector2Array(537.641, 283.25, 160, 292.742, 160, 88.8438, 530.3
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(150, 79, 540, 73, 548, 293, 150, 303)])
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0eo6c"]
+
 [node name="GameLevel" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_0ooie")
@@ -638,6 +641,7 @@ inv = ExtResource("15_jw0rm")
 emptyObj = ExtResource("17_wri67")
 
 [node name="Cow" parent="." instance=ExtResource("13_ds5vk")]
+position = Vector2(-49, 34)
 
 [node name="Cow2" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("13_ds5vk")]
 position = Vector2(277, 218)
@@ -732,8 +736,30 @@ position = Vector2(223, 326)
 [node name="Spawn Car4" parent="." instance=ExtResource("28_08jf7")]
 position = Vector2(611, 54)
 car_direction = 3
+[node name="PhoneBooth" parent="." instance=ExtResource("27_0eo6c")]
+
+[node name="CollisionShape2D" parent="PhoneBooth/Area2D" index="0"]
+position = Vector2(464, 310)
+shape = SubResource("RectangleShape2D_0eo6c")
+
+[node name="RichTextLabel" parent="PhoneBooth/Area2D/CanvasLayer" index="0"]
+offset_left = 182.0
+offset_top = 239.0
+offset_right = 222.0
+offset_bottom = 279.0
+
+[node name="LineEdit" parent="PhoneBooth/Area2D/UserInput/CanvasLayer" index="0"]
+offset_left = 315.0
+offset_top = 280.0
+offset_right = 438.0
+offset_bottom = 318.0
+
+[node name="Sprite2D" parent="PhoneBooth" index="1"]
+position = Vector2(463, 309)
 
 [connection signal="pressed" from="switchLevelButton/Button" to="." method="_on_button_pressed"]
 
 [editable path="Chest/DialogAreaChest1"]
 [editable path="DialogPlayer"]
+[editable path="PhoneBooth"]
+[editable path="PhoneBooth/Area2D/UserInput"]
