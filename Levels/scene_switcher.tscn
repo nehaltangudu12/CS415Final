@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b4t4wmqtf1wjm" path="res://Levels/game_level.tscn" id="2_otmaw"]
 [ext_resource type="PackedScene" uid="uid://gfyeg7ece47w" path="res://Levels/Room_One.tscn" id="3_bs623"]
 [ext_resource type="PackedScene" uid="uid://fmdf1j2goin1" path="res://Levels/Room_Two.tscn" id="4_e54a5"]
-[ext_resource type="PackedScene" path="res://Levels/Room_Three.tscn" id="4_q18r2"]
+[ext_resource type="PackedScene" uid="uid://c1q2xp6o1acx6" path="res://Levels/Room_Three.tscn" id="4_q18r2"]
 [ext_resource type="PackedScene" uid="uid://blh1b4f3kcsg4" path="res://Levels/Room_Four.tscn" id="5_q18r2"]
 
 [node name="SceneSwitcher" type="Node"]

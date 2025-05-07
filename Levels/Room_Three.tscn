@@ -1,6 +1,6 @@
-[gd_scene load_steps=13 format=4 uid="uid://c1q2xp6o1acx6"]
+[gd_scene load_steps=18 format=4 uid="uid://c1q2xp6o1acx6"]
 
-[ext_resource type="Script" path="res://Levels/room_three.gd" id="1_ius1t"]
+[ext_resource type="Script" uid="uid://bjagsxh1opbop" path="res://Levels/room_three.gd" id="1_ius1t"]
 [ext_resource type="Texture2D" uid="uid://dj0rpl3lmfvso" path="res://Assets/kenney_rpg-urban-pack/Tilemap/tilemap.png" id="2_do05b"]
 [ext_resource type="Texture2D" uid="uid://b5i5vnao4jj4e" path="res://Assets/kenney_rpg-urban-pack/Tilemap/tilemap_packed.png" id="3_t8u00"]
 [ext_resource type="Texture2D" uid="uid://bos7wqi4dipxf" path="res://Assets/Top-Down_Retro_Interior/TopDownHouse_DoorsAndWindows.png" id="4_do05b"]
@@ -8,6 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://l8xtpy0co1om" path="res://Inventory/inv_menu.tscn" id="5_qayah"]
 [ext_resource type="Resource" uid="uid://bia5i2p7vck5l" path="res://Inventory/myInv.tres" id="6_4662p"]
 [ext_resource type="Resource" uid="uid://bkv8184rupkau" path="res://Inventory/Items/empty.tres" id="7_nlcyj"]
+[ext_resource type="PackedScene" uid="uid://ckys4pe8jtm5p" path="res://Characters/NPC/Car/spawn_car.tscn" id="9_khx3j"]
+[ext_resource type="PackedScene" uid="uid://bia6mho7tystw" path="res://Objects/Health/health.tscn" id="10_qayah"]
+[ext_resource type="PackedScene" uid="uid://cf8mfgyju77wt" path="res://Characters/NPC/Car/car.tscn" id="11_qayah"]
+[ext_resource type="PackedScene" uid="uid://bym46dceki7o3" path="res://Levels/TransitionArea.tscn" id="12_4662p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4can4"]
 texture = ExtResource("2_do05b")
@@ -1286,6 +1290,9 @@ sources/0 = SubResource("TileSetAtlasSource_4can4")
 sources/1 = SubResource("TileSetAtlasSource_x7h8r")
 sources/2 = SubResource("TileSetAtlasSource_t8u00")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlcyj"]
+size = Vector2(15.9167, 1.03448)
+
 [node name="RoomThree" type="Node2D"]
 script = ExtResource("1_ius1t")
 
@@ -1323,11 +1330,11 @@ tile_set = SubResource("TileSet_tf58o")
 
 [node name="Trees + Environmental" type="TileMapLayer" parent="Grass + Deco"]
 position = Vector2(0, 8)
-tile_map_data = PackedByteArray("AAABAAoAAQAFAAkAAAACAAoAAQAWAAoAAAAXAAoAAQAWAAoAAAAWAAoAAQAWAAkAAAAQAA4AAQAWAAkAAAAFAA4AAQAWAAkAAAAFABUAAQAWAAkAAAAIABUAAQAWAAkAAAAWABUAAQAWAAkAAAAMAAoAAQAWAAkAAAALAAoAAQAWAAgAAAAFAAoAAQAWAAgAAAAPAAoAAQAWAAgAAAASAAoAAQAWAAgAAAAUAA4AAQAWAAgAAAAVAA4AAQAWAAgAAAAGAA4AAQAWAAgAAAABAA4AAQAWAAgAAAACAA4AAQAWAAoAAAAMAA4AAQAWAAoAAAALABUAAQAWAAoAAAAMABUAAQAWAAgAAAATABUAAQAWAAgAAAABABUAAQAWAAgAAAADABkAAQAWAAgAAAAKABkAAQAWAAgAAAAMABkAAQAWAAgAAAAPABkAAQAWAAkAAAAVABkAAQAWAAkAAAAUAB0AAQAWAAkAAAAOAB0AAQAWAAkAAAADAB0AAQAWAAkAAAAAAB0AAQAWAAkAAAAEACEAAQAWAAoAAAACACEAAQAWAAoAAAAUACEAAQAWAAkAAAARACEAAQAWAAkAAAAIAA4AAQAWAAkAAAAJAAoAAQAWAAkAAAAIAAoAAQAWAAgAAAAVAAoAAQAVAAoAAAAQAAoAAQAVAAoAAAAAAAoAAQAVAAoAAAADAAoAAQAGAAgAAAATAAoAAQAGAAgAAAAKAAoAAQAFAAgAAAAHAAoAAQAFAAgAAAARAAoAAQAFAAgAAAAAAA4AAQAGAAkAAAAJAA4AAQAGAAkAAAAQABUAAQAGAAkAAAALAA4AAQAFAAkAAAATAA4AAQAFAAkAAAAPAA4AAQAFAAkAAAAOABUAAQAFAAkAAAANABkAAQAGAAgAAAARABkAAQAGAAgAAAAEAA4AAQAGAAgAAAANAAoAAQAHAAkAAAASAA4AAQAHAAkAAAAHABUAAQAHAAkAAAADABUAAQALAAkAAAANABUAAQALAAkAAAAXABUAAQALAAkAAAARABUAAQAKAAkAAAAOAAoAAQAKAAkAAAAXAA4AAQAIAAkAAAARAA4AAQAIAAkAAAADAA4AAQAIAAoAAAAEABUAAQAEAAsAAAAAAAMAAQARAAkAAAAIAAMAAQARAAkAAAAJAAMAAQAWAAoAAAAEAAMAAQAWAAoAAAADAAMAAQAWAAkAAAABAAMAAQAWAAkAAAATAAMAAQAWAAkAAAARAAMAAQAWAAkAAAASAAMAAQAWAAgAAAAWAAMAAQAWAAgAAAAOAAMAAQAWAAgAAAAQAAMAAQARAAkAAAAPAAMAAQAQAAkAAAACAAMAAQAKAAsAAAAKAAMAAQAJAAkAAAALAAMAAQAKAAkAAAAFAAMAAQAFAAgAAAANAAMAAQAFAAgAAAAGAAMAAQAFAAgAAAAHAAMAAQAFAAgAAAAXAAMAAQALAAkAAAAUAAMAAQAKAAkAAAAVAAMAAQAWAAoAAAA=")
+tile_map_data = PackedByteArray("AAABAAoAAQAFAAkAAAACAAoAAQAWAAoAAAAXAAoAAQAWAAoAAAAWAAoAAQAWAAkAAAAQAA4AAQAWAAkAAAAFAA4AAQAWAAkAAAAFABUAAQAWAAkAAAAIABUAAQAWAAkAAAAWABUAAQAWAAkAAAAMAAoAAQAWAAkAAAALAAoAAQAWAAgAAAAFAAoAAQAWAAgAAAASAAoAAQAWAAgAAAAUAA4AAQAWAAgAAAABAA4AAQAWAAgAAAACAA4AAQAWAAoAAAAMAA4AAQAWAAoAAAALABUAAQAWAAoAAAAMABUAAQAWAAgAAAATABUAAQAWAAgAAAABABUAAQAWAAgAAAADABkAAQAWAAgAAAAKABkAAQAWAAgAAAAPABkAAQAWAAkAAAAVABkAAQAWAAkAAAAUAB0AAQAWAAkAAAAOAB0AAQAWAAkAAAADAB0AAQAWAAkAAAAAAB0AAQAWAAkAAAAEACEAAQAWAAoAAAACACEAAQAWAAoAAAAUACEAAQAWAAkAAAARACEAAQAWAAkAAAAIAA4AAQAWAAkAAAAJAAoAAQAWAAkAAAAIAAoAAQAWAAgAAAAQAAoAAQAVAAoAAAAAAAoAAQAVAAoAAAADAAoAAQAGAAgAAAATAAoAAQAGAAgAAAAKAAoAAQAFAAgAAAARAAoAAQAFAAgAAAAAAA4AAQAGAAkAAAAQABUAAQAGAAkAAAALAA4AAQAFAAkAAAATAA4AAQAFAAkAAAAOABUAAQAFAAkAAAANABkAAQAGAAgAAAARABkAAQAGAAgAAAAEAA4AAQAGAAgAAAANAAoAAQAHAAkAAAASAA4AAQAHAAkAAAANABUAAQALAAkAAAAXABUAAQALAAkAAAARABUAAQAKAAkAAAAOAAoAAQAKAAkAAAAXAA4AAQAIAAkAAAARAA4AAQAIAAkAAAADAA4AAQAIAAoAAAAEABUAAQAEAAsAAAAAAAMAAQARAAkAAAAIAAMAAQARAAkAAAAJAAMAAQAWAAoAAAAEAAMAAQAWAAoAAAADAAMAAQAWAAkAAAABAAMAAQAWAAkAAAATAAMAAQAWAAkAAAARAAMAAQAWAAkAAAASAAMAAQAWAAgAAAAWAAMAAQAWAAgAAAAOAAMAAQAWAAgAAAAQAAMAAQARAAkAAAAPAAMAAQAQAAkAAAACAAMAAQAKAAsAAAAKAAMAAQAJAAkAAAAFAAMAAQAFAAgAAAANAAMAAQAFAAgAAAAGAAMAAQAFAAgAAAAHAAMAAQAFAAgAAAAXAAMAAQALAAkAAAAUAAMAAQAKAAkAAAAVAAMAAQAWAAoAAAAPAAoAAQAWAAgAAAA=")
 tile_set = SubResource("TileSet_tf58o")
 
 [node name="PlayerCat" parent="." instance=ExtResource("4_khx3j")]
-position = Vector2(39, 62)
+position = Vector2(198, 14)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PlayerCat"]
 remote_path = NodePath("../../Camera2D")
@@ -1341,7 +1348,7 @@ tile_map_data = PackedByteArray("AAAAAAEAAQARAAgAAAAIAAEAAQARAAgAAAAQAAEAAQARAAg
 tile_set = SubResource("TileSet_tf58o")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(39, 62)
+position = Vector2(198, 14)
 
 [node name="InvMenu" parent="Camera2D" instance=ExtResource("5_qayah")]
 offset_left = -157.0
@@ -1352,10 +1359,193 @@ inv = ExtResource("6_4662p")
 emptyObj = ExtResource("7_nlcyj")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-visible = false
-energy = 0.8
 blend_mode = 1
 
 [node name="Border (Collision)" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAD//wAAAgAFAAAAAAD//wEAAgAFAAAAAAD//wIAAgAFAAAAAAD//wMAAgAFAAAAAAD//wQAAgAFAAAAAAD//wUAAgAFAAAAAAD//wYAAgAFAAAAAAD//wcAAgAFAAAAAAD//wgAAgAFAAAAAAD//wkAAgAFAAAAAAD//woAAgAFAAAAAAD//wsAAgAFAAAAAAD//wwAAgAFAAAAAAD//w0AAgAFAAAAAAD//w4AAgAFAAAAAAD//w8AAgAFAAAAAAD//xAAAgAFAAAAAAD//xEAAgAFAAAAAAD//xIAAgAFAAAAAAD//xMAAgAFAAAAAAD//xQAAgAFAAAAAAD//xUAAgAFAAAAAAD//xYAAgAFAAAAAAD//xcAAgAFAAAAAAD//xgAAgAFAAAAAAD//xkAAgAFAAAAAAD//xoAAgAFAAAAAAD//xsAAgAFAAAAAAD//xwAAgAFAAAAAAD//x0AAgAFAAAAAAD//x4AAgAFAAAAAAD//x8AAgAFAAAAAAD//yAAAgAFAAAAAAD//yEAAgAFAAAAAAD//yIAAgAFAAAAAAD//yMAAgAFAAAAAAAAACMAAgAFAAAAAAABACMAAgAFAAAAAAACACMAAgAFAAAAAAADACMAAgAFAAAAAAAEACMAAgAFAAAAAAAEACQAAgAFAAAAAAAFACQAAgAFAAAAAAAFACMAAgAFAAAAAAAGACMAAgAFAAAAAAAHACMAAgAFAAAAAAAIACMAAgAFAAAAAAAJACMAAgAFAAAAAAAKACMAAgAFAAAAAAALACMAAgAFAAAAAAAMACMAAgAFAAAAAAANACMAAgAFAAAAAAAOACMAAgAFAAAAAAAPACMAAgAFAAAAAAAQACMAAgAFAAAAAAARACMAAgAFAAAAAAASACMAAgAFAAAAAAATACMAAgAFAAAAAAAUACMAAgAFAAAAAAAVACMAAgAFAAAAAAAWACMAAgAFAAAAAAAXACMAAgAFAAAAAAAYACMAAgAFAAAAAAAYACIAAgAFAAAAAAAYACEAAgAFAAAAAAAYACAAAgAFAAAAAAAYAB8AAgAFAAAAAAAYAB4AAgAFAAAAAAAYAB0AAgAFAAAAAAAYABwAAgAFAAAAAAAYABsAAgAFAAAAAAAYABoAAgAFAAAAAAAYABkAAgAFAAAAAAAYABgAAgAFAAAAAAAYABcAAgAFAAAAAAAYABYAAgAFAAAAAAAYABUAAgAFAAAAAAAYABQAAgAFAAAAAAAYABMAAgAFAAAAAAAYABIAAgAFAAAAAAAYABEAAgAFAAAAAAAYABAAAgAFAAAAAAAYAA8AAgAFAAAAAAAYAA4AAgAFAAAAAAAYAA0AAgAFAAAAAAAYAAwAAgAFAAAAAAAYAAsAAgAFAAAAAAAYAAoAAgAFAAAAAAAYAAkAAgAFAAAAAAAYAAgAAgAFAAAAAAAYAAcAAgAFAAAAAAAYAAYAAgAFAAAAAAAYAAUAAgAFAAAAAAAYAAQAAgAFAAAAAAAYAAMAAgAFAAAAAAAYAAIAAgAFAAAAAAAYAAEAAgAFAAAAAAAYAAAAAgAFAAAAAAAYAP//AgAFAAAAAAASAP//AgAFAAAAAAATAP//AgAFAAAAAAAUAP//AgAFAAAAAAAVAP//AgAFAAAAAAAWAP//AgAFAAAAAAAXAP//AgAFAAAAAAALAP//AgAFAAAAAAAMAP//AgAFAAAAAAANAP//AgAFAAAAAAAOAP//AgAFAAAAAAAPAP//AgAFAAAAAAAQAP//AgAFAAAAAAARAP//AgAFAAAAAAAEAP//AgAFAAAAAAAFAP//AgAFAAAAAAAGAP//AgAFAAAAAAAHAP//AgAFAAAAAAAIAP//AgAFAAAAAAAJAP//AgAFAAAAAAAKAP//AgAFAAAAAAAAAP//AgAFAAAAAAABAP//AgAFAAAAAAACAP//AgAFAAAAAAADAP//AgAFAAAAAAD/////AgAFAAAAAAA=")
 tile_set = SubResource("TileSet_tf58o")
+
+[node name="Spawn Car" parent="." instance=ExtResource("9_khx3j")]
+position = Vector2(392, 62)
+car_direction = 0
+spawn_interval = 3.0
+
+[node name="Spawn Car2" parent="." instance=ExtResource("9_khx3j")]
+position = Vector2(-11, 175)
+spawn_interval = 4.0
+
+[node name="Spawn Car3" parent="." instance=ExtResource("9_khx3j")]
+position = Vector2(394, 197)
+car_direction = 0
+spawn_interval = 5.0
+
+[node name="Spawn Car4" parent="." instance=ExtResource("9_khx3j")]
+position = Vector2(448, 85)
+car_direction = 0
+
+[node name="Spawn Car5" parent="." instance=ExtResource("9_khx3j")]
+position = Vector2(394, 109)
+car_direction = 0
+spawn_interval = 3.0
+
+[node name="Spawn Car6" parent="." instance=ExtResource("9_khx3j")]
+position = Vector2(430, 134)
+car_direction = 0
+spawn_interval = 4.0
+
+[node name="Health" parent="." instance=ExtResource("10_qayah")]
+position = Vector2(197, 37)
+
+[node name="Health2" parent="." instance=ExtResource("10_qayah")]
+position = Vector2(72, 151)
+
+[node name="Health3" parent="." instance=ExtResource("10_qayah")]
+position = Vector2(101, 151)
+
+[node name="Health4" parent="." instance=ExtResource("10_qayah")]
+position = Vector2(331, 154)
+
+[node name="Health5" parent="." instance=ExtResource("10_qayah")]
+position = Vector2(121, 219)
+
+[node name="Health6" parent="." instance=ExtResource("10_qayah")]
+position = Vector2(169, 217)
+
+[node name="Health7" parent="." instance=ExtResource("10_qayah")]
+position = Vector2(226, 218)
+
+[node name="Health8" parent="." instance=ExtResource("10_qayah")]
+position = Vector2(361, 216)
+
+[node name="Health9" parent="." instance=ExtResource("10_qayah")]
+position = Vector2(40, 327)
+
+[node name="Health11" parent="." instance=ExtResource("10_qayah")]
+position = Vector2(103, 327)
+
+[node name="Health12" parent="." instance=ExtResource("10_qayah")]
+position = Vector2(168, 327)
+
+[node name="Health13" parent="." instance=ExtResource("10_qayah")]
+position = Vector2(249, 327)
+
+[node name="Health14" parent="." instance=ExtResource("10_qayah")]
+position = Vector2(297, 328)
+
+[node name="Health15" parent="." instance=ExtResource("10_qayah")]
+position = Vector2(344, 330)
+
+[node name="Health16" parent="." instance=ExtResource("10_qayah")]
+position = Vector2(234, 389)
+
+[node name="Health17" parent="." instance=ExtResource("10_qayah")]
+position = Vector2(263, 390)
+
+[node name="Health18" parent="." instance=ExtResource("10_qayah")]
+position = Vector2(370, 391)
+
+[node name="Health19" parent="." instance=ExtResource("10_qayah")]
+position = Vector2(36, 393)
+
+[node name="Health20" parent="." instance=ExtResource("10_qayah")]
+position = Vector2(184, 391)
+
+[node name="Health21" parent="." instance=ExtResource("10_qayah")]
+position = Vector2(127, 393)
+
+[node name="Health22" parent="." instance=ExtResource("10_qayah")]
+position = Vector2(313, 392)
+
+[node name="Health23" parent="." instance=ExtResource("10_qayah")]
+position = Vector2(34, 456)
+
+[node name="Health24" parent="." instance=ExtResource("10_qayah")]
+position = Vector2(255, 453)
+
+[node name="Health25" parent="." instance=ExtResource("10_qayah")]
+position = Vector2(95, 455)
+
+[node name="Health26" parent="." instance=ExtResource("10_qayah")]
+position = Vector2(180, 456)
+
+[node name="Health27" parent="." instance=ExtResource("10_qayah")]
+position = Vector2(352, 454)
+
+[node name="Health28" parent="." instance=ExtResource("10_qayah")]
+position = Vector2(55, 521)
+
+[node name="Health29" parent="." instance=ExtResource("10_qayah")]
+position = Vector2(302, 520)
+
+[node name="Health30" parent="." instance=ExtResource("10_qayah")]
+position = Vector2(215, 521)
+
+[node name="Health31" parent="." instance=ExtResource("10_qayah")]
+position = Vector2(134, 522)
+
+[node name="Health32" parent="." instance=ExtResource("10_qayah")]
+position = Vector2(370, 520)
+
+[node name="Spawn Car7" parent="." instance=ExtResource("9_khx3j")]
+position = Vector2(-10, 236)
+spawn_interval = 3.0
+
+[node name="Spawn Car8" parent="." instance=ExtResource("9_khx3j")]
+position = Vector2(408, 259)
+car_direction = 0
+
+[node name="Spawn Car9" parent="." instance=ExtResource("9_khx3j")]
+position = Vector2(-40, 284)
+
+[node name="Spawn Car10" parent="." instance=ExtResource("9_khx3j")]
+position = Vector2(419, 304)
+car_direction = 0
+spawn_interval = 3.0
+
+[node name="Spawn Car11" parent="." instance=ExtResource("9_khx3j")]
+position = Vector2(-9, 347)
+
+[node name="Spawn Car12" parent="." instance=ExtResource("9_khx3j")]
+position = Vector2(-10, 371)
+spawn_interval = 3.0
+
+[node name="Spawn Car13" parent="." instance=ExtResource("9_khx3j")]
+position = Vector2(395, 412)
+car_direction = 0
+
+[node name="Spawn Car14" parent="." instance=ExtResource("9_khx3j")]
+position = Vector2(-9, 436)
+spawn_interval = 1.0
+
+[node name="Spawn Car15" parent="." instance=ExtResource("9_khx3j")]
+position = Vector2(393, 476)
+car_direction = 0
+
+[node name="Spawn Car16" parent="." instance=ExtResource("9_khx3j")]
+position = Vector2(453, 499)
+car_direction = 0
+spawn_interval = 1.0
+
+[node name="Car" parent="." instance=ExtResource("11_qayah")]
+position = Vector2(302, 61)
+car_direction = 0
+
+[node name="Car2" parent="." instance=ExtResource("11_qayah")]
+position = Vector2(104, 85)
+car_direction = 0
+
+[node name="Car3" parent="." instance=ExtResource("11_qayah")]
+position = Vector2(235, 128)
+car_direction = 0
+
+[node name="Car4" parent="." instance=ExtResource("11_qayah")]
+position = Vector2(206, 193)
+car_direction = 0
+
+[node name="TransitionArea" parent="." instance=ExtResource("12_4662p")]
+position = Vector2(266, 702)
+text_key = "Room_Four"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TransitionArea"]
+position = Vector2(2.95833, 5.48276)
+shape = SubResource("RectangleShape2D_nlcyj")

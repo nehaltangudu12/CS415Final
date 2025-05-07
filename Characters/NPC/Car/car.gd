@@ -1,9 +1,6 @@
 extends CharacterBody2D
 
-@export var move_speed: float = 150
-@export var damage: float = 0.8
-@export var knockback_strength: float = 500.0
-@export var despawn_time: float = 5
+@export var car_direction: DIRECTION = DIRECTION.DOWN
 
 @onready var timer = $Timer
 
@@ -19,8 +16,11 @@ extends CharacterBody2D
 
 enum DIRECTION {LEFT, RIGHT, UP, DOWN}
 
-var car_direction: DIRECTION = DIRECTION.DOWN
 var move_direction: Vector2 = Vector2.ZERO
+var move_speed: float = 150
+var damage: float = 0.8
+var knockback_strength: float = 500.0
+var despawn_time: float = 5
 
 func _ready() -> void:
 	# Set a timer to despawn car

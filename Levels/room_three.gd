@@ -10,9 +10,9 @@ var paused = false
 
 func _ready():
 	SignalBus.open_inventory.connect(pauseMenu)
-	player.shrink_speed = 0.01
+	player.shrink_speed = 0.08
 	var light = player.get_node("PointLight2D")
-	light.energy = 0.5
+	transition_area.set_can_use(true)
 
 # Catching inputs for interaction and inventory
 func _input(event):
