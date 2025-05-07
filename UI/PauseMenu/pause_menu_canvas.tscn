@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://b86chorkm4eqo"]
+
+[ext_resource type="PackedScene" uid="uid://b0efnhlcoenlu" path="res://UI/PauseMenu/pause_menu.tscn" id="1_roqsk"]
+
+[node name="PauseMenuCanvas" type="CanvasLayer"]
+scale = Vector2(0.5, 0.5)
+transform = Transform2D(0.5, 0, 0, 0.5, 0, 0)
+
+[node name="PauseMenu" parent="." instance=ExtResource("1_roqsk")]
+anchors_preset = 15
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+scale = Vector2(0.5, 0.5)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[editable path="PauseMenu"]

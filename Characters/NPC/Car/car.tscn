@@ -1,0 +1,93 @@
+[gd_scene load_steps=11 format=3 uid="uid://cf8mfgyju77wt"]
+
+[ext_resource type="Script" uid="uid://us3ntw6oppp1" path="res://Characters/NPC/Car/car.gd" id="1_jb50f"]
+[ext_resource type="Texture2D" uid="uid://c4een2865isb7" path="res://Assets/kenney_rpg-urban-pack/Sprites/car_left.png" id="2_7bdip"]
+[ext_resource type="Texture2D" uid="uid://dtjk4r54pl6qx" path="res://Assets/kenney_rpg-urban-pack/Sprites/car_up.png" id="3_45164"]
+[ext_resource type="Texture2D" uid="uid://1tq3d7cani3x" path="res://Assets/kenney_rpg-urban-pack/Sprites/car_down.png" id="4_pi2we"]
+
+[sub_resource type="Gradient" id="Gradient_6pi37"]
+offsets = PackedFloat32Array(0, 0.154321, 0.462963, 0.87037)
+colors = PackedColorArray(1, 1, 1, 1, 0.740741, 0.740741, 0.740741, 1, 0.146751, 0.146751, 0.146751, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jb50f"]
+gradient = SubResource("Gradient_6pi37")
+fill = 1
+fill_from = Vector2(1, 0.509971)
+fill_to = Vector2(0, 0.470085)
+
+[sub_resource type="Gradient" id="Gradient_mn6i6"]
+offsets = PackedFloat32Array(0.438272, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vf82s"]
+gradient = SubResource("Gradient_mn6i6")
+fill = 1
+fill_from = Vector2(0.48433, 0.487179)
+fill_to = Vector2(1, 0.481481)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6pi37"]
+size = Vector2(20.5659, 14.7061)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jb50f"]
+size = Vector2(16, 15)
+
+[node name="Car" type="CharacterBody2D"]
+collision_layer = 16
+collision_mask = 4
+script = ExtResource("1_jb50f")
+
+[node name="HorizontalSprite" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+texture = ExtResource("2_7bdip")
+
+[node name="HorizontalHeadLight" type="PointLight2D" parent="."]
+position = Vector2(-161.5, -0.999999)
+scale = Vector2(5.04688, 0.5625)
+color = Color(1, 0.840348, 0.530174, 1)
+texture = SubResource("GradientTexture2D_jb50f")
+
+[node name="VerticallHeadLight" type="PointLight2D" parent="."]
+visible = false
+position = Vector2(1.00002, 172)
+rotation = -1.57079
+scale = Vector2(5.04688, 0.5625)
+color = Color(1, 0.840348, 0.530174, 1)
+texture = SubResource("GradientTexture2D_jb50f")
+
+[node name="SurroundingLight" type="PointLight2D" parent="."]
+position = Vector2(0, -1)
+scale = Vector2(0.558594, 0.558594)
+texture = SubResource("GradientTexture2D_vf82s")
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 12
+
+[node name="HorizontalCollision" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(-4, 2)
+scale = Vector2(1.50735, 1.17298)
+shape = SubResource("RectangleShape2D_6pi37")
+
+[node name="VerticalCollision" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(0, 4)
+rotation = -1.57079
+scale = Vector2(1.50735, 1.17298)
+shape = SubResource("RectangleShape2D_6pi37")
+disabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_jb50f")
+
+[node name="UpSprite" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_45164")
+
+[node name="DownSprite" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("4_pi2we")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -8,6 +8,7 @@ func pause():
 	$AnimationPlayer.play("blur")
 
 func _input(key):
+	print("Hello")
 	if key is InputEventKey:
 		if key.keycode == KEY_ESCAPE:
 			self.visible = true

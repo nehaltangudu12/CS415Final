@@ -1,13 +1,85 @@
-[gd_scene load_steps=3 format=3 uid="uid://4c17iu1c58rh"]
+[gd_scene load_steps=4 format=3 uid="uid://4c17iu1c58rh"]
 
-[ext_resource type="PackedScene" uid="uid://co0v0co1afgom" path="res://UI/GameOver/game_over.tscn" id="1_igy2w"]
 [ext_resource type="Script" uid="uid://bbb3v5rwfxajx" path="res://UI/GameOver/game_over_canvas.gd" id="1_y2dp4"]
+[ext_resource type="PackedScene" uid="uid://cghg6brvvecmj" path="res://UI/GameOver/game_over_core.tscn" id="2_r867j"]
+[ext_resource type="Script" uid="uid://bydmn4gduugpu" path="res://UI/GameOver/game_over_core.gd" id="3_twr2p"]
 
 [node name="GameOverCanvas" type="CanvasLayer"]
 scale = Vector2(0.2, 0.2)
 transform = Transform2D(0.2, 0, 0, 0.2, 0, 0)
 script = ExtResource("1_y2dp4")
 
-[node name="GameOverMenu" parent="." instance=ExtResource("1_igy2w")]
+[node name="GameOverCore" parent="." instance=ExtResource("2_r867j")]
+anchors_preset = -1
+anchor_right = 1.648
+anchor_bottom = 1.949
+offset_left = -35.0
+offset_top = -65.0
+offset_right = 3647.2
+offset_bottom = 1922.05
+script = ExtResource("3_twr2p")
 
-[editable path="GameOverMenu"]
+[node name="ColorRect" parent="GameOverCore" index="0"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.034
+anchor_top = 0.026
+anchor_right = 1.442
+anchor_bottom = 1.557
+offset_left = -151.83
+offset_top = -24.5
+offset_right = -438.79
+offset_bottom = -770.25
+
+[node name="Label" parent="GameOverCore" index="1"]
+anchor_left = 0.219
+anchor_top = 0.089
+anchor_right = 0.352
+anchor_bottom = 0.17
+offset_left = -328.405
+offset_top = 0.749817
+offset_right = -66.2401
+offset_bottom = 162.5
+scale = Vector2(2, 2)
+
+[node name="Label2" parent="GameOverCore" index="2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.237
+anchor_top = 0.246
+anchor_right = 0.368
+anchor_bottom = 0.366
+offset_left = -152.315
+offset_top = 95.4995
+offset_right = 122.84
+offset_bottom = -1.50085
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+
+[node name="YES" parent="GameOverCore" index="3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.303
+anchor_bottom = 0.735
+offset_left = 585.0
+offset_top = 1345.0
+offset_right = -224.985
+offset_bottom = -528.75
+
+[node name="NO" parent="GameOverCore" index="4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.346
+anchor_top = 0.028
+anchor_right = 0.742
+anchor_bottom = 0.805
+offset_left = 188.73
+offset_top = 1239.0
+offset_right = -1052.29
+offset_bottom = -756.25
+
+[connection signal="pressed" from="GameOverCore/YES" to="GameOverCore" method="_on_yes_pressed"]
+[connection signal="pressed" from="GameOverCore/NO" to="GameOverCore" method="_on_no_pressed"]
+
+[editable path="GameOverCore"]

@@ -1,0 +1,78 @@
+[gd_scene load_steps=5 format=3 uid="uid://cghg6brvvecmj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_b7l17"]
+font_size = 133
+font_color = Color(1, 0.0588235, 0.0784314, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ydpha"]
+font_size = 100
+font_color = Color(1, 0.5505, 0.13, 1)
+
+[sub_resource type="Theme" id="Theme_2stwx"]
+default_font_size = 75
+
+[sub_resource type="Theme" id="Theme_l2db1"]
+default_font_size = 75
+
+[node name="GameOverCore" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -6.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 5.0
+offset_right = 2206.0
+offset_bottom = 1287.0
+scale = Vector2(0.5, 0.5)
+color = Color(0.968627, 0.945098, 0.913725, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.955
+anchor_bottom = 0.425
+offset_left = 179.0
+offset_top = 39.0
+offset_right = -81.5
+offset_bottom = 131.6
+text = "Game Over
+"
+label_settings = SubResource("LabelSettings_b7l17")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 273.0
+offset_top = 274.0
+offset_right = 837.0
+offset_bottom = 486.0
+text = "Play again?"
+label_settings = SubResource("LabelSettings_ydpha")
+
+[node name="YES" type="Button" parent="."]
+layout_mode = 0
+offset_left = 239.0
+offset_top = 447.0
+offset_right = 458.0
+offset_bottom = 590.0
+theme = SubResource("Theme_2stwx")
+text = "YES
+"
+text_overrun_behavior = 1
+
+[node name="NO" type="Button" parent="."]
+layout_mode = 0
+offset_left = 609.0
+offset_top = 444.0
+offset_right = 834.0
+offset_bottom = 590.0
+theme = SubResource("Theme_l2db1")
+text = "NO"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

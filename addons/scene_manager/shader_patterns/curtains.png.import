@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxh54lharw1ol"
-path="res://.godot/imported/TopDownHouse_FloorsAndWalls.png-195fe91939e40d7c326c2878c5cfa7e7.ctex"
+uid="uid://d3vrxnroxcbu4"
+path="res://.godot/imported/curtains.png-f5a25cbc897d336641cfbab203b5832e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Top-Down_Retro_Interior/TopDownHouse_FloorsAndWalls.png"
-dest_files=["res://.godot/imported/TopDownHouse_FloorsAndWalls.png-195fe91939e40d7c326c2878c5cfa7e7.ctex"]
+source_file="res://addons/scene_manager/shader_patterns/curtains.png"
+dest_files=["res://.godot/imported/curtains.png-f5a25cbc897d336641cfbab203b5832e.ctex"]
 
 [params]
 

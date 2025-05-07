@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://6gthckxb7hrf"]
+
+[ext_resource type="Script" uid="uid://dye1uk5fl4rem" path="res://Levels/scene_switcher.gd" id="1_otmaw"]
+[ext_resource type="PackedScene" uid="uid://b4t4wmqtf1wjm" path="res://Levels/game_level.tscn" id="2_otmaw"]
+[ext_resource type="PackedScene" uid="uid://gfyeg7ece47w" path="res://Levels/Room_One.tscn" id="3_bs623"]
+[ext_resource type="PackedScene" uid="uid://fmdf1j2goin1" path="res://Levels/Room_Two.tscn" id="4_e54a5"]
+[ext_resource type="PackedScene" uid="uid://c6k5nnpbypshi" path="res://addons/maaacks_menus_template/base/scenes/menus/main_menu/main_menu.tscn" id="5_e54a5"]
+
+[node name="SceneSwitcher" type="Node"]
+script = ExtResource("1_otmaw")
+
+[node name="GameLevel" parent="." instance=ExtResource("2_otmaw")]
+
+[node name="RoomOne" parent="." instance=ExtResource("3_bs623")]
+
+[node name="RoomTwo" parent="." instance=ExtResource("4_e54a5")]
+
+[node name="MainMenu" parent="." instance=ExtResource("5_e54a5")]
+
+[editable path="RoomOne"]
+[editable path="RoomOne/Bartender"]
+[editable path="RoomOne/Bartender/DialogArea"]
+[editable path="RoomTwo"]
