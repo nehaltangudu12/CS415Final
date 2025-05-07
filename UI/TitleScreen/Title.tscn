@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8givf78c1vda"]
+
+[ext_resource type="PackedScene" uid="uid://dxi5o8uq432a4" path="res://UI/TitleScreen/MainMenu.tscn" id="1_0yg5j"]
+[ext_resource type="Script" uid="uid://65ccnm7vju5f" path="res://UI/TitleScreen/title.gd" id="1_30nif"]
+
+[node name="Title" type="Node2D"]
+script = ExtResource("1_30nif")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MainMenu" parent="CanvasLayer" instance=ExtResource("1_0yg5j")]
+offset_left = -324.0
+offset_right = 1018.5
+offset_bottom = 339.0
+
+[connection signal="button_down" from="CanvasLayer/MainMenu/HBoxContainer/VBoxContainer/VBoxContainer/New Game" to="." method="_on_new_game_button_down"]
+[connection signal="button_down" from="CanvasLayer/MainMenu/HBoxContainer/VBoxContainer/VBoxContainer/Help" to="." method="_on_help_button_down"]
+
+[editable path="CanvasLayer/MainMenu"]
