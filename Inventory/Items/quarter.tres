@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://dw3xoo2oe3q4y"]
+
+[ext_resource type="Script" uid="uid://rwy1bekjxd4m" path="res://Inventory/inv_item.gd" id="1_rwobl"]
+[ext_resource type="Texture2D" uid="uid://dtgc5fsokmjb2" path="res://Assets/kenney_ui-pack-pixel-adventure/Tiles/Large tiles/Thin outline/tile_0052.png" id="2_rwobl"]
+
+[resource]
+script = ExtResource("1_rwobl")
+name = "Quarter"
+texture = ExtResource("2_rwobl")
+metadata/_custom_type_script = "uid://rwy1bekjxd4m"

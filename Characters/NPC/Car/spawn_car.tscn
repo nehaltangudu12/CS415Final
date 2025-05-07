@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckys4pe8jtm5p"]
+
+[ext_resource type="Script" uid="uid://bnahdbkjsi3tj" path="res://Characters/NPC/Car/spawn_car.gd" id="1_vkl3j"]
+[ext_resource type="PackedScene" uid="uid://cf8mfgyju77wt" path="res://Characters/NPC/Car/car.tscn" id="2_jq40r"]
+
+[node name="Spawn Car" type="Node2D"]
+script = ExtResource("1_vkl3j")
+car_direction = 1
+car_scene = ExtResource("2_jq40r")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
