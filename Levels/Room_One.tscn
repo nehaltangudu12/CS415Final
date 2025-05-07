@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=4 uid="uid://gfyeg7ece47w"]
+[gd_scene load_steps=78 format=4 uid="uid://gfyeg7ece47w"]
 
 [ext_resource type="Texture2D" uid="uid://bos7wqi4dipxf" path="res://Assets/Top-Down_Retro_Interior/TopDownHouse_DoorsAndWindows.png" id="1_dw3m1"]
 [ext_resource type="Script" uid="uid://pw56rlhmu2cw" path="res://Levels/room_one.gd" id="1_mdgqp"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://c4iau7xgtq3gq" path="res://Assets/sprites/Player-Idle.png" id="21_p6p58"]
 [ext_resource type="PackedScene" uid="uid://cum3uhbgu6q8j" path="res://UI/DialogPlayer.tscn" id="22_gdaqv"]
 [ext_resource type="PackedScene" uid="uid://bym46dceki7o3" path="res://Levels/TransitionArea.tscn" id="23_daorc"]
+[ext_resource type="PackedScene" uid="uid://bnjgi7twv00tb" path="res://Objects/NonInteractables/Light.tscn" id="24_7if0r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0xmi6"]
 texture = ExtResource("1_dw3m1")
@@ -7502,7 +7503,7 @@ texture = ExtResource("9_h52gv")
 myItem = ExtResource("11_m4r50")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-energy = 0.5
+energy = 0.2
 blend_mode = 1
 
 [node name="Bartender" parent="." instance=ExtResource("20_p6p58")]
@@ -7536,6 +7537,30 @@ text_key = "Room_Two"
 [node name="CollisionShape2D" parent="TransitionArea" index="0"]
 position = Vector2(10.75, -5.24138)
 shape = SubResource("RectangleShape2D_daorc")
+
+[node name="Light" parent="." instance=ExtResource("24_7if0r")]
+visible = false
+position = Vector2(-96, 63)
+
+[node name="Light2" parent="." instance=ExtResource("24_7if0r")]
+position = Vector2(648, 161)
+
+[node name="Light3" parent="." instance=ExtResource("24_7if0r")]
+position = Vector2(682, 48)
+
+[node name="Light4" parent="." instance=ExtResource("24_7if0r")]
+position = Vector2(401, 105)
+
+[node name="Light5" parent="." instance=ExtResource("24_7if0r")]
+position = Vector2(-112, -111)
+
+[node name="Light6" parent="." instance=ExtResource("24_7if0r")]
+visible = false
+position = Vector2(435, 215)
+
+[node name="Light7" parent="." instance=ExtResource("24_7if0r")]
+visible = false
+position = Vector2(37, -78)
 
 [editable path="Bartender"]
 [editable path="Bartender/DialogArea"]

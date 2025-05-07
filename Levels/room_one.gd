@@ -22,7 +22,7 @@ func _ready():
 	DialogueManager.passed_title.connect(on_finished_talking_with_nathan)
 	player.shrink_speed = 0.0
 	var light = player.get_node("PointLight2D")
-	light.energy = 0.5
+	light.energy = 0.3
 	Notif.display_notif("Allright, all tasks should be done. I should talk to Nathan for my check!")	
 
 
