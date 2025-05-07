@@ -13,6 +13,9 @@ script = ExtResource("1_otmaw")
 [node name="RoomOne" parent="." instance=ExtResource("3_bs623")]
 unique_name_in_owner = true
 
+[node name="Outline" parent="RoomOne" index="1"]
+visible = true
+
 [node name="RoomTwo" parent="." instance=ExtResource("4_e54a5")]
 
 [node name="RoomThree" parent="." instance=ExtResource("4_q18r2")]
