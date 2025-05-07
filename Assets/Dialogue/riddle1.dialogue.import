@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://d83vgar8gjp"
+path="res://.godot/imported/riddle1.dialogue-fdc3164f4001556742ac847c9e1bceec.tres"
+
+[deps]
+
+source_file="res://Assets/Dialogue/riddle1.dialogue"
+dest_files=["res://.godot/imported/riddle1.dialogue-fdc3164f4001556742ac847c9e1bceec.tres"]
+
+[params]
+
+defaults=true

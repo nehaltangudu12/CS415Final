@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://67ifv0k1kmlr"
+path="res://.godot/imported/stlsign.dialogue-f01cfad4e23e5a37706c0abb53c19b9d.tres"
+
+[deps]
+
+source_file="res://Assets/Dialogue/stlsign.dialogue"
+dest_files=["res://.godot/imported/stlsign.dialogue-f01cfad4e23e5a37706c0abb53c19b9d.tres"]
+
+[params]
+
+defaults=true

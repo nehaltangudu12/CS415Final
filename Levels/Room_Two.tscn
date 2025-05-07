@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://fmdf1j2goin1"]
+[gd_scene load_steps=23 format=4 uid="uid://fmdf1j2goin1"]
 
 [ext_resource type="Texture2D" uid="uid://dj0rpl3lmfvso" path="res://Assets/kenney_rpg-urban-pack/Tilemap/tilemap.png" id="1_4can4"]
 [ext_resource type="Script" uid="uid://hqlo5akbpdq7" path="res://Levels/room_two.gd" id="1_fakkh"]
@@ -7,6 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://l8xtpy0co1om" path="res://Inventory/inv_menu.tscn" id="4_fakkh"]
 [ext_resource type="Resource" uid="uid://bia5i2p7vck5l" path="res://Inventory/myInv.tres" id="5_p0pjj"]
 [ext_resource type="Resource" uid="uid://bkv8184rupkau" path="res://Inventory/Items/empty.tres" id="6_g6qth"]
+[ext_resource type="PackedScene" uid="uid://dadbr7g4hva8u" path="res://Objects/PhoneBooth/PhoneBooth.tscn" id="8_p0pjj"]
+[ext_resource type="PackedScene" uid="uid://b6q7qfq27gosg" path="res://Characters/NPC/GenericNPC/GenericNPC.tscn" id="10_cr4ho"]
+[ext_resource type="PackedScene" uid="uid://bym46dceki7o3" path="res://Levels/TransitionArea.tscn" id="10_xl4ak"]
+[ext_resource type="Texture2D" uid="uid://c4iau7xgtq3gq" path="res://Assets/sprites/Player-Idle.png" id="11_8a8q8"]
+[ext_resource type="PackedScene" uid="uid://cum3uhbgu6q8j" path="res://UI/DialogPlayer.tscn" id="12_8a8q8"]
+[ext_resource type="Texture2D" uid="uid://c0531600m6ebj" path="res://Assets/Sprout Lands - Sprites - Basic pack/Objects/Basic_Furniture.png" id="13_ghd3g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4can4"]
 texture = ExtResource("1_4can4")
@@ -692,7 +698,6 @@ texture = ExtResource("2_x7h8r")
 0:4/0 = 0
 0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:4/0 = 0
-1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:4/0 = 0
 2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:4/0 = 0
@@ -788,6 +793,7 @@ texture = ExtResource("2_x7h8r")
 12:6/0 = 0
 13:6/0 = 0
 14:6/0 = 0
+14:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 15:6/0 = 0
 16:6/0 = 0
 16:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -1223,8 +1229,35 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_4can4")
 sources/1 = SubResource("TileSetAtlasSource_x7h8r")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xl4ak"]
+size = Vector2(49.625, 1.27586)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g6qth"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cr4ho"]
+size = Vector2(12, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8a8q8"]
+size = Vector2(0.958334, 0.775863)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ghd3g"]
+size = Vector2(0.916665, 0.663795)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wu31j"]
+size = Vector2(1.58333, 0.793103)
+
 [node name="RoomTwo" type="Node2D"]
 script = ExtResource("1_fakkh")
+
+[node name="PlayerCat" parent="." instance=ExtResource("3_tf58o")]
+top_level = true
+position = Vector2(39, 62)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PlayerCat"]
+remote_path = NodePath("../../Camera2D")
+
+[node name="RemoteTransform2D2" type="RemoteTransform2D" parent="PlayerCat"]
+remote_path = NodePath("../../Camera2D")
 
 [node name="BASE (Copy This)" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_tf58o")
@@ -1278,16 +1311,6 @@ position = Vector2(0, 10)
 tile_map_data = PackedByteArray("AAAVABYAAQAEAA0AAAAWABYAAQAFAA0AAAAXABYAAQAGAA0AAAAYABYAAQAEAA0AAAAZABYAAQAFAA0AAAAaABYAAQAGAA0AAAAbABYAAQAEAA0AAAAcABYAAQAFAA0AAAAdABYAAQAGAA0AAAAeABYAAQAEAA0AAAAfABYAAQAFAA0AAAAgABYAAQAGAA0AAAAhABYAAQAEAA0AAAAiABYAAQAFAA0AAAAjABYAAQAGAA0AAAAkABYAAQAEAA0AAAAlABYAAQAFAA0AAAAmABYAAQAGAA0AAAAnABYAAQAEAA0AAAAoABYAAQAFAA0AAAApABYAAQAGAA0AAAAqABYAAQAEAA0AAAArABYAAQAFAA0AAAAsABYAAQAGAA0AAAAtABYAAQAEAA0AAAAuABYAAQAFAA0AAAAvABYAAQAGAA0AAAAwABYAAQAEAA0AAAAxABYAAQAFAA0AAAAyABYAAQAGAA0AAAAzABYAAQAEAA0AAAA0ABYAAQAFAA0AAAA1ABYAAQAGAA0AAAA2ABYAAQAEAA0AAAA3ABYAAQAFAA0AAAA4ABYAAQAGAA0AAAA5ABYAAQAEAA0AAAA6ABYAAQAFAA0AAAA7ABYAAQAGAA0AAAA8ABYAAQAEAA0AAAA9ABYAAQAFAA0AAAA+ABYAAQAGAA0AAAA/ABYAAQAEAA0AAABAABYAAQAFAA0AAABBABYAAQAGAA0AAABCABYAAQAEAA0AAABDABYAAQAFAA0AAABEABYAAQAGAA0AAAA=")
 tile_set = SubResource("TileSet_tf58o")
 
-[node name="PlayerCat" parent="." instance=ExtResource("3_tf58o")]
-visible = false
-position = Vector2(39, 62)
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PlayerCat"]
-remote_path = NodePath("../../Camera2D")
-
-[node name="RemoteTransform2D2" type="RemoteTransform2D" parent="PlayerCat"]
-remote_path = NodePath("../../Camera2D")
-
 [node name="Camera2D" type="Camera2D" parent="."]
 visible = false
 position = Vector2(39, 62)
@@ -1309,3 +1332,103 @@ blend_mode = 1
 [node name="Room Boundaries" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAD//wAAAQAAAAcAAAD//wEAAQAAAAcAAAD//wIAAQAAAAcAAAD//wMAAQAAAAcAAAD//wQAAQAAAAcAAAD//wUAAQAAAAcAAAD//wYAAQAAAAcAAAD//wcAAQAAAAcAAAD//wgAAQAAAAcAAAD//wkAAQAAAAcAAAD//woAAQAAAAcAAAD//wsAAQAAAAcAAAD//wwAAQAAAAcAAAD//w0AAQAAAAcAAAD//w4AAQAAAAcAAAD//w8AAQAAAAcAAAD//xAAAQAAAAcAAAD//xEAAQAAAAcAAAD//xIAAQAAAAcAAAD//xMAAQAAAAcAAAD//xQAAQAAAAcAAAD//xUAAQAAAAcAAAD//xYAAQAAAAcAAAD//xcAAQAAAAcAAAD//xgAAQAAAAcAAAD//xkAAQAAAAcAAAD//xoAAQAAAAcAAAD//xsAAQAAAAcAAAD//xwAAQAAAAcAAAD//x0AAQAAAAcAAAD//x4AAQAAAAcAAAAAAB8AAQAAAAcAAGABAB8AAQAAAAcAAGACAB8AAQAAAAcAAGADAB8AAQAAAAcAAGAEAB8AAQAAAAcAAGAFAB8AAQAAAAcAAGAGAB8AAQAAAAcAAGAHAB8AAQAAAAcAAGAIAB8AAQAAAAcAAGAJAB8AAQAAAAcAAGAKAB8AAQAAAAcAAGALAB8AAQAAAAcAAGAMAB8AAQAAAAcAAGANAB8AAQAAAAcAAGAOAB8AAQAAAAcAAGAPAB8AAQAAAAcAAGAQAB8AAQAAAAcAAGARAB8AAQAAAAcAAGASAB8AAQAAAAcAAGATAB8AAQAAAAcAAGAUAB8AAQAAAAcAAGAVAB8AAQAAAAcAAGAWAB8AAQAAAAcAAGAXAB8AAQAAAAcAAGAYAB8AAQAAAAcAAGAZAB8AAQAAAAcAAGAaAB8AAQAAAAcAAGAbAB8AAQAAAAcAAGAcAB8AAQAAAAcAAGAdAB8AAQAAAAcAAGAeAB8AAQAAAAcAAGAfAB8AAQAAAAcAAGAgAB8AAQAAAAcAAGAhAB8AAQAAAAcAAGAiAB8AAQAAAAcAAGAjAB8AAQAAAAcAAGAkAB8AAQAAAAcAAGAlAB8AAQAAAAcAAGAmAB8AAQAAAAcAAGAnAB8AAQAAAAcAAGAoAB8AAQAAAAcAAGApAB8AAQAAAAcAAGAqAB8AAQAAAAcAAGArAB8AAQAAAAcAAGAsAB8AAQAAAAcAAGAtAB8AAQAAAAcAAGAuAB8AAQAAAAcAAGAvAB8AAQAAAAcAAGAwAB8AAQAAAAcAAGAxAB8AAQAAAAcAAGAyAB8AAQAAAAcAAGAzAB8AAQAAAAcAAGA0AB8AAQAAAAcAAGA1AB8AAQAAAAcAAGA2AB8AAQAAAAcAAGA3AB8AAQAAAAcAAGA4AB8AAQAAAAcAAGA5AB8AAQAAAAcAAGA6AB8AAQAAAAcAAGA7AB8AAQAAAAcAAGA8AB8AAQAAAAcAAGA9AB8AAQAAAAcAAGA+AB8AAQAAAAcAAGA/AB8AAQAAAAcAAGBAAB8AAQAAAAcAAGBBAB8AAQAAAAcAAGBCAB8AAQAAAAcAAGBDAB8AAQAAAAcAAGBEAB8AAQAAAAcAAGBFAB4AAQAAAAcAADBFAB0AAQAAAAcAADBFABwAAQAAAAcAADBFABsAAQAAAAcAADBFABoAAQAAAAcAADBFABkAAQAAAAcAADBFABgAAQAAAAcAADBFABcAAQAAAAcAADBFABYAAQAAAAcAADBFABUAAQAAAAcAADBFABQAAQAAAAcAADBFABMAAQAAAAcAADBFABIAAQAAAAcAADBFABEAAQAAAAcAADBFABAAAQAAAAcAADBFAA8AAQAAAAcAADBFAA4AAQAAAAcAADBFAA0AAQAAAAcAADBFAAwAAQAAAAcAADBFAAsAAQAAAAcAADBFAAoAAQAAAAcAADBFAAkAAQAAAAcAADBFAAgAAQAAAAcAADBFAAcAAQAAAAcAADBFAAYAAQAAAAcAADBFAAUAAQAAAAcAADBFAAQAAQAAAAcAADBFAAMAAQAAAAcAADBFAAIAAQAAAAcAADBFAAEAAQAAAAcAADBFAAAAAQAAAAcAADBEAP//AQAAAAcAAFBDAP//AQAAAAcAAFBCAP//AQAAAAcAAFBBAP//AQAAAAcAAFBAAP//AQAAAAcAAFA/AP//AQAAAAcAAFA+AP//AQAAAAcAAFA9AP//AQAAAAcAAFA8AP//AQAAAAcAAFA7AP//AQAAAAcAAFA6AP//AQAAAAcAAFA5AP//AQAAAAcAAFA4AP//AQAAAAcAAFA3AP//AQAAAAcAAFA2AP//AQAAAAcAAFA1AP//AQAAAAcAAFA0AP//AQAAAAcAAFAzAP//AQAAAAcAAFAyAP//AQAAAAcAAFAxAP//AQAAAAcAAFAwAP//AQAAAAcAAFAvAP//AQAAAAcAAFAuAP//AQAAAAcAAFAtAP//AQAAAAcAAFAsAP//AQAAAAcAAFArAP//AQAAAAcAAFAqAP//AQAAAAcAAFApAP//AQAAAAcAAFAoAP//AQAAAAcAAFAnAP//AQAAAAcAAFAmAP//AQAAAAcAAFAlAP//AQAAAAcAAFAkAP//AQAAAAcAAFAjAP//AQAAAAcAAFAiAP//AQAAAAcAAFAhAP//AQAAAAcAAFAgAP//AQAAAAcAAFAfAP//AQAAAAcAAFAeAP//AQAAAAcAAFAdAP//AQAAAAcAAFAcAP//AQAAAAcAAFAbAP//AQAAAAcAAFAaAP//AQAAAAcAAFAZAP//AQAAAAcAAFAYAP//AQAAAAcAAFAXAP//AQAAAAcAAFAWAP//AQAAAAcAAFAVAP//AQAAAAcAAFAUAP//AQAAAAcAAFATAP//AQAAAAcAAFASAP//AQAAAAcAAFARAP//AQAAAAcAAFAQAP//AQAAAAcAAFAPAP//AQAAAAcAAFAOAP//AQAAAAcAAFANAP//AQAAAAcAAFAMAP//AQAAAAcAAFALAP//AQAAAAcAAFAKAP//AQAAAAcAAFAJAP//AQAAAAcAAFAIAP//AQAAAAcAAFAHAP//AQAAAAcAAFAGAP//AQAAAAcAAFAFAP//AQAAAAcAAFAEAP//AQAAAAcAAFADAP//AQAAAAcAAFACAP//AQAAAAcAAFABAP//AQAAAAcAAFAAAP//AQAAAAcAAFA=")
 tile_set = SubResource("TileSet_tf58o")
+
+[node name="TransitionArea" parent="." instance=ExtResource("10_xl4ak")]
+text_key = "Room_Three"
+
+[node name="CollisionShape2D" parent="TransitionArea" index="0"]
+position = Vector2(-15.875, -10.9655)
+shape = SubResource("RectangleShape2D_xl4ak")
+
+[node name="PhoneBooth" parent="." instance=ExtResource("8_p0pjj")]
+
+[node name="CollisionShape2D" parent="PhoneBooth/Area2D" index="0"]
+position = Vector2(301, 57)
+shape = SubResource("RectangleShape2D_g6qth")
+
+[node name="RichTextLabel" parent="PhoneBooth/Area2D/CanvasLayer" index="0"]
+offset_left = 252.0
+offset_top = 190.0
+offset_right = 292.0
+offset_bottom = 230.0
+
+[node name="UserInput" parent="PhoneBooth/Area2D" index="2"]
+position = Vector2(-3, 5)
+
+[node name="LineEdit" parent="PhoneBooth/Area2D/UserInput/CanvasLayer" index="0"]
+offset_left = 189.0
+offset_top = 214.0
+offset_right = 360.0
+offset_bottom = 276.0
+
+[node name="Sprite2D" parent="PhoneBooth" index="1"]
+position = Vector2(300, 50)
+
+[node name="RiddleOne" parent="." instance=ExtResource("10_cr4ho")]
+position = Vector2(950, 250)
+
+[node name="Sprite2D" parent="RiddleOne" index="0"]
+scale = Vector2(2, 2)
+texture = ExtResource("11_8a8q8")
+
+[node name="CollisionShape2D" parent="RiddleOne/CharacterBody2D" index="0"]
+position = Vector2(0, 13)
+shape = SubResource("RectangleShape2D_cr4ho")
+
+[node name="DialogArea" parent="RiddleOne" index="2"]
+text_key = "riddle1.dialogue"
+
+[node name="CollisionShape2D" parent="RiddleOne/DialogArea" index="0"]
+position = Vector2(7.20833, 4.82759)
+shape = SubResource("RectangleShape2D_8a8q8")
+
+[node name="DialogPlayer" parent="." instance=ExtResource("12_8a8q8")]
+
+[node name="RiddleTwo" parent="." instance=ExtResource("10_cr4ho")]
+position = Vector2(100, 300)
+rotation = -6.28319
+
+[node name="Sprite2D" parent="RiddleTwo" index="0"]
+scale = Vector2(2, 2)
+texture = ExtResource("11_8a8q8")
+
+[node name="CollisionShape2D" parent="RiddleTwo/CharacterBody2D" index="0"]
+position = Vector2(0, 13)
+shape = SubResource("RectangleShape2D_cr4ho")
+
+[node name="DialogArea" parent="RiddleTwo" index="2"]
+text_key = "riddle2.dialogue"
+
+[node name="CollisionShape2D" parent="RiddleTwo/DialogArea" index="0"]
+position = Vector2(7.20834, 4.7931)
+shape = SubResource("RectangleShape2D_ghd3g")
+
+[node name="STLSign" parent="." instance=ExtResource("10_cr4ho")]
+position = Vector2(200, 30)
+
+[node name="Sprite2D" parent="STLSign" index="0"]
+texture = ExtResource("13_ghd3g")
+hframes = 9
+vframes = 6
+frame = 2
+
+[node name="DialogArea" parent="STLSign" index="2"]
+text_key = "stlsign.dialogue"
+
+[node name="CollisionShape2D" parent="STLSign/DialogArea" index="0"]
+position = Vector2(7.125, 4.93103)
+shape = SubResource("RectangleShape2D_wu31j")
+
+[node name="RichTextLabel" parent="STLSign/DialogArea/CanvasLayer" index="0"]
+text = "[Read]"
+
+[editable path="PlayerCat"]
+[editable path="TransitionArea"]
+[editable path="PhoneBooth"]
+[editable path="PhoneBooth/Area2D/UserInput"]
+[editable path="RiddleOne"]
+[editable path="RiddleOne/DialogArea"]
+[editable path="RiddleTwo"]
+[editable path="RiddleTwo/DialogArea"]
+[editable path="STLSign"]
+[editable path="STLSign/DialogArea"]
