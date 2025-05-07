@@ -1,10 +1,19 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=13 format=4 uid="uid://blh1b4f3kcsg4"]
+=======
+[gd_scene load_steps=15 format=4 uid="uid://blh1b4f3kcsg4"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" path="res://Levels/room_four.gd" id="1_ius1t"]
 [ext_resource type="Texture2D" uid="uid://dj0rpl3lmfvso" path="res://Assets/kenney_rpg-urban-pack/Tilemap/tilemap.png" id="2_do05b"]
 [ext_resource type="Texture2D" uid="uid://b5i5vnao4jj4e" path="res://Assets/kenney_rpg-urban-pack/Tilemap/tilemap_packed.png" id="3_t8u00"]
+<<<<<<< Updated upstream
 [ext_resource type="Texture2D" uid="uid://dsybb0raonk26" path="res://Assets/sprites/IMG_2783 3.png" id="4_aiclw"]
+=======
+[ext_resource type="Texture2D" uid="uid://ldqfgpytlkbd" path="res://Assets/sprites/Untitled_Artwork 2.png" id="4_aiclw"]
+>>>>>>> Stashed changes
 [ext_resource type="PackedScene" uid="uid://l6oecmvfr7a7" path="res://Characters/Player/player_cat.tscn" id="4_khx3j"]
+[ext_resource type="Texture2D" uid="uid://bs02rq345eu2y" path="res://Assets/sprites/IMG_2783 3.png" id="5_3h06v"]
 [ext_resource type="PackedScene" uid="uid://l8xtpy0co1om" path="res://Inventory/inv_menu.tscn" id="5_qayah"]
 [ext_resource type="Resource" uid="uid://bia5i2p7vck5l" path="res://Inventory/myInv.tres" id="6_4662p"]
 [ext_resource type="Resource" uid="uid://bkv8184rupkau" path="res://Inventory/Items/empty.tres" id="7_nlcyj"]
@@ -1039,6 +1048,17 @@ texture = ExtResource("4_aiclw")
 1:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
+<<<<<<< Updated upstream
+=======
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_726c2"]
+texture = ExtResource("5_3h06v")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+>>>>>>> Stashed changes
 2:1/0 = 0
 0:2/0 = 0
 1:2/0 = 0
@@ -1046,12 +1066,19 @@ texture = ExtResource("4_aiclw")
 0:3/0 = 0
 1:3/0 = 0
 2:3/0 = 0
+<<<<<<< Updated upstream
 2:0/0 = 0
+=======
+>>>>>>> Stashed changes
 
 [sub_resource type="TileSet" id="TileSet_tf58o"]
 sources/0 = SubResource("TileSetAtlasSource_4can4")
 sources/1 = SubResource("TileSetAtlasSource_x7h8r")
 sources/2 = SubResource("TileSetAtlasSource_3h06v")
+<<<<<<< Updated upstream
+=======
+sources/3 = SubResource("TileSetAtlasSource_726c2")
+>>>>>>> Stashed changes
 
 [node name="RoomFour" type="Node2D"]
 script = ExtResource("1_ius1t")
@@ -1119,7 +1146,12 @@ tile_set = SubResource("TileSet_tf58o")
 
 [node name="forest" type="TileMapLayer" parent="mcfukin forest!"]
 position = Vector2(0, 5)
-tile_map_data = PackedByteArray("AAAcAAoAAQATAAgAAAAcAAsAAQATAAkAAAAcAAwAAQATAAoAAAAbAAoAAQATAAgAAAAbAAsAAQATAAkAAAAbAAwAAQATAAoAAAAaAAoAAQATAAgAAAAaAAsAAQATAAkAAAAaAAwAAQATAAoAAAAZAAoAAQASAAgAAAAZAAsAAQASAAkAAAAZAAwAAQASAAoAAAA=")
+tile_map_data = PackedByteArray("AAAcAAoAAQATAAgAAAAcAAsAAQATAAkAAAAcAAwAAQATAAoAAAAbAAoAAQATAAgAAAAbAAsAAQATAAkAAAAbAAwAAQATAAoAAAAaAAoAAQATAAgAAAAaAAsAAQATAAkAAAAaAAwAAQATAAoAAAAZAAoAAQASAAgAAAAZAAsAAQASAAkAAAAZAAwAAQASAAoAAAAKAAUAAwABAAIAAAA=")
+tile_set = SubResource("TileSet_tf58o")
+
+[node name="bus" type="TileMapLayer" parent="."]
+position = Vector2(-8, 0)
+tile_map_data = PackedByteArray("AAAJAAUAAgAAAAAAAAAJAAYAAgAAAAEAAAAKAAUAAgABAAAAAAAKAAYAAgABAAEAAAA=")
 tile_set = SubResource("TileSet_tf58o")
 
 [node name="PlayerCat" parent="." instance=ExtResource("4_khx3j")]
