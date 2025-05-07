@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://blh1b4f3kcsg4"]
+[gd_scene load_steps=14 format=4 uid="uid://blh1b4f3kcsg4"]
 
 [ext_resource type="Script" uid="uid://b3sn5ryw36ls5" path="res://Levels/room_four.gd" id="1_ius1t"]
 [ext_resource type="Texture2D" uid="uid://dj0rpl3lmfvso" path="res://Assets/kenney_rpg-urban-pack/Tilemap/tilemap.png" id="2_do05b"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://l8xtpy0co1om" path="res://Inventory/inv_menu.tscn" id="5_qayah"]
 [ext_resource type="Resource" uid="uid://bia5i2p7vck5l" path="res://Inventory/myInv.tres" id="6_4662p"]
 [ext_resource type="Resource" uid="uid://bkv8184rupkau" path="res://Inventory/Items/empty.tres" id="7_nlcyj"]
+[ext_resource type="Script" uid="uid://dk5s4g5cs7th3" path="res://Levels/busFare.gd" id="8_3h06v"]
+[ext_resource type="Texture2D" uid="uid://c4een2865isb7" path="res://Assets/kenney_rpg-urban-pack/Sprites/car_left.png" id="8_726c2"]
+[ext_resource type="PackedScene" uid="uid://dmj8q8ibt2p47" path="res://World/ItemUseArea.tscn" id="8_aiclw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4can4"]
 texture = ExtResource("2_do05b")
@@ -1100,3 +1103,12 @@ emptyObj = ExtResource("7_nlcyj")
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 energy = 0.8
 blend_mode = 1
+
+[node name="BusDriver" type="Sprite2D" parent="."]
+position = Vector2(81, 193)
+texture = ExtResource("8_726c2")
+script = ExtResource("8_3h06v")
+
+[node name="BusArea" parent="BusDriver" instance=ExtResource("8_aiclw")]
+scale = Vector2(1.765, 1.765)
+itemNeeded = ["Coin", "Coin", "Coin", "Coin", "Coin", "Coin"]
