@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dadbr7g4hva8u"]
+
+[ext_resource type="PackedScene" uid="uid://dsyito3u5kcx3" path="res://UI/UserInput/UserInput.tscn" id="1_4jyb3"]
+[ext_resource type="Script" uid="uid://y0vnet546gdk" path="res://Objects/PhoneBooth/phone_booth.gd" id="1_s4kew"]
+[ext_resource type="Texture2D" uid="uid://0mmtpjrvj4xr" path="res://Assets/Interactables/Closed Book.png" id="3_q5apb"]
+[ext_resource type="Script" uid="uid://b3uncyiakr2a0" path="res://Objects/PhoneBooth/phone_booth_area.gd" id="3_s4kew"]
+
+[node name="PhoneBooth" type="Node2D"]
+script = ExtResource("1_s4kew")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("3_s4kew")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Area2D"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Area2D/CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+text = "[Use]"
+
+[node name="UserInput" parent="Area2D" instance=ExtResource("1_4jyb3")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_q5apb")
+
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]
+[connection signal="area_exited" from="Area2D" to="Area2D" method="_on_area_exited"]
