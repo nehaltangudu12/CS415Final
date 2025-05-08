@@ -1236,7 +1236,7 @@ size = Vector2(49.625, 1.27586)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g6qth"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cr4ho"]
-size = Vector2(12, 9)
+size = Vector2(14, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8a8q8"]
 size = Vector2(0.958334, 0.775863)
@@ -1346,12 +1346,12 @@ position = Vector2(300, 50)
 position = Vector2(950, 250)
 
 [node name="Sprite2D" parent="RiddleOne" index="0"]
-position = Vector2(0.5, 8.5)
-scale = Vector2(0.9375, 0.9375)
+position = Vector2(2.28882e-05, 6.5)
+scale = Vector2(1.125, 1.1875)
 texture = ExtResource("7_wu31j")
 
 [node name="CollisionShape2D" parent="RiddleOne/CharacterBody2D" index="0"]
-position = Vector2(0, 12.5)
+position = Vector2(0, 12)
 shape = SubResource("RectangleShape2D_cr4ho")
 
 [node name="DialogArea" parent="RiddleOne" index="2"]
@@ -1368,8 +1368,8 @@ position = Vector2(100, 300)
 rotation = -6.28319
 
 [node name="Sprite2D" parent="RiddleTwo" index="0"]
-position = Vector2(0.393597, 9.89005)
-scale = Vector2(0.7992, 0.763748)
+position = Vector2(0.325366, 8.24011)
+scale = Vector2(1.05773, 0.969989)
 texture = ExtResource("9_5xqnu")
 
 [node name="CollisionShape2D" parent="RiddleTwo/CharacterBody2D" index="0"]
