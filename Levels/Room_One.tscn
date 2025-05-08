@@ -20,7 +20,7 @@
 [ext_resource type="Script" path="res://Levels/sink.gd" id="12_jyagn"]
 [ext_resource type="Resource" uid="uid://cy8arp3h5gi4c" path="res://Inventory/Items/plate.tres" id="14_fj5cf"]
 [ext_resource type="PackedScene" uid="uid://b6q7qfq27gosg" path="res://Characters/NPC/GenericNPC/GenericNPC.tscn" id="20_p6p58"]
-[ext_resource type="Texture2D" uid="uid://c4iau7xgtq3gq" path="res://Assets/sprites/Player-Idle.png" id="21_p6p58"]
+[ext_resource type="Texture2D" uid="uid://cbahjpx7k2ka" path="res://Assets/kenney_rpg-urban-pack/Tiles/tile_0186.png" id="21_7if0r"]
 [ext_resource type="PackedScene" uid="uid://cum3uhbgu6q8j" path="res://UI/DialogPlayer.tscn" id="22_gdaqv"]
 [ext_resource type="PackedScene" uid="uid://bym46dceki7o3" path="res://Levels/TransitionArea.tscn" id="23_daorc"]
 [ext_resource type="PackedScene" uid="uid://bnjgi7twv00tb" path="res://Objects/NonInteractables/Light.tscn" id="24_7if0r"]
@@ -7510,15 +7510,15 @@ blend_mode = 1
 position = Vector2(575.312, 152.158)
 
 [node name="Sprite2D" parent="Bartender" index="0"]
-position = Vector2(13.3441, -14.5789)
-scale = Vector2(2.66801, 2.82236)
-texture = ExtResource("21_p6p58")
+position = Vector2(15.86, -3.158)
+scale = Vector2(1.1465, 1.25987)
+texture = ExtResource("21_7if0r")
 
 [node name="CharacterBody2D" parent="Bartender" index="1"]
 collision_mask = 13
 
 [node name="CollisionShape2D" parent="Bartender/CharacterBody2D" index="0"]
-position = Vector2(14.6882, -11.1972)
+position = Vector2(15.6882, -11.1972)
 shape = SubResource("RectangleShape2D_p6p58")
 
 [node name="DialogArea" parent="Bartender" index="2"]
