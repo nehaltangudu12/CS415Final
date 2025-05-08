@@ -7412,6 +7412,29 @@ position = Vector2(6, -14)
 tile_map_data = PackedByteArray("AAAdAAwAAAAAAAUAAAAdAA0AAAAAAAYAAAAdAA4AAAAAAAcAAAAdAA8AAAAAAAgAAAAdABAAAAAAAAkAAAAeAAwAAAABAAUAAAAeAA0AAAABAAYAAAAeAA4AAAABAAcAAAAeAA8AAAABAAgAAAAeABAAAAABAAkAAAAcAAwAAAAAAAUAABAbAAwAAAABAAUAABAcAA0AAAAAAAYAABAbAA0AAAABAAYAABAcAA4AAAAAAAcAABAbAA4AAAABAAcAABAcAA8AAAAAAAgAABAbAA8AAAABAAgAABAcABAAAAAAAAkAABAbABAAAAABAAkAABA=")
 tile_set = SubResource("TileSet_7if0r")
 
+[node name="Bartender" parent="." instance=ExtResource("20_p6p58")]
+position = Vector2(575.312, 152.158)
+
+[node name="Sprite2D" parent="Bartender" index="0"]
+position = Vector2(15.86, -3.158)
+scale = Vector2(1.1465, 1.25987)
+texture = ExtResource("21_7if0r")
+
+[node name="CharacterBody2D" parent="Bartender" index="1"]
+collision_mask = 13
+
+[node name="CollisionShape2D" parent="Bartender/CharacterBody2D" index="0"]
+position = Vector2(15.6882, -11.1972)
+shape = SubResource("RectangleShape2D_p6p58")
+
+[node name="DialogArea" parent="Bartender" index="2"]
+position = Vector2(-8.31183, 26.8422)
+text_key = "bartender1.dialogue"
+
+[node name="CollisionShape2D" parent="Bartender/DialogArea" index="0"]
+position = Vector2(-0.833333, 0.103449)
+shape = SubResource("RectangleShape2D_gdaqv")
+
 [node name="PlayerCat" parent="." instance=ExtResource("7_lbnra")]
 position = Vector2(-2, 266)
 
@@ -7505,29 +7528,6 @@ myItem = ExtResource("11_m4r50")
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 energy = 0.2
 blend_mode = 1
-
-[node name="Bartender" parent="." instance=ExtResource("20_p6p58")]
-position = Vector2(575.312, 152.158)
-
-[node name="Sprite2D" parent="Bartender" index="0"]
-position = Vector2(15.86, -3.158)
-scale = Vector2(1.1465, 1.25987)
-texture = ExtResource("21_7if0r")
-
-[node name="CharacterBody2D" parent="Bartender" index="1"]
-collision_mask = 13
-
-[node name="CollisionShape2D" parent="Bartender/CharacterBody2D" index="0"]
-position = Vector2(15.6882, -11.1972)
-shape = SubResource("RectangleShape2D_p6p58")
-
-[node name="DialogArea" parent="Bartender" index="2"]
-position = Vector2(-8.31183, 26.8422)
-text_key = "bartender1.dialogue"
-
-[node name="CollisionShape2D" parent="Bartender/DialogArea" index="0"]
-position = Vector2(-0.833333, 0.103449)
-shape = SubResource("RectangleShape2D_gdaqv")
 
 [node name="DialogPlayer" parent="." instance=ExtResource("22_gdaqv")]
 
