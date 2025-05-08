@@ -1112,7 +1112,7 @@ tile_set = SubResource("TileSet_tf58o")
 
 [node name="forest" type="TileMapLayer" parent="mcfukin forest!"]
 position = Vector2(0, 5)
-tile_map_data = PackedByteArray("AAAcAAoAAQATAAgAAAAcAAsAAQATAAkAAAAcAAwAAQATAAoAAAAbAAoAAQATAAgAAAAbAAsAAQATAAkAAAAbAAwAAQATAAoAAAAaAAoAAQATAAgAAAAaAAsAAQATAAkAAAAaAAwAAQATAAoAAAAZAAoAAQASAAgAAAAZAAsAAQASAAkAAAAZAAwAAQASAAoAAAA=")
+tile_map_data = PackedByteArray("AAAcAAoAAQATAAgAAAAaAAoAAQATAAgAAAAZAAoAAQASAAgAAAAZAAsAAQASAAkAAAAZAAwAAQASAAoAAAAaAAwAAQATAAoAAAAaAAsAAQATAAkAAAAcAAsAAQATAAkAAAAcAAwAAQATAAoAAAAbAAoAAQATAAgAAAAbAAsAAQATAAkAAAAbAAwAAQATAAoAAAA=")
 tile_set = SubResource("TileSet_tf58o")
 
 [node name="PlayerCat" parent="." instance=ExtResource("4_khx3j")]
@@ -1148,9 +1148,13 @@ position = Vector2(357, 131)
 scale = Vector2(0.7375, 0.6875)
 texture = ExtResource("8_6aub8")
 
-[node name="TrashCoinArea" parent="trashCan" instance=ExtResource("8_aiclw")]
+[node name="PickupArea" parent="trashCan" instance=ExtResource("9_4pcj1")]
 script = ExtResource("10_wwkix")
 myItem = ExtResource("10_4pcj1")
+
+[node name="House2" type="Sprite2D" parent="."]
+position = Vector2(245, 116)
+texture = ExtResource("16_2m12b")
 
 [node name="BusDriver" type="Sprite2D" parent="."]
 position = Vector2(241, 13)
@@ -1171,7 +1175,7 @@ scale = Vector2(1.905, 1.905)
 myItem = ExtResource("10_4pcj1")
 
 [node name="Quarter3" type="Sprite2D" parent="."]
-position = Vector2(433, 105)
+position = Vector2(355, 41)
 scale = Vector2(0.4375, 0.4375)
 texture = ExtResource("8_nfcvq")
 
@@ -1183,8 +1187,7 @@ myItem = ExtResource("10_4pcj1")
 position = Vector2(281, 116)
 texture = ExtResource("16_2m12b")
 
-[node name="TrashCoinArea" parent="House" instance=ExtResource("8_aiclw")]
-scale = Vector2(2.665, 2.665)
+[node name="PickupArea" parent="House" instance=ExtResource("9_4pcj1")]
 script = ExtResource("10_wwkix")
 myItem = ExtResource("10_4pcj1")
 
@@ -1193,6 +1196,6 @@ position = Vector2(104, 195)
 scale = Vector2(0.7375, 0.6875)
 texture = ExtResource("17_2m12b")
 
-[node name="TrashCoinArea" parent="Book" instance=ExtResource("8_aiclw")]
+[node name="PickupArea" parent="Book" instance=ExtResource("9_4pcj1")]
 script = ExtResource("10_wwkix")
 myItem = ExtResource("10_4pcj1")

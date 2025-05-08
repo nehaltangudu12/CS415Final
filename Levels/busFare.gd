@@ -27,7 +27,7 @@ func checkItemCount():
 		level_root.change_coins_found_state(level_root.COINS_FOUND_STATE.COINS_FOUND)
 		Notif.display_notif("Looks like I have enough money to take the bus. Yay!")
 		SceneManager.change_scene(
-			"Room_One",
+			"game_win",
 			fade_out_options,
 			fade_in_options,
 			general_options,
