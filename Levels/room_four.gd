@@ -29,6 +29,8 @@ func _ready():
 	player.shrink_speed = 0.01
 	var light = player.get_node("PointLight2D")
 	light.energy = 0.5
+	Notif.display_notif("There's a bus! But damn I don't have any coins. Gotta collect 5 coins to pay the bus fare!")	
+
 
 # Catching inputs for interaction and inventory
 func _input(event):
