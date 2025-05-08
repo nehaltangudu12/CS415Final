@@ -1,7 +1,7 @@
 [gd_scene load_steps=32 format=3 uid="uid://l6oecmvfr7a7"]
 
-[ext_resource type="Texture2D" uid="uid://c5iig5mniuitb" path="res://Assets/Sprout Lands - Sprites - Basic pack/Characters/Basic Charakter Spritesheet.png" id="1_k8dsg"]
 [ext_resource type="Script" uid="uid://dkt4ekm7grid1" path="res://Characters/Player/player_cat.gd" id="1_u0lhy"]
+[ext_resource type="Texture2D" uid="uid://dw32qeftaqwg5" path="res://Assets/sprites/IMG_2783 8.png" id="2_my8ih"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k8dsg"]
 size = Vector2(14, 6)
@@ -257,7 +257,7 @@ collision_mask = 33
 script = ExtResource("1_u0lhy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_k8dsg")
+texture = ExtResource("2_my8ih")
 hframes = 4
 vframes = 4
 frame = 12
