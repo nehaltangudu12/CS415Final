@@ -17,7 +17,7 @@
 [ext_resource type="Resource" uid="uid://bkv8184rupkau" path="res://Inventory/Items/empty.tres" id="11_8qlal"]
 [ext_resource type="Resource" uid="uid://b1migf6lktrov" path="res://Inventory/Items/cup.tres" id="11_m4r50"]
 [ext_resource type="PackedScene" uid="uid://dmj8q8ibt2p47" path="res://World/ItemUseArea.tscn" id="11_oaq7o"]
-[ext_resource type="Script" path="res://Levels/sink.gd" id="12_jyagn"]
+[ext_resource type="Script" uid="uid://cm1uoxywu1tbm" path="res://Levels/sink.gd" id="12_jyagn"]
 [ext_resource type="Resource" uid="uid://cy8arp3h5gi4c" path="res://Inventory/Items/plate.tres" id="14_fj5cf"]
 [ext_resource type="PackedScene" uid="uid://b6q7qfq27gosg" path="res://Characters/NPC/GenericNPC/GenericNPC.tscn" id="20_p6p58"]
 [ext_resource type="Texture2D" uid="uid://c4iau7xgtq3gq" path="res://Assets/sprites/Player-Idle.png" id="21_p6p58"]
