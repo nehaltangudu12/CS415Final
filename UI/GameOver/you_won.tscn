@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://b6rvuljdtcl2r"]
 
-[ext_resource type="Texture2D" uid="uid://bpj04oooxndtq" path="res://Assets/Sprout Lands - Sprites - Basic pack/Characters/Basic Charakter Spritesheet_static.png" id="1_x4tai"]
 [ext_resource type="Script" uid="uid://dcqml1o3c4b2g" path="res://UI/GameOver/you_won.gd" id="1_y1pdn"]
 [ext_resource type="Texture2D" uid="uid://0ky2s4h5abv" path="res://UI/GameOver/assets/restart.png" id="2_x4tai"]
+[ext_resource type="Texture2D" uid="uid://c8q0as2xrvep6" path="res://Assets/sprites/Single_sprite.png" id="2_y1pdn"]
 [ext_resource type="Texture2D" uid="uid://b4klqmv0vfxsu" path="res://UI/GameOver/assets/quit.png" id="3_5kf5n"]
 [ext_resource type="Texture2D" uid="uid://ct45dmgtas51b" path="res://UI/GameOver/assets/you_won.png" id="4_5kf5n"]
 
@@ -14,11 +14,12 @@ scale = Vector2(0.7, 0.7)
 transform = Transform2D(0.7, 0, 0, 0.7, 0, 0)
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
-offset_left = 328.0
-offset_top = 152.0
-offset_right = 457.0
-offset_bottom = 261.0
-texture = ExtResource("1_x4tai")
+offset_left = 330.0
+offset_top = 144.286
+offset_right = 459.0
+offset_bottom = 253.286
+scale = Vector2(0.892308, 1.19824)
+texture = ExtResource("2_y1pdn")
 
 [node name="RestartWin" type="TextureButton" parent="CanvasLayer"]
 offset_left = 150.0
