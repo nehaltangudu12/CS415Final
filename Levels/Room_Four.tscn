@@ -1,20 +1,20 @@
 [gd_scene load_steps=21 format=4 uid="uid://blh1b4f3kcsg4"]
 
-[ext_resource type="Script" uid="uid://b3sn5ryw36ls5" path="res://Levels/room_four.gd" id="1_ius1t"]
+[ext_resource type="Script" path="res://Levels/room_four.gd" id="1_ius1t"]
 [ext_resource type="Texture2D" uid="uid://dj0rpl3lmfvso" path="res://Assets/kenney_rpg-urban-pack/Tilemap/tilemap.png" id="2_do05b"]
 [ext_resource type="Texture2D" uid="uid://b5i5vnao4jj4e" path="res://Assets/kenney_rpg-urban-pack/Tilemap/tilemap_packed.png" id="3_t8u00"]
 [ext_resource type="PackedScene" uid="uid://l6oecmvfr7a7" path="res://Characters/Player/player_cat.tscn" id="4_khx3j"]
 [ext_resource type="PackedScene" uid="uid://l8xtpy0co1om" path="res://Inventory/inv_menu.tscn" id="5_qayah"]
 [ext_resource type="Resource" uid="uid://bia5i2p7vck5l" path="res://Inventory/myInv.tres" id="6_4662p"]
 [ext_resource type="Resource" uid="uid://bkv8184rupkau" path="res://Inventory/Items/empty.tres" id="7_nlcyj"]
-[ext_resource type="Script" uid="uid://dk5s4g5cs7th3" path="res://Levels/busFare.gd" id="8_3h06v"]
+[ext_resource type="Script" path="res://Levels/busFare.gd" id="8_3h06v"]
 [ext_resource type="Texture2D" uid="uid://cp1m22skyk6f6" path="res://Assets/Interactables/Dirty Pot.png" id="8_6aub8"]
-[ext_resource type="Texture2D" uid="uid://c4een2865isb7" path="res://Assets/kenney_rpg-urban-pack/Sprites/car_left.png" id="8_726c2"]
 [ext_resource type="PackedScene" uid="uid://dmj8q8ibt2p47" path="res://World/ItemUseArea.tscn" id="8_aiclw"]
 [ext_resource type="Texture2D" uid="uid://dtgc5fsokmjb2" path="res://Assets/kenney_ui-pack-pixel-adventure/Tiles/Large tiles/Thin outline/tile_0052.png" id="8_nfcvq"]
 [ext_resource type="PackedScene" uid="uid://c631sh33m0vn2" path="res://World/PickupArea.tscn" id="9_4pcj1"]
 [ext_resource type="Resource" uid="uid://dw3xoo2oe3q4y" path="res://Inventory/Items/quarter.tres" id="10_4pcj1"]
-[ext_resource type="Script" uid="uid://bs2evlo8jiolw" path="res://World/trash_coin.gd" id="10_wwkix"]
+[ext_resource type="Script" path="res://World/trash_coin.gd" id="10_wwkix"]
+[ext_resource type="Texture2D" uid="uid://wl52d0epr6ub" path="res://Assets/sprites/Untitled_Artwork 8.png" id="13_2m12b"]
 [ext_resource type="Texture2D" uid="uid://sic858yd3cs7" path="res://Assets/Sprout Lands - Sprites - Basic pack/Objects/Free_Chicken_House.png" id="16_2m12b"]
 [ext_resource type="Texture2D" uid="uid://0mmtpjrvj4xr" path="res://Assets/Interactables/Closed Book.png" id="17_2m12b"]
 
@@ -1154,10 +1154,11 @@ myItem = ExtResource("10_4pcj1")
 
 [node name="BusDriver" type="Sprite2D" parent="."]
 position = Vector2(241, 13)
-texture = ExtResource("8_726c2")
+texture = ExtResource("13_2m12b")
 script = ExtResource("8_3h06v")
 
 [node name="BusArea" parent="BusDriver" instance=ExtResource("8_aiclw")]
+position = Vector2(-14, 0)
 scale = Vector2(1.765, 1.765)
 itemNeeded = ["Quarter", "Quarter", "Quarter", "Quarter", "Quarter"]
 
