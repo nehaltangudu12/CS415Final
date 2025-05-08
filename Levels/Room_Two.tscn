@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://fmdf1j2goin1"]
+[gd_scene load_steps=24 format=4 uid="uid://fmdf1j2goin1"]
 
 [ext_resource type="Texture2D" uid="uid://dj0rpl3lmfvso" path="res://Assets/kenney_rpg-urban-pack/Tilemap/tilemap.png" id="1_4can4"]
 [ext_resource type="Script" uid="uid://hqlo5akbpdq7" path="res://Levels/room_two.gd" id="1_fakkh"]
@@ -7,10 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://l8xtpy0co1om" path="res://Inventory/inv_menu.tscn" id="4_fakkh"]
 [ext_resource type="Resource" uid="uid://bia5i2p7vck5l" path="res://Inventory/myInv.tres" id="5_p0pjj"]
 [ext_resource type="Resource" uid="uid://bkv8184rupkau" path="res://Inventory/Items/empty.tres" id="6_g6qth"]
+[ext_resource type="Texture2D" uid="uid://bxmusnq4smnyl" path="res://Assets/kenney_rpg-urban-pack/Tiles/tile_0024.png" id="7_wu31j"]
 [ext_resource type="PackedScene" uid="uid://dadbr7g4hva8u" path="res://Objects/PhoneBooth/PhoneBooth.tscn" id="8_p0pjj"]
+[ext_resource type="Texture2D" uid="uid://cjxtxu8y0xkgh" path="res://Assets/kenney_rpg-urban-pack/Tiles/tile_0105.png" id="9_5xqnu"]
 [ext_resource type="PackedScene" uid="uid://b6q7qfq27gosg" path="res://Characters/NPC/GenericNPC/GenericNPC.tscn" id="10_cr4ho"]
 [ext_resource type="PackedScene" uid="uid://bym46dceki7o3" path="res://Levels/TransitionArea.tscn" id="10_xl4ak"]
-[ext_resource type="Texture2D" uid="uid://c4iau7xgtq3gq" path="res://Assets/sprites/Player-Idle.png" id="11_8a8q8"]
 [ext_resource type="PackedScene" uid="uid://cum3uhbgu6q8j" path="res://UI/DialogPlayer.tscn" id="12_8a8q8"]
 [ext_resource type="Texture2D" uid="uid://c0531600m6ebj" path="res://Assets/Sprout Lands - Sprites - Basic pack/Objects/Basic_Furniture.png" id="13_ghd3g"]
 
@@ -1235,7 +1236,7 @@ size = Vector2(49.625, 1.27586)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g6qth"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cr4ho"]
-size = Vector2(12, 8)
+size = Vector2(12, 9)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8a8q8"]
 size = Vector2(0.958334, 0.775863)
@@ -1248,16 +1249,6 @@ size = Vector2(1.58333, 0.793103)
 
 [node name="RoomTwo" type="Node2D"]
 script = ExtResource("1_fakkh")
-
-[node name="PlayerCat" parent="." instance=ExtResource("3_tf58o")]
-top_level = true
-position = Vector2(39, 62)
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PlayerCat"]
-remote_path = NodePath("../../Camera2D")
-
-[node name="RemoteTransform2D2" type="RemoteTransform2D" parent="PlayerCat"]
-remote_path = NodePath("../../Camera2D")
 
 [node name="BASE (Copy This)" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_tf58o")
@@ -1311,19 +1302,6 @@ position = Vector2(0, 10)
 tile_map_data = PackedByteArray("AAAVABYAAQAEAA0AAAAWABYAAQAFAA0AAAAXABYAAQAGAA0AAAAYABYAAQAEAA0AAAAZABYAAQAFAA0AAAAaABYAAQAGAA0AAAAbABYAAQAEAA0AAAAcABYAAQAFAA0AAAAdABYAAQAGAA0AAAAeABYAAQAEAA0AAAAfABYAAQAFAA0AAAAgABYAAQAGAA0AAAAhABYAAQAEAA0AAAAiABYAAQAFAA0AAAAjABYAAQAGAA0AAAAkABYAAQAEAA0AAAAlABYAAQAFAA0AAAAmABYAAQAGAA0AAAAnABYAAQAEAA0AAAAoABYAAQAFAA0AAAApABYAAQAGAA0AAAAqABYAAQAEAA0AAAArABYAAQAFAA0AAAAsABYAAQAGAA0AAAAtABYAAQAEAA0AAAAuABYAAQAFAA0AAAAvABYAAQAGAA0AAAAwABYAAQAEAA0AAAAxABYAAQAFAA0AAAAyABYAAQAGAA0AAAAzABYAAQAEAA0AAAA0ABYAAQAFAA0AAAA1ABYAAQAGAA0AAAA2ABYAAQAEAA0AAAA3ABYAAQAFAA0AAAA4ABYAAQAGAA0AAAA5ABYAAQAEAA0AAAA6ABYAAQAFAA0AAAA7ABYAAQAGAA0AAAA8ABYAAQAEAA0AAAA9ABYAAQAFAA0AAAA+ABYAAQAGAA0AAAA/ABYAAQAEAA0AAABAABYAAQAFAA0AAABBABYAAQAGAA0AAABCABYAAQAEAA0AAABDABYAAQAFAA0AAABEABYAAQAGAA0AAAA=")
 tile_set = SubResource("TileSet_tf58o")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-visible = false
-position = Vector2(39, 62)
-
-[node name="InvMenu" parent="Camera2D" instance=ExtResource("4_fakkh")]
-visible = false
-offset_left = -157.0
-offset_top = -152.0
-offset_right = -157.0
-offset_bottom = -152.0
-inv = ExtResource("5_p0pjj")
-emptyObj = ExtResource("6_g6qth")
-
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 visible = false
 energy = 0.8
@@ -1368,11 +1346,12 @@ position = Vector2(300, 50)
 position = Vector2(950, 250)
 
 [node name="Sprite2D" parent="RiddleOne" index="0"]
-scale = Vector2(2, 2)
-texture = ExtResource("11_8a8q8")
+position = Vector2(0.5, 8.5)
+scale = Vector2(0.9375, 0.9375)
+texture = ExtResource("7_wu31j")
 
 [node name="CollisionShape2D" parent="RiddleOne/CharacterBody2D" index="0"]
-position = Vector2(0, 13)
+position = Vector2(0, 12.5)
 shape = SubResource("RectangleShape2D_cr4ho")
 
 [node name="DialogArea" parent="RiddleOne" index="2"]
@@ -1389,8 +1368,9 @@ position = Vector2(100, 300)
 rotation = -6.28319
 
 [node name="Sprite2D" parent="RiddleTwo" index="0"]
-scale = Vector2(2, 2)
-texture = ExtResource("11_8a8q8")
+position = Vector2(0.393597, 9.89005)
+scale = Vector2(0.7992, 0.763748)
+texture = ExtResource("9_5xqnu")
 
 [node name="CollisionShape2D" parent="RiddleTwo/CharacterBody2D" index="0"]
 position = Vector2(0, 13)
@@ -1422,7 +1402,29 @@ shape = SubResource("RectangleShape2D_wu31j")
 [node name="RichTextLabel" parent="STLSign/DialogArea/CanvasLayer" index="0"]
 text = "[Read]"
 
-[editable path="PlayerCat"]
+[node name="PlayerCat" parent="." instance=ExtResource("3_tf58o")]
+top_level = true
+position = Vector2(39, 62)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PlayerCat"]
+remote_path = NodePath("../../Camera2D")
+
+[node name="RemoteTransform2D2" type="RemoteTransform2D" parent="PlayerCat"]
+remote_path = NodePath("../../Camera2D")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+visible = false
+position = Vector2(39, 62)
+
+[node name="InvMenu" parent="Camera2D" instance=ExtResource("4_fakkh")]
+visible = false
+offset_left = -157.0
+offset_top = -152.0
+offset_right = -157.0
+offset_bottom = -152.0
+inv = ExtResource("5_p0pjj")
+emptyObj = ExtResource("6_g6qth")
+
 [editable path="TransitionArea"]
 [editable path="PhoneBooth"]
 [editable path="PhoneBooth/Area2D/UserInput"]
@@ -1432,3 +1434,4 @@ text = "[Read]"
 [editable path="RiddleTwo/DialogArea"]
 [editable path="STLSign"]
 [editable path="STLSign/DialogArea"]
+[editable path="PlayerCat"]
