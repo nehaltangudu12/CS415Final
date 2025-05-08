@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmh3n161r5xos"]
+
+[ext_resource type="Script" uid="uid://c0owdwbyrxvad" path="res://Characters/NPC/Stalker/stalker.gd" id="1_g1inf"]
+[ext_resource type="Texture2D" uid="uid://h1t0xu2fi04h" path="res://Assets/sprites/Stalker.png" id="2_g1inf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bfsqv"]
+size = Vector2(8, 7.78214)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w554k"]
+size = Vector2(10.5773, 12.7093)
+
+[node name="Stalker" type="CharacterBody2D"]
+collision_layer = 16
+collision_mask = 17
+script = ExtResource("1_g1inf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.77522, 2.97951)
+texture = ExtResource("2_g1inf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 18)
+scale = Vector2(1.42339, 1.55366)
+shape = SubResource("RectangleShape2D_bfsqv")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="HitBox" type="Area2D" parent="."]
+scale = Vector2(1.77522, 2.46314)
+collision_layer = 16
+collision_mask = 12
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(0, 3.51273)
+shape = SubResource("RectangleShape2D_w554k")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]

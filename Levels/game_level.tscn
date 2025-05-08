@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://b4t4wmqtf1wjm"]
+[gd_scene load_steps=45 format=4 uid="uid://b4t4wmqtf1wjm"]
 
 [ext_resource type="Script" uid="uid://sej1q3wjvr8u" path="res://Levels/game_level.gd" id="1_0ooie"]
 [ext_resource type="PackedScene" uid="uid://l6oecmvfr7a7" path="res://Characters/Player/player_cat.tscn" id="1_up8ek"]
@@ -28,6 +28,7 @@
 [ext_resource type="Script" uid="uid://712cacw6ayrk" path="res://Levels/button.gd" id="24_pl1jo"]
 [ext_resource type="PackedScene" uid="uid://ckys4pe8jtm5p" path="res://Characters/NPC/Car/spawn_car.tscn" id="28_08jf7"]
 [ext_resource type="PackedScene" uid="uid://bia6mho7tystw" path="res://Objects/Health/health.tscn" id="28_glhpp"]
+[ext_resource type="PackedScene" uid="uid://dmh3n161r5xos" path="res://Characters/NPC/Stalker/stalker.tscn" id="29_08jf7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_um5wi"]
 
@@ -637,8 +638,6 @@ offset_bottom = -152.0
 inv = ExtResource("15_jw0rm")
 emptyObj = ExtResource("17_wri67")
 
-[node name="Cow" parent="." instance=ExtResource("13_ds5vk")]
-
 [node name="Cow2" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("13_ds5vk")]
 position = Vector2(277, 218)
 target_to_chase = NodePath("../PlayerCat")
@@ -732,6 +731,10 @@ position = Vector2(223, 326)
 [node name="Spawn Car4" parent="." instance=ExtResource("28_08jf7")]
 position = Vector2(611, 54)
 car_direction = 3
+
+[node name="Stalker" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("29_08jf7")]
+position = Vector2(514, 287)
+target_to_chase = NodePath("../PlayerCat")
 
 [connection signal="pressed" from="switchLevelButton/Button" to="." method="_on_button_pressed"]
 

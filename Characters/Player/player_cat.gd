@@ -68,16 +68,19 @@ func _process(delta):
 	if light.texture_scale > 0.0:
 		light.texture_scale -= shrink_speed * delta
 		if light.texture_scale < 0.0:
-			GameOverCanvas.game_over()
+			GameOverCanvas.murder_cutscene()
 			print("you died :(")
 
 # Note: Damage MUST be between [0,1]
-func take_damage(damage: float):
+func take_damage(damage: float, key: String = ""):
 	print("You got cheese touched")
 	var new_health = light.texture_scale - damage
 	if new_health < 0:
 			light.texture_scale = 0
-			GameOverCanvas.game_over()
+			if key == "car":
+				GameOverCanvas.game_over()
+			else:
+				GameOverCanvas.murder_cutscene()
 			is_dead = true
 	else:
 		light.texture_scale = new_health
