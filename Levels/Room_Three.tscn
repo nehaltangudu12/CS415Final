@@ -1426,11 +1426,17 @@ position = Vector2(361, 216)
 [node name="Health9" parent="." instance=ExtResource("10_qayah")]
 position = Vector2(40, 327)
 
+[node name="Health11" parent="." instance=ExtResource("10_qayah")]
+position = Vector2(103, 327)
+
 [node name="Health12" parent="." instance=ExtResource("10_qayah")]
 position = Vector2(168, 327)
 
 [node name="Health13" parent="." instance=ExtResource("10_qayah")]
 position = Vector2(249, 327)
+
+[node name="Health14" parent="." instance=ExtResource("10_qayah")]
+position = Vector2(297, 328)
 
 [node name="Health15" parent="." instance=ExtResource("10_qayah")]
 position = Vector2(344, 330)
@@ -1438,20 +1444,41 @@ position = Vector2(344, 330)
 [node name="Health16" parent="." instance=ExtResource("10_qayah")]
 position = Vector2(234, 389)
 
+[node name="Health17" parent="." instance=ExtResource("10_qayah")]
+position = Vector2(263, 390)
+
 [node name="Health18" parent="." instance=ExtResource("10_qayah")]
-position = Vector2(361, 392)
+position = Vector2(370, 391)
+
+[node name="Health19" parent="." instance=ExtResource("10_qayah")]
+position = Vector2(36, 393)
+
+[node name="Health20" parent="." instance=ExtResource("10_qayah")]
+position = Vector2(184, 391)
 
 [node name="Health21" parent="." instance=ExtResource("10_qayah")]
 position = Vector2(127, 393)
 
+[node name="Health22" parent="." instance=ExtResource("10_qayah")]
+position = Vector2(313, 392)
+
 [node name="Health23" parent="." instance=ExtResource("10_qayah")]
 position = Vector2(34, 456)
+
+[node name="Health24" parent="." instance=ExtResource("10_qayah")]
+position = Vector2(255, 453)
+
+[node name="Health25" parent="." instance=ExtResource("10_qayah")]
+position = Vector2(95, 455)
 
 [node name="Health26" parent="." instance=ExtResource("10_qayah")]
 position = Vector2(180, 456)
 
 [node name="Health27" parent="." instance=ExtResource("10_qayah")]
 position = Vector2(352, 454)
+
+[node name="Health28" parent="." instance=ExtResource("10_qayah")]
+position = Vector2(55, 521)
 
 [node name="Health29" parent="." instance=ExtResource("10_qayah")]
 position = Vector2(302, 520)
@@ -1461,6 +1488,9 @@ position = Vector2(215, 521)
 
 [node name="Health31" parent="." instance=ExtResource("10_qayah")]
 position = Vector2(134, 522)
+
+[node name="Health32" parent="." instance=ExtResource("10_qayah")]
+position = Vector2(370, 520)
 
 [node name="Spawn Car7" parent="." instance=ExtResource("9_khx3j")]
 position = Vector2(-10, 236)
