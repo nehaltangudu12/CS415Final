@@ -9,6 +9,7 @@ var paused = false
 @onready var transition_area = $TransitionArea
 
 func _ready():
+	SignalBus.set_current_level("Room_Three")
 	SignalBus.open_inventory.connect(pauseMenu)
 	player.shrink_speed = 0.08
 	var light = player.get_node("PointLight2D")

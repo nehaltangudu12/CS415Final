@@ -23,6 +23,8 @@ func _ready():
 	pass
 
 func _on_new_game_button_down() -> void:
+	SignalBus.emit_signal("SET_CURRENT_LEVEL", "Room_One")
+	
 	SceneManager.change_scene(
 		"Room_One",
 		fade_in_options,

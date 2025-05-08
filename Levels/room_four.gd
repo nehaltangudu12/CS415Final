@@ -24,6 +24,7 @@ func change_coins_found_state(state: COINS_FOUND_STATE):
 		#REPLACE DIALOGUE TRIGGER HERE -> bartender.change_dialogue_key("bartender2.dialogue")
 
 func _ready():
+	SignalBus.set_current_level("Room_Four")
 	SignalBus.open_inventory.connect(pauseMenu)
 	player.shrink_speed = 0.01
 	var light = player.get_node("PointLight2D")

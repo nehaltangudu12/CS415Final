@@ -21,6 +21,7 @@ func _check_phone_number_matches(val: String):
 		Notif.display_notif("Must be the wrong number...")
 		
 func _ready():
+	SignalBus.set_current_level("Room_Two")
 	SignalBus.open_inventory.connect(pauseMenu)
 	player.shrink_speed = 0.01
 	var light = player.get_node("PointLight2D")

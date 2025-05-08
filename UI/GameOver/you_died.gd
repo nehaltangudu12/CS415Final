@@ -17,10 +17,18 @@ extends Node2D
 @onready var fade_in_options = SceneManager.create_options(fade_in_speed, fade_in_pattern, fade_in_smoothness, fade_in_inverted)
 @onready var general_options = SceneManager.create_general_options(color, timeout, clickable, add_to_back)
 	
+var current_level_key = "Title"
+
+func _ready() -> void:
+	SignalBus.SET_CURRENT_LEVEL.connect(set_current_level_key)
+	set_current_level_key(SignalBus.current_level_key)
+	
+func set_current_level_key(new_current_level_key):
+	current_level_key = new_current_level_key
 
 func _on_restart_button_down() -> void:
 	SceneManager.change_scene(
-		"Title",
+		current_level_key,
 		fade_in_options,
 		fade_out_options,
 		general_options,

@@ -18,6 +18,7 @@ enum DISHES_WASHED_STATE {
 static var dishes_washed_state: DISHES_WASHED_STATE = DISHES_WASHED_STATE.DISHES_NOT_WASHED
 
 func _ready():
+	SignalBus.set_current_level("Room_One")
 	SignalBus.open_inventory.connect(pauseMenu)
 	DialogueManager.passed_title.connect(on_finished_talking_with_nathan)
 	player.shrink_speed = 0.0
