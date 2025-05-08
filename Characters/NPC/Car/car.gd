@@ -61,7 +61,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_hit_box_body_entered(body: Node2D) -> void:
 	if body is Player:
-		body.take_damage(damage)
+		body.take_damage(damage, "car")
 		var direction = global_position.direction_to(body.global_position)
 		body.get_knockbacked(direction, knockback_strength)
 

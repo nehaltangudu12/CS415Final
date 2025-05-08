@@ -1,7 +1,7 @@
 [gd_scene load_steps=32 format=3 uid="uid://l6oecmvfr7a7"]
 
+[ext_resource type="Texture2D" uid="uid://c5iig5mniuitb" path="res://Assets/Sprout Lands - Sprites - Basic pack/Characters/Basic Charakter Spritesheet.png" id="1_k8dsg"]
 [ext_resource type="Script" uid="uid://dkt4ekm7grid1" path="res://Characters/Player/player_cat.gd" id="1_u0lhy"]
-[ext_resource type="Texture2D" uid="uid://d02cnwc2yxg0h" path="res://Assets/sprites/IMG_2783 6.png" id="2_my8ih"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k8dsg"]
 size = Vector2(14, 6)
@@ -234,7 +234,6 @@ states/Idle/position = Vector2(361.333, 99.6296)
 states/Walk/node = SubResource("AnimationNodeBlendSpace2D_mvmeq")
 states/Walk/position = Vector2(530.667, 99.0371)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_3b306"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_pilkh"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_rktvm")]
-graph_offset = Vector2(27.24, 3.8625)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_my8ih"]
 
@@ -258,9 +257,7 @@ collision_mask = 33
 script = ExtResource("1_u0lhy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 0.25)
-scale = Vector2(1, 0.970588)
-texture = ExtResource("2_my8ih")
+texture = ExtResource("1_k8dsg")
 hframes = 4
 vframes = 4
 frame = 12
@@ -298,7 +295,6 @@ shape = SubResource("RectangleShape2D_ot2k6")
 [node name="Timer" type="Timer" parent="."]
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(0, 2)
 texture = SubResource("GradientTexture2D_ot2k6")
 
 [connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
