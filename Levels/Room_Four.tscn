@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://blh1b4f3kcsg4"]
+[gd_scene load_steps=17 format=4 uid="uid://blh1b4f3kcsg4"]
 
 [ext_resource type="Script" uid="uid://b3sn5ryw36ls5" path="res://Levels/room_four.gd" id="1_ius1t"]
 [ext_resource type="Texture2D" uid="uid://dj0rpl3lmfvso" path="res://Assets/kenney_rpg-urban-pack/Tilemap/tilemap.png" id="2_do05b"]
@@ -7,6 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://l8xtpy0co1om" path="res://Inventory/inv_menu.tscn" id="5_qayah"]
 [ext_resource type="Resource" uid="uid://bia5i2p7vck5l" path="res://Inventory/myInv.tres" id="6_4662p"]
 [ext_resource type="Resource" uid="uid://bkv8184rupkau" path="res://Inventory/Items/empty.tres" id="7_nlcyj"]
+[ext_resource type="Script" uid="uid://dk5s4g5cs7th3" path="res://Levels/busFare.gd" id="8_3h06v"]
+[ext_resource type="Texture2D" uid="uid://c4een2865isb7" path="res://Assets/kenney_rpg-urban-pack/Sprites/car_left.png" id="8_726c2"]
+[ext_resource type="PackedScene" uid="uid://dmj8q8ibt2p47" path="res://World/ItemUseArea.tscn" id="8_aiclw"]
+[ext_resource type="Texture2D" uid="uid://dtgc5fsokmjb2" path="res://Assets/kenney_ui-pack-pixel-adventure/Tiles/Large tiles/Thin outline/tile_0052.png" id="8_nfcvq"]
+[ext_resource type="PackedScene" uid="uid://c631sh33m0vn2" path="res://World/PickupArea.tscn" id="9_4pcj1"]
+[ext_resource type="Resource" uid="uid://dw3xoo2oe3q4y" path="res://Inventory/Items/quarter.tres" id="10_4pcj1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4can4"]
 texture = ExtResource("2_do05b")
@@ -1132,3 +1138,57 @@ emptyObj = ExtResource("7_nlcyj")
 visible = false
 energy = 0.8
 blend_mode = 1
+
+[node name="BusDriver" type="Sprite2D" parent="."]
+position = Vector2(84, 223)
+texture = ExtResource("8_726c2")
+script = ExtResource("8_3h06v")
+
+[node name="BusArea" parent="BusDriver" instance=ExtResource("8_aiclw")]
+scale = Vector2(1.765, 1.765)
+itemNeeded = ["Quarter", "Quarter", "Quarter", "Quarter", "Quarter"]
+
+[node name="Quarter" type="Sprite2D" parent="."]
+position = Vector2(508, 120)
+scale = Vector2(0.4375, 0.4375)
+texture = ExtResource("8_nfcvq")
+
+[node name="PickupArea" parent="Quarter" instance=ExtResource("9_4pcj1")]
+scale = Vector2(1.905, 1.905)
+myItem = ExtResource("10_4pcj1")
+
+[node name="Quarter2" type="Sprite2D" parent="."]
+position = Vector2(398, 253)
+scale = Vector2(0.4375, 0.4375)
+texture = ExtResource("8_nfcvq")
+
+[node name="PickupArea" parent="Quarter2" instance=ExtResource("9_4pcj1")]
+scale = Vector2(1.905, 1.905)
+myItem = ExtResource("10_4pcj1")
+
+[node name="Quarter3" type="Sprite2D" parent="."]
+position = Vector2(571, 205)
+scale = Vector2(0.4375, 0.4375)
+texture = ExtResource("8_nfcvq")
+
+[node name="PickupArea" parent="Quarter3" instance=ExtResource("9_4pcj1")]
+scale = Vector2(1.905, 1.905)
+myItem = ExtResource("10_4pcj1")
+
+[node name="Quarter4" type="Sprite2D" parent="."]
+position = Vector2(536, 326)
+scale = Vector2(0.4375, 0.4375)
+texture = ExtResource("8_nfcvq")
+
+[node name="PickupArea" parent="Quarter4" instance=ExtResource("9_4pcj1")]
+scale = Vector2(1.905, 1.905)
+myItem = ExtResource("10_4pcj1")
+
+[node name="Quarter5" type="Sprite2D" parent="."]
+position = Vector2(438, 209)
+scale = Vector2(0.4375, 0.4375)
+texture = ExtResource("8_nfcvq")
+
+[node name="PickupArea" parent="Quarter5" instance=ExtResource("9_4pcj1")]
+scale = Vector2(1.905, 1.905)
+myItem = ExtResource("10_4pcj1")
