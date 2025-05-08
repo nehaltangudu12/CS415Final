@@ -638,8 +638,6 @@ offset_bottom = -152.0
 inv = ExtResource("15_jw0rm")
 emptyObj = ExtResource("17_wri67")
 
-[node name="Cow" parent="." instance=ExtResource("13_ds5vk")]
-
 [node name="Cow2" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("13_ds5vk")]
 position = Vector2(277, 218)
 target_to_chase = NodePath("../PlayerCat")
