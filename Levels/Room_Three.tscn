@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=4 uid="uid://c1q2xp6o1acx6"]
 
-[ext_resource type="Script" uid="uid://bjagsxh1opbop" path="res://Levels/room_three.gd" id="1_ius1t"]
+[ext_resource type="Script" path="res://Levels/room_three.gd" id="1_ius1t"]
 [ext_resource type="Texture2D" uid="uid://dj0rpl3lmfvso" path="res://Assets/kenney_rpg-urban-pack/Tilemap/tilemap.png" id="2_do05b"]
 [ext_resource type="Texture2D" uid="uid://b5i5vnao4jj4e" path="res://Assets/kenney_rpg-urban-pack/Tilemap/tilemap_packed.png" id="3_t8u00"]
 [ext_resource type="Texture2D" uid="uid://bos7wqi4dipxf" path="res://Assets/Top-Down_Retro_Interior/TopDownHouse_DoorsAndWindows.png" id="4_do05b"]
