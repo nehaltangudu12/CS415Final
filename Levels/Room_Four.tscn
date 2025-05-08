@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=4 uid="uid://blh1b4f3kcsg4"]
 
-[ext_resource type="Script" path="res://Levels/room_four.gd" id="1_ius1t"]
+[ext_resource type="Script" uid="uid://b3sn5ryw36ls5" path="res://Levels/room_four.gd" id="1_ius1t"]
 [ext_resource type="Texture2D" uid="uid://dj0rpl3lmfvso" path="res://Assets/kenney_rpg-urban-pack/Tilemap/tilemap.png" id="2_do05b"]
 [ext_resource type="Texture2D" uid="uid://b5i5vnao4jj4e" path="res://Assets/kenney_rpg-urban-pack/Tilemap/tilemap_packed.png" id="3_t8u00"]
 [ext_resource type="PackedScene" uid="uid://l6oecmvfr7a7" path="res://Characters/Player/player_cat.tscn" id="4_khx3j"]
@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dtgc5fsokmjb2" path="res://Assets/kenney_ui-pack-pixel-adventure/Tiles/Large tiles/Thin outline/tile_0052.png" id="8_nfcvq"]
 [ext_resource type="PackedScene" uid="uid://c631sh33m0vn2" path="res://World/PickupArea.tscn" id="9_4pcj1"]
 [ext_resource type="Resource" uid="uid://dw3xoo2oe3q4y" path="res://Inventory/Items/quarter.tres" id="10_4pcj1"]
-[ext_resource type="Script" path="res://World/trash_coin.gd" id="10_wwkix"]
+[ext_resource type="Script" uid="uid://bs2evlo8jiolw" path="res://World/trash_coin.gd" id="10_wwkix"]
 [ext_resource type="Texture2D" uid="uid://wl52d0epr6ub" path="res://Assets/sprites/Untitled_Artwork 8.png" id="13_2m12b"]
 [ext_resource type="Texture2D" uid="uid://sic858yd3cs7" path="res://Assets/Sprout Lands - Sprites - Basic pack/Objects/Free_Chicken_House.png" id="16_2m12b"]
 [ext_resource type="Texture2D" uid="uid://0mmtpjrvj4xr" path="res://Assets/Interactables/Closed Book.png" id="17_2m12b"]
@@ -745,6 +745,7 @@ texture = ExtResource("3_t8u00")
 25:6/0 = 0
 26:6/0 = 0
 0:7/0 = 0
+0:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:7/0 = 0
 2:7/0 = 0
 3:7/0 = 0
@@ -1132,6 +1133,10 @@ remote_path = NodePath("../../Camera2D")
 
 [node name="RemoteTransform2D2" type="RemoteTransform2D" parent="PlayerCat"]
 remote_path = NodePath("../../Camera2D")
+
+[node name="Border (collision)" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD///7/AQAAAAcAAAD/////AQAAAAcAAAD//wAAAQAAAAcAAAD//wEAAQAAAAcAAAD//wIAAQAAAAcAAAD//wMAAQAAAAcAAAD//wQAAQAAAAcAAAD//wUAAQAAAAcAAAD//wYAAQAAAAcAAAD//wcAAQAAAAcAAAD//wgAAQAAAAcAAAD//wkAAQAAAAcAAAD//woAAQAAAAcAAAD//wsAAQAAAAcAAAD//wwAAQAAAAcAAAD//w0AAQAAAAcAAAD//w4AAQAAAAcAAAAAAA8AAQAAAAcAAGABAA8AAQAAAAcAAGACAA8AAQAAAAcAAGADAA8AAQAAAAcAAGAEAA8AAQAAAAcAAGAFAA8AAQAAAAcAAGAGAA8AAQAAAAcAAGAHAA8AAQAAAAcAAGAIAA8AAQAAAAcAAGAJAA8AAQAAAAcAAGAKAA8AAQAAAAcAAGALAA8AAQAAAAcAAGAMAA8AAQAAAAcAAGANAA8AAQAAAAcAAGAOAA8AAQAAAAcAAGAPAA8AAQAAAAcAAGAQAA8AAQAAAAcAAGARAA8AAQAAAAcAAGASAA8AAQAAAAcAAGATAA8AAQAAAAcAAGAUAA8AAQAAAAcAAGAVAA8AAQAAAAcAAGAWAA8AAQAAAAcAAGAXAA8AAQAAAAcAAGAYAA8AAQAAAAcAAGAZAA8AAQAAAAcAAGAaAA8AAQAAAAcAAGAbAA8AAQAAAAcAAGAcAA8AAQAAAAcAAGAdAA4AAQAAAAcAADAdAA0AAQAAAAcAADAdAAwAAQAAAAcAADAdAAsAAQAAAAcAADAdAAoAAQAAAAcAADAdAAkAAQAAAAcAADAdAAgAAQAAAAcAADAdAAcAAQAAAAcAADAdAAYAAQAAAAcAADAdAAUAAQAAAAcAADAdAAQAAQAAAAcAADAdAAMAAQAAAAcAADAdAAIAAQAAAAcAADAdAAEAAQAAAAcAADAdAAAAAQAAAAcAADAdAP//AQAAAAcAADAdAP7/AQAAAAcAADAcAP3/AQAAAAcAAFAbAP3/AQAAAAcAAFAaAP3/AQAAAAcAAFAZAP3/AQAAAAcAAFAYAP3/AQAAAAcAAFAXAP3/AQAAAAcAAFAWAP3/AQAAAAcAAFAVAP3/AQAAAAcAAFAUAP3/AQAAAAcAAFATAP3/AQAAAAcAAFASAP3/AQAAAAcAAFARAP3/AQAAAAcAAFAQAP3/AQAAAAcAAFAPAP3/AQAAAAcAAFAOAP3/AQAAAAcAAFANAP3/AQAAAAcAAFAMAP3/AQAAAAcAAFALAP3/AQAAAAcAAFAKAP3/AQAAAAcAAFAJAP3/AQAAAAcAAFAIAP3/AQAAAAcAAFAHAP3/AQAAAAcAAFAGAP3/AQAAAAcAAFAFAP3/AQAAAAcAAFAEAP3/AQAAAAcAAFADAP3/AQAAAAcAAFACAP3/AQAAAAcAAFABAP3/AQAAAAcAAFAAAP3/AQAAAAcAAFA=")
+tile_set = SubResource("TileSet_tf58o")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(39, 62)
