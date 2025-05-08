@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://fmdf1j2goin1"]
+[gd_scene load_steps=26 format=4 uid="uid://fmdf1j2goin1"]
 
 [ext_resource type="Texture2D" uid="uid://dj0rpl3lmfvso" path="res://Assets/kenney_rpg-urban-pack/Tilemap/tilemap.png" id="1_4can4"]
 [ext_resource type="Script" uid="uid://hqlo5akbpdq7" path="res://Levels/room_two.gd" id="1_fakkh"]
@@ -1416,15 +1416,11 @@ wait_time = 60.0
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_wu31j")
 
-[editable path="PlayerCat"]
 [node name="PlayerCat" parent="." instance=ExtResource("3_tf58o")]
 top_level = true
 position = Vector2(39, 62)
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PlayerCat"]
-remote_path = NodePath("../../Camera2D")
-
-[node name="RemoteTransform2D2" type="RemoteTransform2D" parent="PlayerCat"]
 remote_path = NodePath("../../Camera2D")
 
 [node name="Camera2D" type="Camera2D" parent="."]
