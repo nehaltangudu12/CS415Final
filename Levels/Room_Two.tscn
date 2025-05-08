@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://fmdf1j2goin1"]
+[gd_scene load_steps=28 format=4 uid="uid://fmdf1j2goin1"]
 
 [ext_resource type="Texture2D" uid="uid://dj0rpl3lmfvso" path="res://Assets/kenney_rpg-urban-pack/Tilemap/tilemap.png" id="1_4can4"]
 [ext_resource type="Script" uid="uid://hqlo5akbpdq7" path="res://Levels/room_two.gd" id="1_fakkh"]
@@ -15,6 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://cum3uhbgu6q8j" path="res://UI/DialogPlayer.tscn" id="12_8a8q8"]
 [ext_resource type="Texture2D" uid="uid://c0531600m6ebj" path="res://Assets/Sprout Lands - Sprites - Basic pack/Objects/Basic_Furniture.png" id="13_ghd3g"]
 [ext_resource type="PackedScene" uid="uid://dmh3n161r5xos" path="res://Characters/NPC/Stalker/stalker.tscn" id="14_wu31j"]
+[ext_resource type="PackedScene" uid="uid://bnjgi7twv00tb" path="res://Objects/NonInteractables/Light.tscn" id="16_pvwft"]
+[ext_resource type="PackedScene" uid="uid://bia6mho7tystw" path="res://Objects/Health/health.tscn" id="17_t206m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4can4"]
 texture = ExtResource("1_4can4")
@@ -1435,6 +1437,22 @@ offset_right = -157.0
 offset_bottom = -152.0
 inv = ExtResource("5_p0pjj")
 emptyObj = ExtResource("6_g6qth")
+
+[node name="Light" parent="." instance=ExtResource("16_pvwft")]
+position = Vector2(101, 304)
+
+[node name="Light2" parent="." instance=ExtResource("16_pvwft")]
+position = Vector2(950, 257)
+
+[node name="Health" parent="." instance=ExtResource("17_t206m")]
+position = Vector2(511, 116)
+
+[node name="Health2" parent="." instance=ExtResource("17_t206m")]
+position = Vector2(735, 311)
+
+[node name="Light3" parent="." instance=ExtResource("16_pvwft")]
+position = Vector2(300, 50)
+scale = Vector2(3.93805, 3.93805)
 
 [editable path="TransitionArea"]
 [editable path="PhoneBooth"]

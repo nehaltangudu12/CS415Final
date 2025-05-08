@@ -25,7 +25,6 @@ func _ready():
 	SignalBus.open_inventory.connect(pauseMenu)
 	player.shrink_speed = 0.01
 	var light = player.get_node("PointLight2D")
-	light.energy = 0.5
 	phone_booth.set_text_input_callback(_check_phone_number_matches)
 	
 	# Intro text

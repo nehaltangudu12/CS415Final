@@ -295,6 +295,7 @@ shape = SubResource("RectangleShape2D_ot2k6")
 [node name="Timer" type="Timer" parent="."]
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(0.741916, 0.741916)
 texture = SubResource("GradientTexture2D_ot2k6")
 
 [connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]

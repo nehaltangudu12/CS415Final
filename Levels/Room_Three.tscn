@@ -1558,9 +1558,9 @@ shape = SubResource("RectangleShape2D_nlcyj")
 
 [node name="Stalker" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("13_nlcyj")]
 position = Vector2(14, -37)
-move_speed = 80.0
+move_speed = 60.0
 target_to_chase = NodePath("../PlayerCat")
-wait_time = 7.0
+wait_time = 5.0
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_nlcyj")

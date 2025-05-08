@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://blh1b4f3kcsg4"]
+[gd_scene load_steps=25 format=4 uid="uid://blh1b4f3kcsg4"]
 
 [ext_resource type="Script" uid="uid://b3sn5ryw36ls5" path="res://Levels/room_four.gd" id="1_ius1t"]
 [ext_resource type="Texture2D" uid="uid://dj0rpl3lmfvso" path="res://Assets/kenney_rpg-urban-pack/Tilemap/tilemap.png" id="2_do05b"]
@@ -18,6 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://sic858yd3cs7" path="res://Assets/Sprout Lands - Sprites - Basic pack/Objects/Free_Chicken_House.png" id="16_2m12b"]
 [ext_resource type="Texture2D" uid="uid://0mmtpjrvj4xr" path="res://Assets/Interactables/Closed Book.png" id="17_2m12b"]
 [ext_resource type="PackedScene" uid="uid://dmh3n161r5xos" path="res://Characters/NPC/Stalker/stalker.tscn" id="18_i2ti4"]
+[ext_resource type="PackedScene" uid="uid://bia6mho7tystw" path="res://Objects/Health/health.tscn" id="19_7elv8"]
+[ext_resource type="PackedScene" uid="uid://bnjgi7twv00tb" path="res://Objects/NonInteractables/Light.tscn" id="20_em53f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4can4"]
 texture = ExtResource("2_do05b")
@@ -1156,7 +1158,6 @@ inv = ExtResource("6_4662p")
 emptyObj = ExtResource("7_nlcyj")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-energy = 0.8
 blend_mode = 1
 
 [node name="trashCan" type="Sprite2D" parent="."]
@@ -1220,8 +1221,27 @@ myItem = ExtResource("10_4pcj1")
 
 [node name="Stalker" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("18_i2ti4")]
 position = Vector2(447, -22)
-move_speed = 40.0
+move_speed = 30.0
 target_to_chase = NodePath("../PlayerCat")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_lqye7")
+
+[node name="Health" parent="." instance=ExtResource("19_7elv8")]
+position = Vector2(103, 196)
+
+[node name="Health2" parent="." instance=ExtResource("19_7elv8")]
+position = Vector2(231, 215)
+
+[node name="Health3" parent="." instance=ExtResource("19_7elv8")]
+position = Vector2(283, 119)
+
+[node name="Health4" parent="." instance=ExtResource("19_7elv8")]
+position = Vector2(355, 133)
+
+[node name="Health5" parent="." instance=ExtResource("19_7elv8")]
+position = Vector2(355, 42)
+
+[node name="Light" parent="." instance=ExtResource("20_em53f")]
+position = Vector2(191, 17)
+scale = Vector2(2.12, 1)

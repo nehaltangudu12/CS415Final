@@ -26,9 +26,8 @@ func change_coins_found_state(state: COINS_FOUND_STATE):
 func _ready():
 	SignalBus.set_current_level("Room_Four")
 	SignalBus.open_inventory.connect(pauseMenu)
-	player.shrink_speed = 0.01
+	player.shrink_speed = 0.1
 	var light = player.get_node("PointLight2D")
-	light.energy = 0.5
 	Notif.display_notif("There's a bus! But damn I don't have any coins. Gotta collect 5 coins to pay the bus fare!")	
 
 
