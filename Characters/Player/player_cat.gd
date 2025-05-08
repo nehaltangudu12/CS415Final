@@ -79,7 +79,6 @@ func take_damage(damage: float):
 			light.texture_scale = 0
 			GameOverCanvas.game_over()
 			is_dead = true
-			print("you died :(")
 	else:
 		light.texture_scale = new_health
 
