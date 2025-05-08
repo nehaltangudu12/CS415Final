@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://fmdf1j2goin1"]
+[gd_scene load_steps=25 format=4 uid="uid://fmdf1j2goin1"]
 
 [ext_resource type="Texture2D" uid="uid://dj0rpl3lmfvso" path="res://Assets/kenney_rpg-urban-pack/Tilemap/tilemap.png" id="1_4can4"]
 [ext_resource type="Script" uid="uid://hqlo5akbpdq7" path="res://Levels/room_two.gd" id="1_fakkh"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://c4iau7xgtq3gq" path="res://Assets/sprites/Player-Idle.png" id="11_8a8q8"]
 [ext_resource type="PackedScene" uid="uid://cum3uhbgu6q8j" path="res://UI/DialogPlayer.tscn" id="12_8a8q8"]
 [ext_resource type="Texture2D" uid="uid://c0531600m6ebj" path="res://Assets/Sprout Lands - Sprites - Basic pack/Objects/Basic_Furniture.png" id="13_ghd3g"]
+[ext_resource type="PackedScene" uid="uid://dmh3n161r5xos" path="res://Characters/NPC/Stalker/stalker.tscn" id="14_wu31j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4can4"]
 texture = ExtResource("1_4can4")
@@ -1246,6 +1247,11 @@ size = Vector2(0.916665, 0.663795)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wu31j"]
 size = Vector2(1.58333, 0.793103)
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_wu31j"]
+vertices = PackedVector2Array(8.89844, 483, -40.7578, 58.0391, 162.539, 58.9297, 1090, 483, 1090, 62.9531)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 2, 4)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(0, 493, 1100, 493, 1100, 53, 162.582, 48.9314, -52, 48)])
+
 [node name="RoomTwo" type="Node2D"]
 script = ExtResource("1_fakkh")
 
@@ -1421,6 +1427,15 @@ shape = SubResource("RectangleShape2D_wu31j")
 
 [node name="RichTextLabel" parent="STLSign/DialogArea/CanvasLayer" index="0"]
 text = "[Read]"
+
+[node name="Stalker" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("14_wu31j")]
+position = Vector2(-14, 80)
+move_speed = 30.0
+target_to_chase = NodePath("../PlayerCat")
+wait_time = 60.0
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_wu31j")
 
 [editable path="PlayerCat"]
 [editable path="TransitionArea"]

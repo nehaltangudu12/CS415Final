@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://c1q2xp6o1acx6"]
+[gd_scene load_steps=20 format=4 uid="uid://c1q2xp6o1acx6"]
 
 [ext_resource type="Script" uid="uid://bjagsxh1opbop" path="res://Levels/room_three.gd" id="1_ius1t"]
 [ext_resource type="Texture2D" uid="uid://dj0rpl3lmfvso" path="res://Assets/kenney_rpg-urban-pack/Tilemap/tilemap.png" id="2_do05b"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bia6mho7tystw" path="res://Objects/Health/health.tscn" id="10_qayah"]
 [ext_resource type="PackedScene" uid="uid://cf8mfgyju77wt" path="res://Characters/NPC/Car/car.tscn" id="11_qayah"]
 [ext_resource type="PackedScene" uid="uid://bym46dceki7o3" path="res://Levels/TransitionArea.tscn" id="12_4662p"]
+[ext_resource type="PackedScene" uid="uid://dmh3n161r5xos" path="res://Characters/NPC/Stalker/stalker.tscn" id="13_nlcyj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4can4"]
 texture = ExtResource("2_do05b")
@@ -1293,6 +1294,11 @@ sources/2 = SubResource("TileSetAtlasSource_t8u00")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlcyj"]
 size = Vector2(15.9167, 1.03448)
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_nlcyj"]
+vertices = PackedVector2Array(387, 563, 7.9375, 563, 4.0625, -57.0703, 387, -59.9219)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-6, -67, -2, 573, 397, 573, 397, -70)])
+
 [node name="RoomThree" type="Node2D"]
 script = ExtResource("1_ius1t")
 
@@ -1519,3 +1525,12 @@ text_key = "Room_Four"
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="TransitionArea"]
 position = Vector2(2.95833, 5.48276)
 shape = SubResource("RectangleShape2D_nlcyj")
+
+[node name="Stalker" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("13_nlcyj")]
+position = Vector2(14, -37)
+move_speed = 80.0
+target_to_chase = NodePath("../PlayerCat")
+wait_time = 7.0
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_nlcyj")

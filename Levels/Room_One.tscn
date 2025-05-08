@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=4 uid="uid://gfyeg7ece47w"]
+[gd_scene load_steps=79 format=4 uid="uid://gfyeg7ece47w"]
 
 [ext_resource type="Texture2D" uid="uid://bos7wqi4dipxf" path="res://Assets/Top-Down_Retro_Interior/TopDownHouse_DoorsAndWindows.png" id="1_dw3m1"]
 [ext_resource type="Script" uid="uid://pw56rlhmu2cw" path="res://Levels/room_one.gd" id="1_mdgqp"]
@@ -17,13 +17,14 @@
 [ext_resource type="Resource" uid="uid://bkv8184rupkau" path="res://Inventory/Items/empty.tres" id="11_8qlal"]
 [ext_resource type="Resource" uid="uid://b1migf6lktrov" path="res://Inventory/Items/cup.tres" id="11_m4r50"]
 [ext_resource type="PackedScene" uid="uid://dmj8q8ibt2p47" path="res://World/ItemUseArea.tscn" id="11_oaq7o"]
-[ext_resource type="Script" path="res://Levels/sink.gd" id="12_jyagn"]
+[ext_resource type="Script" uid="uid://cm1uoxywu1tbm" path="res://Levels/sink.gd" id="12_jyagn"]
 [ext_resource type="Resource" uid="uid://cy8arp3h5gi4c" path="res://Inventory/Items/plate.tres" id="14_fj5cf"]
 [ext_resource type="PackedScene" uid="uid://b6q7qfq27gosg" path="res://Characters/NPC/GenericNPC/GenericNPC.tscn" id="20_p6p58"]
 [ext_resource type="Texture2D" uid="uid://c4iau7xgtq3gq" path="res://Assets/sprites/Player-Idle.png" id="21_p6p58"]
 [ext_resource type="PackedScene" uid="uid://cum3uhbgu6q8j" path="res://UI/DialogPlayer.tscn" id="22_gdaqv"]
 [ext_resource type="PackedScene" uid="uid://bym46dceki7o3" path="res://Levels/TransitionArea.tscn" id="23_daorc"]
 [ext_resource type="PackedScene" uid="uid://bnjgi7twv00tb" path="res://Objects/NonInteractables/Light.tscn" id="24_7if0r"]
+[ext_resource type="PackedScene" uid="uid://dmh3n161r5xos" path="res://Characters/NPC/Stalker/stalker.tscn" id="25_0wr1x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0xmi6"]
 texture = ExtResource("1_dw3m1")
@@ -7561,6 +7562,10 @@ position = Vector2(435, 215)
 [node name="Light7" parent="." instance=ExtResource("24_7if0r")]
 visible = false
 position = Vector2(37, -78)
+
+[node name="Stalker" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("25_0wr1x")]
+position = Vector2(1010, 33)
+target_to_chase = NodePath("../PlayerCat")
 
 [editable path="Bartender"]
 [editable path="Bartender/DialogArea"]
