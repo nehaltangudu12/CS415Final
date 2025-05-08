@@ -1408,7 +1408,7 @@ shape = SubResource("RectangleShape2D_wu31j")
 text = "[Read]"
 
 [node name="Stalker" parent="." node_paths=PackedStringArray("target_to_chase") instance=ExtResource("14_wu31j")]
-position = Vector2(36, 95)
+position = Vector2(-21, 78)
 move_speed = 30.0
 target_to_chase = NodePath("../PlayerCat")
 wait_time = 60.0
