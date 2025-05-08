@@ -1,6 +1,4 @@
-extends CanvasLayer
-
-@onready var game_over_screen = $GameOverMenu
+extends Node2D
 
 @export var fade_out_speed: float = 1.0
 @export var fade_in_speed: float = 1.0
@@ -19,29 +17,13 @@ extends CanvasLayer
 @onready var fade_in_options = SceneManager.create_options(fade_in_speed, fade_in_pattern, fade_in_smoothness, fade_in_inverted)
 @onready var general_options = SceneManager.create_general_options(color, timeout, clickable, add_to_back)
 
-func _ready() -> void:
-	game_over_screen.visible = false
-
-func murder_cutscene():
+func _on_restart_win_button_down() -> void:
 	SceneManager.change_scene(
-		"death_cutscene",
+		"Title",
 		fade_in_options,
 		fade_out_options,
 		general_options,
 	)
 
-func game_over():
-	SceneManager.change_scene(
-		"you_died",
-		fade_in_options,
-		fade_out_options,
-		general_options,
-	)
-	
-func game_win():
-	SceneManager.change_scene(
-		"you_won",
-		fade_in_options,
-		fade_out_options,
-		general_options,
-	)
+func _on_quit_win_button_down() -> void:
+	get_tree().quit()

@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://b6rvuljdtcl2r"]
+
+[ext_resource type="Texture2D" uid="uid://bpj04oooxndtq" path="res://Assets/Sprout Lands - Sprites - Basic pack/Characters/Basic Charakter Spritesheet_static.png" id="1_x4tai"]
+[ext_resource type="Script" uid="uid://dcqml1o3c4b2g" path="res://UI/GameOver/you_won.gd" id="1_y1pdn"]
+[ext_resource type="Texture2D" uid="uid://0ky2s4h5abv" path="res://UI/GameOver/assets/restart.png" id="2_x4tai"]
+[ext_resource type="Texture2D" uid="uid://b4klqmv0vfxsu" path="res://UI/GameOver/assets/quit.png" id="3_5kf5n"]
+[ext_resource type="Texture2D" uid="uid://ct45dmgtas51b" path="res://UI/GameOver/assets/you_won.png" id="4_5kf5n"]
+
+[node name="YouWon" type="Node2D"]
+script = ExtResource("1_y1pdn")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+scale = Vector2(0.7, 0.7)
+transform = Transform2D(0.7, 0, 0, 0.7, 0, 0)
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_left = 328.0
+offset_top = 152.0
+offset_right = 457.0
+offset_bottom = 261.0
+texture = ExtResource("1_x4tai")
+
+[node name="RestartWin" type="TextureButton" parent="CanvasLayer"]
+offset_left = 150.0
+offset_top = 262.0
+offset_right = 311.0
+offset_bottom = 327.0
+texture_normal = ExtResource("2_x4tai")
+
+[node name="QuitWin" type="TextureButton" parent="CanvasLayer"]
+offset_left = 483.0
+offset_top = 271.0
+offset_right = 579.0
+offset_bottom = 336.0
+texture_normal = ExtResource("3_5kf5n")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer"]
+offset_left = 265.0
+offset_top = 76.0
+offset_right = 514.0
+offset_bottom = 169.0
+texture = ExtResource("4_5kf5n")
+
+[connection signal="button_down" from="CanvasLayer/RestartWin" to="." method="_on_restart_win_button_down"]
+[connection signal="button_down" from="CanvasLayer/QuitWin" to="." method="_on_quit_win_button_down"]
