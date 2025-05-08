@@ -7,6 +7,7 @@ extends Area2D
 
 var area_active: bool = false
 var parent
+var picked_up: bool = false
 
 func _ready():
 	parent = get_parent()
@@ -14,10 +15,13 @@ func _ready():
 func _input(event):
 	if area_active and event.is_action_pressed("ui_accept"):
 		pauseMenu._add_item(myItem)
-		# picking up item
+		interact_indicator.visible = false
+		picked_up = true
+
 		
 func show_read():
-	interact_indicator.visible = true
+	if !picked_up:
+		interact_indicator.visible = true
 
 func exit_read():
 	interact_indicator.visible = false

@@ -6,7 +6,7 @@ extends Node2D
 var paused = false
 
 @onready var player = $PlayerCat
-@onready var transition_area = $TransitionArea
+#@onready var transition_area = $TransitionArea
 
 enum COINS_FOUND_STATE {
 	COINS_NOT_FOUND,
