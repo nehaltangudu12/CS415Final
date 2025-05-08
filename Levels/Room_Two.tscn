@@ -1325,7 +1325,6 @@ inv = ExtResource("5_p0pjj")
 emptyObj = ExtResource("6_g6qth")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
-visible = false
 energy = 0.8
 blend_mode = 1
 
