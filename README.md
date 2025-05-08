@@ -12,3 +12,5 @@
 Tilesets
 1. [Penzilla itch.io Top Down Retro Interior](https://penzilla.itch.io/top-down-retro-interior) (Room 1)
 2. [Kenney RPG Urban Pack](https://kenney.nl/assets/rpg-urban-pack) (Rooms 2, 3, and 4)
+
+Player Sprite and Bus drawn by Huamin.
