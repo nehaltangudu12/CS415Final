@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://cy1kbravbt3mj"]
+
+[ext_resource type="Script" uid="uid://c2b8sijova2ol" path="res://UI/GameOver/you_died.gd" id="1_1pvet"]
+[ext_resource type="Texture2D" uid="uid://ttpjmrl52nwo" path="res://UI/GameOver/assets/you_died.png" id="1_aovae"]
+[ext_resource type="Texture2D" uid="uid://bpj04oooxndtq" path="res://Assets/Sprout Lands - Sprites - Basic pack/Characters/Basic Charakter Spritesheet_static.png" id="2_4i68t"]
+[ext_resource type="Texture2D" uid="uid://b4klqmv0vfxsu" path="res://UI/GameOver/assets/quit.png" id="3_m56qh"]
+[ext_resource type="Texture2D" uid="uid://0ky2s4h5abv" path="res://UI/GameOver/assets/restart.png" id="4_1pvet"]
+
+[node name="YouDied" type="Node2D"]
+script = ExtResource("1_1pvet")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+scale = Vector2(0.75, 0.75)
+transform = Transform2D(0.75, 0, 0, 0.75, 0, 0)
+
+[node name="YouDied" type="TextureRect" parent="CanvasLayer"]
+offset_left = 218.0
+offset_top = 66.0
+offset_right = 484.0
+offset_bottom = 159.0
+texture = ExtResource("1_aovae")
+
+[node name="Sprite" type="TextureRect" parent="CanvasLayer"]
+offset_left = 262.0
+offset_top = 154.0
+offset_right = 435.0
+offset_bottom = 309.0
+texture = ExtResource("2_4i68t")
+
+[node name="Quit" type="TextureButton" parent="CanvasLayer"]
+offset_left = 394.0
+offset_top = 294.0
+offset_right = 490.0
+offset_bottom = 359.0
+texture_normal = ExtResource("3_m56qh")
+
+[node name="Restart" type="TextureButton" parent="CanvasLayer"]
+offset_left = 166.0
+offset_top = 292.0
+offset_right = 327.0
+offset_bottom = 357.0
+texture_normal = ExtResource("4_1pvet")
+
+[connection signal="button_down" from="CanvasLayer/Quit" to="." method="_on_quit_button_down"]
+[connection signal="button_down" from="CanvasLayer/Restart" to="." method="_on_restart_button_down"]
